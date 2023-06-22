@@ -253,6 +253,11 @@ img {
 .service-image {
   position: relative;
 }
+.skelton-class {
+  width: 200px;
+  height: 100px;
+  background-color: #f1f1f1;
+}
 .ab-ab {
   position: absolute;
   top: 20%;

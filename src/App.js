@@ -22,26 +22,18 @@ import ForgetPassword from './containers/forget-password/ForgetPassword';
 import SignUp from './containers/signup/SignUp';
 
 function App() {
-  useEffect(() => {
-    //First we have to bring(get that) token, which is saved in local storage
-    const token = localStorage.getItem('token');
-    //then we will pass that token in setAuthToken method
-    setAuthToken(token);
-    store.dispatch(loadUser());
-  }, []);
-
   return (
     <Provider store={store}>
       <Router>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/our-centers" component={OurCenter} />
-          <Route exact path="/brand-collabs" component={BrandCollabs} />
-          <Route exact path="/subscription-plan" component={SubscriptionPlan} />
-          <Route exact path="/preferred-partner" component={PreferredPartner} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/forget-password" component={ForgetPassword} />
-          <Route exact path="/register" component={SignUp} />
+          <Route exact path='/' component={Home} />
+          <Route exact path='/our-centers' component={OurCenter} />
+          <Route exact path='/brand-collabs' component={BrandCollabs} />
+          <Route exact path='/subscription-plan' component={SubscriptionPlan} />
+          <Route exact path='/preferred-partner' component={PreferredPartner} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/forget-password' component={ForgetPassword} />
+          <Route exact path='/register' component={SignUp} />
 
           <Route component={PageNotFound} />
         </Switch>
