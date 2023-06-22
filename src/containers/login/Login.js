@@ -1,147 +1,69 @@
-import React from "react";
-import Header from "../common/Header";
-import { Formik, Form } from "formik";
-import { Link } from "react-router-dom";
-import * as Yup from "yup";
-import { TextInput } from "../../components/Form/Form";
-import Footer from "../common/Footer";
-import {
-  useRegisterUser,
-  useLoginUser,
-  useForgetPassword,
-} from "../../shared/hooks/UseAuth";
-
+import React from 'react';
+import { Link } from 'react-router-dom';
 function Login() {
-  const [registerUser] = useRegisterUser();
-  const [loginUser] = useLoginUser();
-  const [forgetUserPassword] = useForgetPassword();
   return (
-    <div>
-      <Header />
-      <div className="customer_login mt-50">
+    <>
+      <section className="signup-section ptb-30">
         <div className="container">
           <div className="row">
-            {/*login area start*/}
-            <div className="col-lg-6 col-md-6">
-              <div
-                className="account_form aos-init aos-animate"
-                data-aos="fade-up"
-                data-aos-delay={0}
-              >
-                <h3>Forget Password</h3>
-                <Formik
-                  initialValues={{
-                    username: "",
-                    password: "",
-                  }}
-                  validationSchema={Yup.object({
-                    username: Yup.string().required("Required"),
-                    password: Yup.string().required("Required"),
-                  })}
-                  onSubmit={async (values, { setSubmitting, resetForm }) => {
-                    setSubmitting(true);
-                    await forgetUserPassword(values);
-                    resetForm();
-                    setSubmitting(false);
-                  }}
-                >
-                  {(formik) => {
-                    console.log(formik);
-                    return (
-                      <Form>
-                        <div className="default-form-box mb-20">
-                          <TextInput
-                            label="Email"
-                            name="username"
-                            type="text"
-                          />
-                        </div>
-                        <div className="default-form-box mb-20">
-                          <TextInput
-                            label="Password"
-                            name="password"
-                            type="password"
-                          />
-                        </div>
-                        <div className="login_submit">
-                          <button className="mb-20" type="submit">
-                            login
-                          </button>
-
-                          <Link to="/forget-password">Lost your password?</Link>
-                        </div>
-                      </Form>
-                    );
-                  }}
-                </Formik>
+            <div className="col-md-12">
+              <div className="section-heading">
+                <h3>Login</h3>
               </div>
             </div>
-            {/*login area start*/}
-            {/*register area start*/}
-            <div className="col-lg-6 col-md-6">
-              <div
-                className="account_form register aos-init aos-animate"
-                data-aos="fade-up"
-                data-aos-delay={200}
-              >
-                <h3>Register</h3>
-                <Formik
-                  initialValues={{
-                    name: "",
-                    phone: "",
-                    email: "",
-                    password: "",
-                  }}
-                  validationSchema={Yup.object({
-                    name: Yup.string().required("Required"),
-                    phone: Yup.string().required("Required"),
-                    email: Yup.string().required("Required"),
-                    password: Yup.string().required("Required"),
-                  })}
-                  onSubmit={async (values, { setSubmitting, resetForm }) => {
-                    setSubmitting(true);
-                    await registerUser(values);
-                    resetForm();
-                    setSubmitting(false);
-                  }}
-                >
-                  {(formik) => {
-                    // console.log(formik);
-                    return (
-                      <Form>
-                        <div className="default-form-box mb-20">
-                          <TextInput label="Name" name="name" type="text" />
-                        </div>
-                        <div className="default-form-box mb-20">
-                          <TextInput label="Phone" name="phone" type="text" />
-                        </div>
-                        <div className="default-form-box mb-20">
-                          <TextInput label="Email" name="email" type="text" />
-                        </div>
-                        <div className="default-form-box mb-20">
-                          <TextInput
-                            label="Password"
-                            name="password"
-                            type="password"
-                          />
-                        </div>
-                        <div className="login_submit">
-                          <button className="mb-20" type="submit">
-                            Register
-                          </button>
-                        </div>
-                      </Form>
-                    );
-                  }}
-                </Formik>
+          </div>
+          <div className="row">
+            <div className="col-md-6">
+              <div className="partner-form box-shadow_6">
+                <div className="form-top-content ptb-10">
+                  <h3>Login</h3>
+                  <p>
+                    Don't have an account?{' '}
+                    <Link to="/register" href>
+                      Sign Up page
+                    </Link>
+                    .
+                  </p>
+                </div>
+                <form action>
+                  <div className="contact-form-group">
+                    <div className="contact-form-input">
+                      <input type="text" placeholder="Email Address" />
+                    </div>
+                    <div className="contact-form-input">
+                      <input type="text" placeholder="Password" />
+                    </div>
+                  </div>
+                  <div className="contact-form-btn">
+                    <div className="form-submit-btn">
+                      <a className="btn btn-primary w-50">Login</a>
+                    </div>
+                  </div>
+                  <div className="login-forget-password">
+                    <Link to="/forget-password">Forgot Password!</Link>
+                  </div>
+                </form>
+              </div>
+              <div className="guest-login-box box-shadow_6 ptb-20 mt-20">
+                <div className="guest-login-content">
+                  Continue as <a href>Guest</a>
+                </div>
+                <div className="contact-form-btn">
+                  <div className="form-submit-btn-guest">
+                    <a className="btn btn-primary">Guest Login</a>
+                  </div>
+                </div>
               </div>
             </div>
-            {/*register area end*/}
+            <div className="col-md-6">
+              <div className="signup-img">
+                <img src="./assets/images/12544.jpg" alt />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <Footer />
-    </div>
+      </section>
+    </>
   );
 }
 
