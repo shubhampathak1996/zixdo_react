@@ -133,10 +133,28 @@ const UseGetBrandType = () => {
   return { getBrandTypes, brand_types_loading: loading, brandTypeData };
 };
 // Services
-const UseGetServices = () => {};
+const UseGetServices = () => {
+  const [Services, setServices] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const getServices = async () => {
+    setLoading(true);
+    const { data } = await api.post('https://zixdo.com/Api/services.php');
+    setServices(data);
+    setLoading(false);
+  };
+  useEffect(() => {
+    getServices();
+  }, []);
+  return {
+    getServices,
+    services_loading: loading,
+    Services,
+  };
+};
 
 // Service Name
 const UseServiceName = () => {};
+
 // Service Content
 const UseServiceContent = () => {};
 
@@ -158,4 +176,5 @@ export {
   UseServiceType,
   UseSubCat,
   UseGetBrandType,
+  UseGetServices,
 };
