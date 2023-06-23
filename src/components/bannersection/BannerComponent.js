@@ -7,6 +7,7 @@ import {
 import Skeleton from 'react-loading-skeleton';
 import { ServiceType } from './ServiceType';
 import { SubMenuComponent } from './SubMenuComponent';
+import { ModelComponent } from './ModelComponent';
 function BannerComponent() {
   const { getServiceTypes, service_type_loading, serviceTypeData } =
     UseServiceType();
@@ -14,39 +15,45 @@ function BannerComponent() {
   const { getBrandTypes, brand_types_loading, brandTypeData } =
     UseGetBrandType();
   const [SERVICES, setSERVICES] = useState(false);
-  const [selectServiceType, setSelectServiceType] = useState(null);
-  const [selectBrandType, setSelectBrandType] = useState(null);
+  const [vehicleType, setVehicleType] = useState(null);
+  const [washType, setWashType] = useState(null);
+  const [modelType, setModelType] = useState(null);
+
   const [filteredBrandData, setFilteredBrandData] = useState(null);
   useEffect(() => {
     getServiceTypes();
   }, []);
   useEffect(() => {
-    if (selectServiceType) {
-      getSubCats(selectServiceType);
+    if (vehicleType) {
+      getSubCats(vehicleType);
     }
-  }, [selectServiceType]);
+  }, [vehicleType]);
   useEffect(() => {
-    if (selectBrandType && selectServiceType && brandTypeData) {
-      console.log(
-        'brandTypeData',
-        brandTypeData,
-        selectBrandType.toString(),
-        selectServiceType.toString()
-      );
-      const filterData = brandTypeData.filter((item) => {
-        console.log('ITEM', item);
-        if (Number(item.service_type) == selectServiceType) {
-          console.log('ITEM INSIDE', item);
-          return item;
+    if (vehicleType && brandTypeData) {
+      console.log('selectServiceType', vehicleType, washType);
+      let filterData = [];
+      if (washType === null) {
+      } else {
+        if (washType) {
+          filterData = brandTypeData.filter((item) => {
+            return item.brand_id === vehicleType && item.service_type === '1';
+          });
         }
-      });
+        if (!washType) {
+          filterData = brandTypeData.filter((item) => {
+            return item.brand_id === vehicleType && item.service_type === '0';
+          });
+        }
+      }
+
       setFilteredBrandData(filterData);
     }
-  }, [selectBrandType, selectServiceType, brandTypeData]);
+  }, [vehicleType, washType, brandTypeData]);
 
   const handleServiceTypeChange = (item) => {
     // console.log('ITEM', item);
-    setSelectServiceType(item.brand_id);
+    setVehicleType(item.brand_id);
+    setWashType(null);
   };
   return (
     <div>
@@ -111,26 +118,14 @@ function BannerComponent() {
                         </>
                       )}
 
-                      {selectServiceType && (
+                      {vehicleType && (
                         <SubMenuComponent
                           sub_cat_loading={sub_cat_loading}
                           subCatData={subCatData}
-                          setSelectBrandType={setSelectBrandType}
+                          setWashType={setWashType}
                         />
                       )}
-                      <div className='hatch-flex'>
-                        {filteredBrandData &&
-                          filteredBrandData.map((item) => {
-                            return (
-                              <div className='car-box'>
-                                <div className='hatchback'>
-                                  <img src='assets/images/hatchback.png' />
-                                  <h5>{item.phone_name}</h5>
-                                </div>
-                              </div>
-                            );
-                          })}
-                      </div>
+                      <ModelComponent filteredBrandData={filteredBrandData} />
 
                       <div className='go-gor-it text-center'>
                         <a href='#' className='btn btn-primary w25'>

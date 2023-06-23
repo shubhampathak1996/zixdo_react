@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const ServiceType = ({ serviceTypeData, handleServiceTypeChange }) => {
-  console.log('service types Data', serviceTypeData);
+  // console.log('service types Data', serviceTypeData);
   return (
     <>
       <div className='hatch-flex'>
