@@ -179,7 +179,9 @@ header {
   font-weight: 400;
   align-items: center;
 }
-
+.active {
+  background: var(--secondary-color) !important;
+}
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: #888888;

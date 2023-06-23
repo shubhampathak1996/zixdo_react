@@ -4,17 +4,17 @@ export const ServiceType = ({ serviceTypeData, handleServiceTypeChange }) => {
   // console.log('service types Data', serviceTypeData);
   return (
     <>
-      <div className='hatch-flex'>
+      <div className="hatch-flex">
         {serviceTypeData &&
           serviceTypeData.map((item) => {
             return (
               <div
-                className='car-box'
+                className="car-box "
                 onClick={() => {
                   handleServiceTypeChange(item);
                 }}
               >
-                <div className='hatchback'>
+                <div className="hatchback active">
                   <img
                     src={
                       item.image ? item.image : 'assets/images/hatchback.png'
