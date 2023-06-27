@@ -4,6 +4,8 @@ export const SubMenuComponent = ({
   sub_cat_loading,
   subCatData,
   setWashType,
+  washType,
+  vehicleType,
 }) => {
   return (
     <div className='car-option car-option-flex'>
@@ -30,7 +32,12 @@ export const SubMenuComponent = ({
             subCatData.map((item) => {
               if (item.service_type === 'Wet Wash') {
                 return (
-                  <div className='options-car' onClick={() => setWashType('1')}>
+                  <div
+                    className={
+                      washType === '1' ? 'options-car active2' : 'options-car'
+                    }
+                    onClick={() => setWashType('1')}
+                  >
                     <img src='assets/images/pressure-washer.png' />
                     <h5>Pressure Wash</h5>
                     <ul>
@@ -49,7 +56,11 @@ export const SubMenuComponent = ({
               if (item.service_type === 'Dry Wash') {
                 return (
                   <div
-                    className='options-car clo'
+                    className={
+                      washType === '0'
+                        ? 'options-car clo active2'
+                        : 'options-car clo'
+                    }
                     onClick={() => setWashType('0')}
                   >
                     <img src='assets/images/washing-machine.png' />
