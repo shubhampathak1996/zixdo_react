@@ -179,6 +179,39 @@ header {
   font-weight: 400;
   align-items: center;
 }
+.service-content ul li i {
+  margin-right: 10px;
+}
+.service-content ul li {
+  margin-bottom: 5px;
+}
+.service-content h5 {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.booking-content h2 {
+  font-size: 1.3rem;
+}
+.booking-amount-flex {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.all-services .service-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e1e1e;
+}
+.all-services .service-card {
+  padding: 0px;
+}
+.all-services .service-card .service-content {
+  padding: 10px 15px;
+}
+.all-services .service-card .service-content .service-heading {
+  margin-bottom: 10px;
+}
 .active {
   background: var(--secondary-color) !important;
 }
