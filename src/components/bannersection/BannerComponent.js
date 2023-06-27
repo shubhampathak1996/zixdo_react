@@ -56,40 +56,40 @@ function BannerComponent() {
     setWashType(null);
   };
   return (
-    <div>
-      <section className='hero-wrapper'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-md-6'>
-              <div className='hero-section-content'>
-                <div className='main-heading-section'>
+    <>
+      <section className="hero-wrapper">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6">
+              <div className="hero-section-content">
+                <div className="main-heading-section">
                   <h1>We Are Car Wash Service Provider</h1>
                   <p>
                     Lorem ipsum dolor sit amet consectetur. Odio in lorem ut
                     cras tristique non. Arcu ac nunc tincidunt eget viverra eget
                     quam sit
                   </p>
-                  <div className='search-bar-section'>
+                  <div className="search-bar-section">
                     <form>
                       <input
-                        type='text'
-                        className='form-control'
-                        placeholder='Search Pincode'
+                        type="text"
+                        className="form-control"
+                        placeholder="Search Pincode"
                       />
                       <div
-                        className='search-btn'
+                        className="search-btn"
                         onClick={() => {
                           setSERVICES(!SERVICES);
                         }}
                       >
-                        <a href className='btn btn-primary'>
+                        <a href className="btn btn-primary">
                           Search
                         </a>
                       </div>
                     </form>
 
                     <div
-                      className='searc-box-container'
+                      className="searc-box-container"
                       style={{ display: SERVICES ? 'block' : 'none' }}
                     >
                       {service_type_loading ? (
@@ -127,8 +127,8 @@ function BannerComponent() {
                       )}
                       <ModelComponent filteredBrandData={filteredBrandData} />
 
-                      <div className='go-gor-it text-center'>
-                        <a href='#' className='btn btn-primary w25'>
+                      <div className="go-gor-it text-center">
+                        <a href="#" className="btn btn-primary w25">
                           Go For it
                         </a>
                       </div>
@@ -137,15 +137,15 @@ function BannerComponent() {
                 </div>
               </div>
             </div>
-            <div className='col-md-6'>
-              <div className='hero-image'>
-                <img src='/assets/images/Wavy_Bus-38_Single-05 1.png' alt />
+            <div className="col-md-6">
+              <div className="hero-image">
+                <img src="/assets/images/Wavy_Bus-38_Single-05 1.png" alt />
               </div>
             </div>
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }
 
