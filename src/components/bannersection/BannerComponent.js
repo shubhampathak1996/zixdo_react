@@ -112,6 +112,7 @@ function BannerComponent() {
                       ) : (
                         <>
                           <ServiceType
+                            vehicleType={vehicleType}
                             serviceTypeData={serviceTypeData}
                             handleServiceTypeChange={handleServiceTypeChange}
                           />
@@ -120,6 +121,8 @@ function BannerComponent() {
 
                       {vehicleType && (
                         <SubMenuComponent
+                          washType={washType}
+                          vehicleType={vehicleType}
                           sub_cat_loading={sub_cat_loading}
                           subCatData={subCatData}
                           setWashType={setWashType}

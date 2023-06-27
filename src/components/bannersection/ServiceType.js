@@ -1,20 +1,30 @@
 import React from 'react';
 
-export const ServiceType = ({ serviceTypeData, handleServiceTypeChange }) => {
+export const ServiceType = ({
+  serviceTypeData,
+  handleServiceTypeChange,
+  vehicleType,
+}) => {
   // console.log('service types Data', serviceTypeData);
   return (
     <>
-      <div className="hatch-flex">
+      <div className='hatch-flex'>
         {serviceTypeData &&
           serviceTypeData.map((item) => {
             return (
               <div
-                className="car-box "
+                className='car-box '
                 onClick={() => {
                   handleServiceTypeChange(item);
                 }}
               >
-                <div className="hatchback active">
+                <div
+                  className={
+                    vehicleType && item.brand_id === vehicleType
+                      ? 'hatchback active'
+                      : 'hatchback'
+                  }
+                >
                   <img
                     src={
                       item.image ? item.image : 'assets/images/hatchback.png'
