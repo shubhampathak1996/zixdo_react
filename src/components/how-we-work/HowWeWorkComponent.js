@@ -11,11 +11,11 @@ function HowWeWorkComponent() {
           <div className="row">
             <div className="col-md-12">
               <div className="how-we-work-section-heading">
-                <h3>How we works</h3>
-                <p>
+                <h3>How it works at Zixdo.</h3>
+                {/* <p>
                   Lorem ipsum dolor sit amet consectetur. Non nulla ultrices
                   rhoncus morbi elementum nisi sed.
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -51,7 +51,7 @@ function HowWeWorkComponent() {
               <div className="col-md-4">
                 <BookServiceCard
                   paragraph={
-                    'Lorem ipsum dolor sit amet consectetur. Lectus laoreet ut egestas fames eu aliquam eget id. At viverra amet'
+                    'View prices upfront and book appointment online or on call.'
                   }
                   heading={'Book Your Service'}
                   icon={'assets/images/calendar_1.png'}
@@ -60,7 +60,7 @@ function HowWeWorkComponent() {
               <div className="col-md-4">
                 <BookServiceCard
                   paragraph={
-                    'Lorem ipsum dolor sit amet consectetur. Lectus laoreet ut egestas fames eu aliquam eget id. At viverra amet'
+                    'Relax! Our expert will shine your vehicle at your comfort zone within 30-60 minutes.'
                   }
                   heading={'Visit And Shine'}
                   icon={'assets/images/shine_1.png'}
@@ -69,7 +69,7 @@ function HowWeWorkComponent() {
               <div className="col-md-4">
                 <BookServiceCard
                   paragraph={
-                    'Lorem ipsum dolor sit amet consectetur. Lectus laoreet ut egestas fames eu aliquam eget id. At viverra amet'
+                    'Check the vehicle & pay. Yes! Do not forget to grab a reflective sticker and get 10% off*.'
                   }
                   heading={'Payments'}
                   icon={'assets/images/payment_1.png'}
@@ -85,27 +85,25 @@ function HowWeWorkComponent() {
               <div className="col-md-4">
                 <BookServiceCard
                   paragraph={
-                    'Lorem ipsum dolor sit amet consectetur. Lectus laoreet ut egestas fames eu aliquam eget id. At viverra amet'
+                    'Get best custom subscription for your vehicle or Call us to know more.'
                   }
-                  heading={'hello this is the'}
+                  heading={'View Subscription plan'}
                   icon={'assets/images/calendar_1.png'}
                 />
               </div>
               <div className="col-md-4">
                 <BookServiceCard
-                  paragraph={
-                    'Lorem ipsum dolor sit amet consectetur. Lectus laoreet ut egestas fames eu aliquam eget id. At viverra amet'
-                  }
-                  heading={'hello this is the '}
+                  paragraph={'Get your vehicle registered with us & Pay.'}
+                  heading={'Register Your Vehicle'}
                   icon={'assets/images/shine_1.png'}
                 />
               </div>
               <div className="col-md-4">
                 <BookServiceCard
                   paragraph={
-                    'Lorem ipsum dolor sit amet consectetur. Lectus laoreet ut egestas fames eu aliquam eget id. At viverra amet'
+                    'Relax! Our expert will shine your vehicle as per subscription.EASY!!'
                   }
-                  heading={'hello this is the '}
+                  heading={'Visit & Shine'}
                   icon={'assets/images/payment_1.png'}
                 />
               </div>

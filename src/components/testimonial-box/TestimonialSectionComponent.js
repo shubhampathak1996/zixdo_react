@@ -22,18 +22,14 @@ function TestimonialSectionComponent() {
                 <div className="testimonial-content">
                   <div className="testimonial-para">
                     <p>
-                      Lorem ipsum dolor sit amet consectetur. Semper non mi
-                      tincidunt etiam commodo arcu. Eu arcu ut ipsum malesuada
-                      sagittis vulputate sit in. Aliquet ullamcorper enim
-                      laoreet ultrices nulla et habitasse in id. Elementum
-                      pulvinar dictum tristique pretium ipsum sit. In etiam odio
-                      ac feugiat. A at at elementum
+                      Best car wash services provider vo bhi ghr baithe budget
+                      friendly service
                     </p>
                   </div>
                   <div className="testimonial-title">
-                    <h3>Shubham Pathak</h3>
+                    <h3>Tanuj Dagar</h3>
                   </div>
-                  <div className="testmonial-des">Website Developer</div>
+                  {/* <div className="testmonial-des">Website Developer</div> */}
                 </div>
               </div>
             </div>
@@ -42,18 +38,16 @@ function TestimonialSectionComponent() {
                 <div className="testimonial-content">
                   <div className="testimonial-para">
                     <p>
-                      Lorem ipsum dolor sit amet consectetur. Semper non mi
-                      tincidunt etiam commodo arcu. Eu arcu ut ipsum malesuada
-                      sagittis vulputate sit in. Aliquet ullamcorper enim
-                      laoreet ultrices nulla et habitasse in id. Elementum
-                      pulvinar dictum tristique pretium ipsum sit. In etiam odio
-                      ac feugiat. A at at elementum
+                      Got an incredible offer of just Rs. 300 for a doorstep car
+                      wash for my Hatch Back. Good Service. Great team of
+                      people. Try and ask for their employee, cleaning buddy
+                      Rohit Kumar.
                     </p>
                   </div>
                   <div className="testimonial-title">
-                    <h3>Shubham Pathak</h3>
+                    <h3>Sannidhya Awasthi</h3>
                   </div>
-                  <div className="testmonial-des">Website Developer</div>
+                  {/* <div className="testmonial-des">Website Developer</div> */}
                 </div>
               </div>
             </div>

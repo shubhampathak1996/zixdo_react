@@ -63,11 +63,10 @@ function BannerComponent() {
             <div className="col-md-6">
               <div className="hero-section-content">
                 <div className="main-heading-section">
-                  <h1>We Are Car Wash Service Provider</h1>
+                  <h1>FAST. CLEAN. SHINE!</h1>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur. Odio in lorem ut
-                    cras tristique non. Arcu ac nunc tincidunt eget viverra eget
-                    quam sit
+                    Choose your Service Type - We provide car washing and other
+                    cleaning services.
                   </p>
                   <div className="search-bar-section">
                     <form>

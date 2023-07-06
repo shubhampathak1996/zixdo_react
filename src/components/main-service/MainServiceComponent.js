@@ -10,8 +10,7 @@ function MainServiceComponent() {
               <div className="service-section-heading">
                 <h3>Our Services</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur. Non nulla ultrices
-                  rhoncus morbi elementum nisi sed.
+                  Opportunity to own & run car cleaning business in your city
                 </p>
               </div>
             </div>
@@ -23,14 +22,14 @@ function MainServiceComponent() {
                   <img src="assets/images/service1 1.png" alt />
                 </div>
                 <div className="service-content">
-                  <div className="service-heading">Exterior Washing</div>
+                  <div className="service-heading">Car Exterior Service</div>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur. Lectus laoreet ut
-                    egestas fames eu aliquam eget id. At viverra amet
+                    We, at Zixdo specialize in premium car exterior services,
+                    using cutting-edge tools and techniques. Our skilled
+                    technicians flawlessly restore your car's paintwork,
+                    bodywork, and detailing, enhancing its aesthetic appeal and
+                    ensuring a head-turning, brand-new look.
                   </p>
-                  <a href className="read-mroe">
-                    READ MORE
-                  </a>
                 </div>
               </div>
             </div>
@@ -40,14 +39,15 @@ function MainServiceComponent() {
                   <img src="assets/images/service1 1.png" alt />
                 </div>
                 <div className="service-content">
-                  <div className="service-heading">Exterior Washing</div>
+                  <div className="service-heading">Car Interior Service</div>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur. Lectus laoreet ut
-                    egestas fames eu aliquam eget id. At viverra amet
+                    We excel in car interior services, enhancing comfort and
+                    aesthetics through luxurious transformations using
+                    high-quality materials and precise craftsmanship.
                   </p>
-                  <a href className="read-mroe">
+                  {/* <a href className="read-mroe">
                     READ MORE
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>
@@ -57,14 +57,13 @@ function MainServiceComponent() {
                   <img src="assets/images/service1 1.png" alt />
                 </div>
                 <div className="service-content">
-                  <div className="service-heading">Exterior Washing</div>
+                  <div className="service-heading">Home/AC service</div>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur. Lectus laoreet ut
-                    egestas fames eu aliquam eget id. At viverra amet
+                    Zixdo is committed to delivering outstanding home/AC
+                    services with skilled technicians for efficient
+                    installation, maintenance, and repair, ensuring comfort and
+                    satisfaction.
                   </p>
-                  <a href className="read-mroe">
-                    READ MORE
-                  </a>
                 </div>
               </div>
             </div>
@@ -74,14 +73,12 @@ function MainServiceComponent() {
                   <img src="assets/images/service1 1.png" alt />
                 </div>
                 <div className="service-content">
-                  <div className="service-heading">Exterior Washing</div>
+                  <div className="service-heading">2 Wheelers</div>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur. Lectus laoreet ut
-                    egestas fames eu aliquam eget id. At viverra amet
+                    We deliver exceptional two-wheeler services, ensuring your
+                    motorcycle or scooter remains in optimal condition for a
+                    seamless and enjoyable ride.
                   </p>
-                  <a href className="read-mroe">
-                    READ MORE
-                  </a>
                 </div>
               </div>
             </div>
@@ -91,14 +88,11 @@ function MainServiceComponent() {
                   <img src="assets/images/service1 1.png" alt />
                 </div>
                 <div className="service-content">
-                  <div className="service-heading">Exterior Washing</div>
+                  <div className="service-heading">Commercial Vehicle</div>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur. Lectus laoreet ut
-                    egestas fames eu aliquam eget id. At viverra amet
+                    We offer comprehensive services for commercial vehicles,
+                    ensuring performance and longevity.
                   </p>
-                  <a href className="read-mroe">
-                    READ MORE
-                  </a>
                 </div>
               </div>
             </div>
@@ -108,14 +102,13 @@ function MainServiceComponent() {
                   <img src="assets/images/service1 1.png" alt />
                 </div>
                 <div className="service-content">
-                  <div className="service-heading">Exterior Washing</div>
+                  <div className="service-heading">
+                    Service for all types of vehicles
+                  </div>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur. Lectus laoreet ut
-                    egestas fames eu aliquam eget id. At viverra amet
+                    We take pride to provide services for all types of your
+                    vehicles-including ACs that too at your place!
                   </p>
-                  <a href className="read-mroe">
-                    READ MORE
-                  </a>
                 </div>
               </div>
             </div>

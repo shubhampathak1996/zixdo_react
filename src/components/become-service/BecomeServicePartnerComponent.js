@@ -9,7 +9,10 @@ function BecomeServicePartnerComponent() {
             <div className="col-md-5">
               <div className="partner-form">
                 <h3>Become our service partner</h3>
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <p>
+                  Best Franchise Business in Car Cleaning & Disinfectant
+                  Services.
+                </p>
                 <form className="partner-main-form" action>
                   <div className="form-group">
                     <input

@@ -26,7 +26,6 @@ function Login() {
                     <Link to="/register" href>
                       Sign Up page
                     </Link>
-                    .
                   </p>
                 </div>
                 <Formik
