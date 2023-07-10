@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Topbar() {
   return (
@@ -15,12 +16,12 @@ function Topbar() {
               </div>
 
               <div>
-                <a href="" className="d-w ">
+                <Link to="/cart" className="d-w ">
                   <i class="fa fa-shopping-cart"></i>
-                </a>
-                <a href="" className="logi">
+                </Link>
+                <Link to="/login" className="logi">
                   Login / Signup{' '}
-                </a>
+                </Link>
               </div>
             </div>
           </div>

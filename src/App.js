@@ -21,6 +21,8 @@ import Login from './containers/login/Login';
 import ForgetPassword from './containers/forget-password/ForgetPassword';
 import SignUp from './containers/signup/SignUp';
 import OurServices from './containers/our-services/OurServices';
+import Cart from './containers/cart/Cart';
+import Checkout from './containers/checkout/Checkout';
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/forget-password" component={ForgetPassword} />
           <Route exact path="/our-services" component={OurServices} />
+          <Route exact path="/cart" component={Cart} />
+          <Route exact path="/checkout" component={Checkout} />
           <Route exact path="/register" component={SignUp} />
 
           <Route component={PageNotFound} />
