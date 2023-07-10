@@ -3,11 +3,11 @@ import AlphabeticalSearch from './AlphabeticalSearch';
 import OurCenterTopPage from './OurCenterTopPage';
 import TestimonialSectionComponent from '../testimonial-box/TestimonialSectionComponent';
 
-function OurCenterComponent() {
+function OurCenterComponent({ setText, text, centers, centers_loading }) {
   return (
     <>
       <OurCenterTopPage />
-      <AlphabeticalSearch />
+      <AlphabeticalSearch setText={setText} text={text} centers={centers} />
       <TestimonialSectionComponent />
     </>
   );

@@ -168,6 +168,25 @@ const UseLat = () => {};
 // Order Info
 const UseOrderInfo = () => {};
 
+// Center Filter
+const UseCenterFilter = () => {
+  const [centers, setCenters] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const getCenters = async ({ text }) => {
+    setLoading(true);
+    const { data } = await api.post('https://zixdo.com/Api/services.php', {
+      textkey: text,
+    });
+    setCenters(data);
+    setLoading(false);
+  };
+  return {
+    centers,
+    getCenters,
+    centers_loading: loading,
+  };
+};
+
 export {
   useFetch,
   usePost,
@@ -177,4 +196,5 @@ export {
   UseSubCat,
   UseGetBrandType,
   UseGetServices,
+  UseCenterFilter,
 };
