@@ -23,6 +23,8 @@ import SignUp from './containers/signup/SignUp';
 import OurServices from './containers/our-services/OurServices';
 import Cart from './containers/cart/Cart';
 import Checkout from './containers/checkout/Checkout';
+import MyProfile from './containers/my-profile/MyProfile';
+
 
 function App() {
   return (
@@ -40,6 +42,7 @@ function App() {
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/checkout" component={Checkout} />
           <Route exact path="/register" component={SignUp} />
+          <Route exact path="/my-profile" component={MyProfile} />
 
           <Route component={PageNotFound} />
         </Switch>
