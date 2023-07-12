@@ -12,14 +12,6 @@ function CartComponent() {
             <div className="col-md-12">
               <div className="shoping-cart-table table-responsive">
                 <table className="table">
-                  {/* <thead>
-                      <th class="cart-product-remove">Remove</th>
-                      <th class="cart-product-image">Image</th>
-                      <th class="cart-product-info">Product</th>
-                      <th class="cart-product-price">Price</th>
-                      <th class="cart-product-quantity">Quantity</th>
-                      <th class="cart-product-subtotal">Subtotal</th>
-                  </thead> */}
                   <tbody>
                     <tr>
                       <td className="cart-product-remove">x</td>
