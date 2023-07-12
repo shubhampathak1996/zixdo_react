@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/common/Header';
 import Footer from '../../components/common/Footer';
 import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
-import { UseRegister } from '../../shared/hooks/UseFetch';
+import { UseAuthenticated, UseRegister } from '../../shared/hooks/UseFetch';
+import { useHistory } from 'react-router-dom';
 function SignUp() {
   const { registerUser, register_loading, registerData } = UseRegister();
+  const { isAuthenticated } = UseAuthenticated();
+  const history = useHistory();
+  useEffect(() => {
+    if (isAuthenticated) {
+      history.push('/my-account');
+    }
+  }, [isAuthenticated]);
+  useEffect(() => {
+    if (registerData && registerData.seesion_key) {
+      history.push('/my-account');
+    }
+  }, [registerData]);
   return (
     <>
       <Header />
@@ -25,8 +38,8 @@ function SignUp() {
                 <div className='form-top-content ptb-10'>
                   <h3>Sign Up</h3>
                   <p>
-                    If you already have an account with us, please login at the{' '}
-                    <Link to='/login'>login page</Link>.
+                    If you already have an account with us, please{' '}
+                    <Link to='/login'>Login </Link>.
                   </p>
                 </div>
                 <Formik
@@ -40,7 +53,12 @@ function SignUp() {
                     name: Yup.string().required('Required'),
                     email: Yup.string().email().required('Required'),
                     password: Yup.string().required('Required'),
-                    confirm_password: Yup.string().required('Required'),
+                    confirm_password: Yup.string()
+                      .required('Required')
+                      .oneOf(
+                        [Yup.ref('password')],
+                        'Both password need to be the same'
+                      ),
                   })}
                   onSubmit={async (values, { setSubmitting, resetForm }) => {
                     setSubmitting(true);
@@ -49,6 +67,7 @@ function SignUp() {
                     formData.append('email', values.email);
                     formData.append('password', values.password);
                     await registerUser(formData);
+
                     resetForm();
                     setSubmitting(false);
                   }}
