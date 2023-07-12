@@ -1,31 +1,37 @@
 import { Form, Formik } from 'formik';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
-import { UseLogin } from '../../shared/hooks/UseFetch';
+import { UseAuthenticated, UseLogin } from '../../shared/hooks/UseFetch';
+import { useHistory } from 'react-router-dom';
 function Login() {
   const { loginUser, login_loading, loginData } = UseLogin();
+  const { isAuthenticated } = UseAuthenticated();
+  const history = useHistory();
+  useEffect(() => {
+    if (isAuthenticated) {
+      history.push('/my-account');
+    }
+  }, [isAuthenticated]);
+
   return (
     <>
-      <section className="signup-section ptb-30">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <div className="section-heading">
+      <section className='signup-section ptb-30'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-md-12'>
+              <div className='section-heading'>
                 <h3>Login</h3>
               </div>
             </div>
           </div>
-          <div className="row">
-            <div className="col-md-6">
-              <div className="partner-form box-shadow_6">
-                <div className="form-top-content ptb-10">
+          <div className='row'>
+            <div className='col-md-6'>
+              <div className='partner-form box-shadow_6'>
+                <div className='form-top-content ptb-10'>
                   <h3>Login</h3>
                   <p>
-                    Don't have an account?
-                    <Link to="/register" href>
-                      Sign Up page
-                    </Link>
+                    Don't have an account? <Link to='/register'>Sign Up</Link>
                   </p>
                 </div>
                 <Formik
@@ -51,31 +57,31 @@ function Login() {
                     console.log(formik);
                     return (
                       <Form>
-                        <div className="contact-form-group">
-                          <div className="contact-form-input">
+                        <div className='contact-form-group'>
+                          <div className='contact-form-input'>
                             <input
-                              type="text"
-                              name="email"
+                              type='text'
+                              name='email'
                               onChange={formik.handleChange}
                               value={formik.values.email}
-                              placeholder="Email Address"
+                              placeholder='Email Address'
                             />
                             {formik.errors && formik.errors.email && (
-                              <span className="text-danger">
+                              <span className='text-danger'>
                                 {formik.errors.email}
                               </span>
                             )}
                           </div>
-                          <div className="contact-form-input">
+                          <div className='contact-form-input'>
                             <input
-                              type="password"
-                              name="password"
+                              type='password'
+                              name='password'
                               onChange={formik.handleChange}
                               value={formik.values.password}
-                              placeholder="Password"
+                              placeholder='Password'
                             />
                             {formik.errors && formik.errors.password && (
-                              <span className="text-danger">
+                              <span className='text-danger'>
                                 {formik.errors.password}
                               </span>
                             )}
@@ -92,11 +98,11 @@ function Login() {
                             {loginData.msg}
                           </p>
                         )}
-                        <div className="contact-form-btn">
-                          <div className="form-submit-btn">
+                        <div className='contact-form-btn'>
+                          <div className='form-submit-btn'>
                             <button
-                              type="submit"
-                              className="btn btn-primary w-50"
+                              type='submit'
+                              className='btn btn-primary w-50'
                             >
                               Login
                             </button>
@@ -121,9 +127,9 @@ function Login() {
                 </div>
               </div> */}
             </div>
-            <div className="col-md-6">
-              <div className="signup-img">
-                <img src="./assets/images/12544.jpg" alt />
+            <div className='col-md-6'>
+              <div className='signup-img'>
+                <img src='./assets/images/12544.jpg' alt />
               </div>
             </div>
           </div>

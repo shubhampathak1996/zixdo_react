@@ -1,11 +1,12 @@
 import React from 'react';
+import { UPLOAD_URI } from '../../domain/constant';
 
 export const ServiceType = ({
   serviceTypeData,
   handleServiceTypeChange,
   vehicleType,
 }) => {
-  // console.log('service types Data', serviceTypeData);
+  console.log('service types Data', serviceTypeData);
   return (
     <>
       <div className='hatch-flex'>
@@ -27,7 +28,9 @@ export const ServiceType = ({
                 >
                   <img
                     src={
-                      item.image ? item.image : 'assets/images/hatchback.png'
+                      item.image
+                        ? `${UPLOAD_URI}services/${item.image}`
+                        : 'assets/images/hatchback.png'
                     }
                   />
                   <h5>{item.brand_name}</h5>

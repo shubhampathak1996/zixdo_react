@@ -23,23 +23,25 @@ import SignUp from './containers/signup/SignUp';
 import OurServices from './containers/our-services/OurServices';
 import Cart from './containers/cart/Cart';
 import Checkout from './containers/checkout/Checkout';
+import MyProfile from './containers/my-profile/MyProfile';
 
 function App() {
   return (
     <Provider store={store}>
       <Router>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/our-centers" component={OurCenter} />
-          <Route exact path="/brand-collabs" component={BrandCollabs} />
-          <Route exact path="/subscription-plan" component={SubscriptionPlan} />
-          <Route exact path="/preferred-partner" component={PreferredPartner} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/forget-password" component={ForgetPassword} />
-          <Route exact path="/our-services" component={OurServices} />
-          <Route exact path="/cart" component={Cart} />
-          <Route exact path="/checkout" component={Checkout} />
-          <Route exact path="/register" component={SignUp} />
+          <Route exact path='/' component={Home} />
+          <Route exact path='/our-centers' component={OurCenter} />
+          <Route exact path='/brand-collabs' component={BrandCollabs} />
+          <Route exact path='/subscription-plan' component={SubscriptionPlan} />
+          <Route exact path='/preferred-partner' component={PreferredPartner} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/forget-password' component={ForgetPassword} />
+          <Route exact path='/our-services' component={OurServices} />
+          <Route exact path='/cart' component={Cart} />
+          <Route exact path='/checkout' component={Checkout} />
+          <Route exact path='/register' component={SignUp} />
+          <Route exact path='/my-account' component={MyProfile} />
 
           <Route component={PageNotFound} />
         </Switch>

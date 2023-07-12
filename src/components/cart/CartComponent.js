@@ -1,47 +1,97 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import { TextInput, SelectBox, CheckBox } from '../../components/Form/Form';
 import * as Yup from 'yup';
-function CartComponent() {
+function CartComponent({
+  cartItems,
+  view_cart_loading,
+  viewCart,
+  remove_from_cart_loading,
+  removeCartMessage,
+  removeFromCart,
+}) {
+  console.log('Cart Items', cartItems);
+  const [totalCartAmount, setTotalCartAmount] = useState(null);
+  useEffect(() => {
+    if (cartItems && cartItems.length > 0) {
+      let totalAmount = 0;
+      cartItems.map((item) => {
+        const price = parseFloat(Number(item.price)).toFixed(2);
+        // console.log('PRICE', price);
+        totalAmount = Number(totalAmount) + Number(price);
+        // console.log('totalAmount', totalAmount);
+      });
+      setTotalCartAmount(totalAmount);
+    }
+  }, [cartItems]);
+  const proceedCheckout = () => {};
+
   return (
     <div>
       <section className="cart ptb-50">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
+              <h3> Your Cart (1) </h3>
               <div className="shoping-cart-table table-responsive">
                 <table className="table">
+                  {/* <thead>
+                      <th class="cart-product-remove">Remove</th>
+                      <th class="cart-product-image">Image</th>
+                      <th class="cart-product-info">Product</th>
+                      <th class="cart-product-price">Price</th>
+                      <th class="cart-product-quantity">Quantity</th>
+                      <th class="cart-product-subtotal">Subtotal</th>
+                  </thead> */}
                   <tbody>
-                    <tr>
-                      <td className="cart-product-remove">x</td>
-                      <td className="cart-product-image">
-                        <a href="product-details.html">
-                          <img src="/assets/images/service1 1.png" alt />
-                        </a>
-                      </td>
-                      <td className="cart-product-info">
-                        <h4>
-                          <a href="product-details.html">
-                            Brake Conversion Kit
-                          </a>
-                        </h4>
-                      </td>
-                      <td className="cart-product-price">₹149.00</td>
-                      <td className="cart-product-quantity">
-                        <div className="cart-plus-minus">
-                          <div className="dec qtybutton">-</div>
-                          <input
-                            type="text"
-                            name="qtybutton"
-                            className="cart-plus-minus-box"
-                          />
-                          <div className="inc qtybutton">+</div>
-                        </div>
-                      </td>
-                      <td className="cart-product-subtotal">₹298.00</td>
-                    </tr>
-                    <tr className="cart-coupon-row appply">
+                    {!view_cart_loading ? (
+                      <>
+                        {cartItems && cartItems.length > 0 ? (
+                          <>
+                            {cartItems.map((item) => {
+                              return (
+                                <tr>
+                                  <td
+                                    className="cart-product-remove"
+                                    onClick={() =>
+                                      removeFromCart({
+                                        service_id: item.service_id,
+                                      })
+                                    }
+                                  >
+                                    {' '}
+                                    x
+                                  </td>
+                                  <td className="cart-product-image">
+                                    <img
+                                      src={
+                                        item.image
+                                          ? `https://www.zixdo.com/images/${item.image}`
+                                          : '/assets/images/service1 1.png'
+                                      }
+                                      alt
+                                    />
+                                  </td>
+                                  <td className="cart-product-info">
+                                    <h4>{item.service_name}</h4>
+                                  </td>
+                                  <td className="cart-product-price">
+                                    ₹{item.price}
+                                  </td>
+                                </tr>
+                              );
+                            })}
+                          </>
+                        ) : (
+                          <div>Your cart is empty</div>
+                        )}
+                      </>
+                    ) : (
+                      <div> Loading .... </div>
+                    )}
+
+                    {/* <tr className='cart-coupon-row appply'>
                       <td colSpan={6}>
                         <Formik
                           initialValues={{
@@ -64,17 +114,17 @@ function CartComponent() {
                             console.log(formik);
                             return (
                               <Form>
-                                <div className="form-group">
+                                <div className='form-group'>
                                   <TextInput
-                                    name="coupan_code"
-                                    type="text"
-                                    placeholder="Enter your Coupon Code"
-                                    className="form-control"
+                                    name='coupan_code'
+                                    type='text'
+                                    placeholder='Enter your Coupon Code'
+                                    className='form-control'
                                   />
                                 </div>
                                 <button
-                                  type="submit"
-                                  className="btn btn-primary mt-4"
+                                  type='submit'
+                                  className='btn btn-primary mt-4'
                                 >
                                   Apply Coupon
                                 </button>
@@ -84,11 +134,11 @@ function CartComponent() {
                         </Formik>
                       </td>
                       <td>
-                        <button type="submit" className="btn btn-primary end ">
+                        <button type='submit' className='btn btn-primary end '>
                           Update Cart
                         </button>
                       </td>
-                    </tr>
+                    </tr> */}
                   </tbody>
                 </table>
               </div>
@@ -100,22 +150,22 @@ function CartComponent() {
                   <tbody>
                     <tr>
                       <td>Cart Subtotal</td>
-                      <td>₹618.00</td>
+                      <td>₹{totalCartAmount}</td>
                     </tr>
-                    <tr>
+                    {/* <tr>
                       <td>Shipping and Handing</td>
                       <td>₹15.00</td>
-                    </tr>
-                    <tr>
+                    </tr> */}
+                    {/* <tr>
                       <td>Vat</td>
                       <td>₹00.00</td>
-                    </tr>
+                    </tr> */}
                     <tr>
                       <td>
                         <strong>Order Total</strong>
                       </td>
                       <td>
-                        <strong>₹633.00</strong>
+                        <strong>₹{totalCartAmount}</strong>
                       </td>
                     </tr>
                   </tbody>
