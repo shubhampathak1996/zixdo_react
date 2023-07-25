@@ -29,13 +29,13 @@ function CartComponent({
 
   return (
     <div>
-      <section className='cart ptb-50'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-md-12'>
+      <section className="cart ptb-50">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
               <h3> Your Cart (1) </h3>
-              <div className='shoping-cart-table table-responsive'>
-                <table className='table'>
+              <div className="shoping-cart-table table-responsive">
+                <table className="table">
                   {/* <thead>
                       <th class="cart-product-remove">Remove</th>
                       <th class="cart-product-image">Image</th>
@@ -53,7 +53,7 @@ function CartComponent({
                               return (
                                 <tr>
                                   <td
-                                    className='cart-product-remove'
+                                    className="cart-product-remove"
                                     onClick={() =>
                                       removeFromCart({
                                         service_id: item.service_id,
@@ -63,7 +63,7 @@ function CartComponent({
                                     {' '}
                                     x
                                   </td>
-                                  <td className='cart-product-image'>
+                                  <td className="cart-product-image">
                                     <img
                                       src={
                                         item.image
@@ -73,10 +73,10 @@ function CartComponent({
                                       alt
                                     />
                                   </td>
-                                  <td className='cart-product-info'>
+                                  <td className="cart-product-info">
                                     <h4>{item.service_name}</h4>
                                   </td>
-                                  <td className='cart-product-price'>
+                                  <td className="cart-product-price">
                                     ₹{item.price}
                                   </td>
                                 </tr>
@@ -143,10 +143,10 @@ function CartComponent({
                 </table>
               </div>
             </div>
-            <div className='col-md-12'>
-              <div className='shoping-cart-total car-total mt-50'>
+            <div className="col-md-12">
+              <div className="shoping-cart-total car-total mt-50">
                 <h4>Cart Totals</h4>
-                <table className='table'>
+                <table className="table">
                   <tbody>
                     <tr>
                       <td>Cart Subtotal</td>
@@ -170,8 +170,8 @@ function CartComponent({
                     </tr>
                   </tbody>
                 </table>
-                <div className='cart-button text-right'>
-                  <Link to='/checkout' className='btn btn-primary'>
+                <div className="cart-button text-right">
+                  <Link to="/checkout" className="btn btn-primary">
                     Proceed to checkout
                   </Link>
                 </div>
