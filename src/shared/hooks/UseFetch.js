@@ -368,17 +368,67 @@ const UseCenterFilter = () => {
     centers_loading: loading,
   };
 };
+// homeapge images api
+const UseHomepageOfferImage = () => {
+  const [offerImage, setofferImage] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const getOfferImage = async () => {
+    setLoading(true);
+    const { data } = await api.post('https://www.zixdo.com/Api/home-image.php');
+    setofferImage(data);
+    setLoading(false);
+  };
+  return {
+    offerImage,
+    getOfferImage,
+    offer_image_loading: loading,
+  };
+};
+// preffered partner
+const usePrferredPartner = () => {
+  const [preferredParnterMessage, setpreferredParnterMessage] = useState(null);
+  const [loading, setloading] = useState(false);
+  const AddPrefferedPartner = async ({
+    name,
+    email,
+    mobile_number,
+    city,
+    invest_type,
+  }) => {
+    setloading(true);
+    const formData = new FormData();
+    formData.append('full_name', name);
+    formData.append('email_address', email);
+    formData.append('contact_number', mobile_number);
+    formData.append('invest_type', invest_type);
 
+    formData.append('city', city);
+
+    const { data } = await api.post(
+      'https://www.zixdo.com/Api/franchise.php',
+      formData
+    );
+    setpreferredParnterMessage(data);
+    setloading(false);
+  };
+  return {
+    preferredParnterMessage,
+    AddPrefferedPartner,
+    preferred_partner_loading: loading,
+  };
+};
 export {
   useFetch,
   usePost,
   UseRegister,
   UseLogin,
   UseServiceType,
+  usePrferredPartner,
   UseSubCat,
   UseGetBrandType,
   UseGetServices,
   UseCenterFilter,
+  UseHomepageOfferImage,
   UseServiceName,
   UseAuthenticated,
 };

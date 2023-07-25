@@ -2,7 +2,7 @@ import React from 'react';
 
 function WhySectionWhite() {
   return (
-    <div>
+    <>
       <section className="how-we-work-section  subscription">
         <div className="container">
           <div className="row">
@@ -56,7 +56,7 @@ function WhySectionWhite() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }
 

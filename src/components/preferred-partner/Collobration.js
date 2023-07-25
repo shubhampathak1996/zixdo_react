@@ -13,19 +13,24 @@ function Collobration() {
             </div>
             <div className="col-md-6">
               <div className="enhace-content ">
-                <h3>Our presense and future plan</h3>
+                <h3>WHAT ARE YOU INVESTING?</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur. Morbi netus lorem ac
-                  suspendisse. Aenean sit eu vitae nunc id eget cursus.
-                  Suspendisse mauris enim cum a quam nulla. Lectus nisl sed at
-                  egestas scelerisque gravida dui. Vivamus euismod non est diam
-                  auctor dolor tortor. Venenatis felis turpis velit curabitur
-                  egestas tincidunt. Sodales montes semper est tortor at id
-                  varius. A semper viverra eget malesuada.
+                  We offer low investment and high return business franchise
+                  model. Our car wash franchise ranges as low as Rs 3 Lakh and
+                  goes up to Rs 5 lakh. So, If you are looking for the cheapest
+                  franchise, you must go for car cleaning and profitable washing
+                  business and a booming sector after lockdown.
                 </p>
-                <div className="enquiry-now">
+                <p>
+                  It is important to stay on budget even after seeking out
+                  strong sectors and growing businesses. Cleaning service
+                  franchise can be very profitable depending on the size of the
+                  business and location; this can lead to profits up to Rs 3
+                  Lakh per month and even more.
+                </p>
+                {/* <div className="enquiry-now">
                   <a className="btn btn-primary">Enquiry Now</a>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

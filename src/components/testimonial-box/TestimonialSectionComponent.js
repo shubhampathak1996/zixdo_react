@@ -9,10 +9,6 @@ function TestimonialSectionComponent() {
             <div className="col-md-12">
               <div className="service-section-heading">
                 <h3>What Client Say</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur. Non nulla ultrices
-                  rhoncus morbi elementum nisi sed.
-                </p>
               </div>
             </div>
           </div>
@@ -22,12 +18,13 @@ function TestimonialSectionComponent() {
                 <div className="testimonial-content">
                   <div className="testimonial-para">
                     <p>
-                      Best car wash services provider vo bhi ghr baithe budget
-                      friendly service
+                      No 1 car washing franchise brand in Delhi maine apni Honda
+                      civic wash krayi thi zixdo se and ye log awesome service
+                      dete h
                     </p>
                   </div>
                   <div className="testimonial-title">
-                    <h3>Tanuj Dagar</h3>
+                    <h3>Ritika Arora</h3>
                   </div>
                   {/* <div className="testmonial-des">Website Developer</div> */}
                 </div>
@@ -38,14 +35,12 @@ function TestimonialSectionComponent() {
                 <div className="testimonial-content">
                   <div className="testimonial-para">
                     <p>
-                      Got an incredible offer of just Rs. 300 for a doorstep car
-                      wash for my Hatch Back. Good Service. Great team of
-                      people. Try and ask for their employee, cleaning buddy
-                      Rohit Kumar.
+                      Best car wash brand in Delhi i recommend to everyone use
+                      zixdo
                     </p>
                   </div>
                   <div className="testimonial-title">
-                    <h3>Sannidhya Awasthi</h3>
+                    <h3>Sonu Nigam</h3>
                   </div>
                   {/* <div className="testmonial-des">Website Developer</div> */}
                 </div>

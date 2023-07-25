@@ -12,7 +12,11 @@ function VideoSectionComponent() {
                   <img src="assets/images/video-image_1.png" alt />
                 </div>
                 <div className="play-button">
-                  <a className="play-btn" href="#">
+                  <a
+                    className="play-btn"
+                    target="_blank"
+                    href="https://zixdo.com/video/zixdo-car-wash-video-latest.mp4"
+                  >
                     <i className="fa fa-play" />
                   </a>
                 </div>

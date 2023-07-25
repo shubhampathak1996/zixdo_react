@@ -70,10 +70,7 @@ function BrandCollabsComponent() {
             <div className="col-md-5">
               <div className="zixdo-partner-form contact-form-brand">
                 <h3>Contact Us</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur. Non nulla ultrices
-                  rhoncus morbi elementum nisi sed.
-                </p>
+                <p>Fill the below details to contact us:</p>
                 <form>
                   <div className="main-zixdo-form">
                     <div className="form-group">
