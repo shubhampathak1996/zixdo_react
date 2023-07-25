@@ -22,10 +22,11 @@ function WhySectionWhite() {
                 <div className="service-icon">
                   <img src="/assets/images/calendar_1.png" alt />
                 </div>
-                <div className="service-card-heading">1 Year Warranty</div>
+                <div className="service-card-heading">
+                  Create your page on Zixdo
+                </div>
                 <div className="service-card-content">
-                  Lorem ipsum dolor sit amet consectetur. Non nulla ultrices
-                  rhoncus morbi elementum nisi sed.
+                  Help users discover your place by creating a listing on Zixdo
                 </div>
               </div>
             </div>
@@ -34,10 +35,11 @@ function WhySectionWhite() {
                 <div className="service-icon">
                   <img src="/assets/images/shine_1.png" alt />
                 </div>
-                <div className="service-card-heading">Low Price Guarantee</div>
+                <div className="service-card-heading">
+                  Register for online ordering
+                </div>
                 <div className="service-card-content">
-                  Lorem ipsum dolor sit amet consectetur. Non nulla ultrices
-                  rhoncus morbi elementum nisi sed.
+                  And deliver orders to millions of customers with ease
                 </div>
               </div>
             </div>
@@ -46,10 +48,13 @@ function WhySectionWhite() {
                 <div className="service-icon">
                   <img src="/assets/images/payment_1.png" alt />
                 </div>
-                <div className="service-card-heading">We're Here for You</div>
+                <div className="service-card-heading">
+                  Start receiving orders online
+                </div>
                 <div className="service-card-content">
-                  Lorem ipsum dolor sit amet consectetur. Non nulla ultrices
-                  rhoncus morbi elementum nisi sed.
+                  Manage orders on our partner app, web dashboard or API
+                  partners Lorem ipsum dolor sit amet consectetur. Non nulla
+                  ultrices rhoncus morbi elementum nisi sed.
                 </div>
               </div>
             </div>

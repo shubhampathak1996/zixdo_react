@@ -384,6 +384,9 @@ header {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   margin: 10px;
 }
+.service-card-heading {
+  line-height: 35px;
+}
 .work-buttons .btn-secondary {
   border: 1px solid #007cc0 !important;
   text-align: center;

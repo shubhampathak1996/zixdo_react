@@ -21,27 +21,27 @@ function WhyChooseUs() {
             <div className="col-md-4">
               <BookServiceCard
                 icon={'/assets/images/calendar_1.png'}
-                heading={'1 Year Warranty'}
+                heading={'Positive Approach & Optimism'}
                 paragraph={
-                  'Lorem ipsum dolor sit amet consectetur. Non nulla ultrices rhoncus morbi elementum nisi sed.'
+                  'In the world of customer-centric services, positive approach and optimism are our key values. These core values transcend us to an era of stress-free solutions to our customers and business associates.'
                 }
               />
             </div>
             <div className="col-md-4">
               <BookServiceCard
                 icon={'/assets/images/calendar_1.png'}
-                heading={'Low Price Guarantee'}
+                heading={'Quality & Professionalism'}
                 paragraph={
-                  'Lorem ipsum dolor sit amet consectetur. Non nulla ultrices rhoncus morbi elementum nisi sed.'
+                  'Quality constitutes our core values and it is the main driving force for us. Quality comes with professional expertise combined with the latest tools and technology. Our employees have inculcated this value.'
                 }
               />
             </div>
             <div className="col-md-4">
               <BookServiceCard
                 icon={'/assets/images/calendar_1.png'}
-                heading={'We are Here for You'}
+                heading={'Customer Care'}
                 paragraph={
-                  'Lorem ipsum dolor sit amet consectetur. Non nulla ultrices rhoncus morbi elementum nisi sed.'
+                  'Customers’ care is yet another core value we have inculcated in true spirit. All our services and solutions accord top priority to customers’ satisfaction. We firmly believe customer care is the key to success.'
                 }
               />
             </div>

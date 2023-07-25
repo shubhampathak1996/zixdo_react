@@ -36,33 +36,28 @@ function Footer() {
                           <ul>
                             <li>
                               <Link to="/">
-                                {' '}
                                 <i className="fa fa-arrow-right" /> HOME
                               </Link>
                             </li>
                             <li>
                               <Link to="/our-centers">
-                                {' '}
                                 <i className="fa fa-arrow-right" /> Our Centers
                               </Link>
                             </li>
                             <li>
                               <Link to="/brand-collabs">
-                                {' '}
                                 <i className="fa fa-arrow-right" /> Brand
                                 Collabs
                               </Link>
                             </li>
                             <li>
                               <Link to="/subscription-plan">
-                                {' '}
                                 <i className="fa fa-arrow-right" />
                                 SUBSCRIPTION PLAN
                               </Link>
                             </li>
                             <li>
                               <Link to="/preferred-partner">
-                                {' '}
                                 <i className="fa fa-arrow-right" /> Preferred
                                 PARTNER
                               </Link>
@@ -86,10 +81,10 @@ function Footer() {
                               </a>
                             </li>
                             <li>
-                              <a href="#">
+                              <Link to="/privacy-policy">
                                 <i className="fa fa-arrow-right" /> PRIVACY
                                 POLICY
-                              </a>
+                              </Link>
                             </li>
                             <li>
                               <a href="#">
