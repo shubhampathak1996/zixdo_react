@@ -302,7 +302,7 @@ header {
   /* color: #d6d0d0; */
   background: #f1f1f1;
   border-radius: 4px;
-  padding: 12px 0px;
+  padding: 12px 10px;
 }
 .contact-form-input-message input {
   border: 1px solid #f1f1f1;
@@ -311,11 +311,15 @@ header {
   height: auto;
   background: #f1f1f1;
   border-radius: 4px;
-  padding: 46px 0px;
+  padding: 46px 10px;
 }
 .form-submit-btn {
   padding: 10px 0px;
   text-align: center;
+  background-color: var(--secondary-color);
+  color: #131313;
+  font-size: 20px;
+  margin-top: 20px;
 }
 
 .bg-grey {
@@ -529,9 +533,7 @@ header {
   font-weight: 600;
   color: #888888;
 }
-footer {
-  /* padding: 40px 0px 20px 0px; */
-}
+
 .footer-inside-box {
   background: #007cc0;
   padding: 30px 10px 0px 10px;
