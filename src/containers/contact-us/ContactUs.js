@@ -1,6 +1,6 @@
-import React from "react";
-import Header from "../../components/common/Header";
-import Footer from "../../components/common/Footer";
+import React from 'react';
+import Header from '../../components/common/Header';
+import Footer from '../../components/common/Footer';
 
 const ContactUs = () => {
   return (
@@ -19,10 +19,10 @@ const ContactUs = () => {
             <div className="col-md-6">
               <div className="partner-form box-shadow_6">
                 <h3>Become our service partner</h3>
-                <p>
+                {/* <p>
                   Lorem ipsum dolor sit amet consectetur. Non nulla ultrices
                   rhoncus morbi elementum nisi sed.
-                </p>
+                </p> */}
                 <form action>
                   <div className="contact-form-group">
                     <div className="contact-form-input">

@@ -417,6 +417,81 @@ const usePrferredPartner = () => {
     preferred_partner_loading: loading,
   };
 };
+// gallary
+const UseGalleryImages = () => {
+  const [galleryImage, setgalleryImage] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const GetGalleryImages = async () => {
+    setLoading(true);
+    const { data } = await api.post('https://www.zixdo.com/Api/gallery.php');
+    setgalleryImage(data);
+    setLoading(false);
+  };
+
+  return {
+    galleryImage,
+    GetGalleryImages,
+    galley_images_loading: loading,
+  };
+};
+// subscription plan
+const UseSubscriptionPlan = () => {
+  const [subscription, setsubscription] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const GetSubscriptionPlan = async () => {
+    setLoading(true);
+    const { data } = await api.post(
+      'https://zixdo.com/Api/subscription-plan.php'
+    );
+    setsubscription(data);
+    setLoading(false);
+  };
+  return {
+    subscription,
+    GetSubscriptionPlan,
+    subscription_plan_loading: loading,
+  };
+};
+// user-subscription
+const UseSubscriptionRegistration = () => {
+  const [subscriptionRegistration, setsubscriptionRegistration] =
+    useState(null);
+  const [loading, setLoading] = useState(false);
+  const AddSubcriptionRegistration = async ({
+    full_name,
+
+    email,
+    phone,
+    nearest_store,
+    zip,
+    vehicle_type,
+    address,
+    payment_option,
+  }) => {
+    setLoading(true);
+    const formData = new FormData();
+    formData.append('full_name', full_name);
+    formData.append('email', email);
+    formData.append('contact_number', phone);
+    formData.append('store_id', nearest_store);
+    formData.append('zip', zip);
+    formData.append('vehicle_type', vehicle_type);
+    formData.append('complete_address', address);
+    formData.append('payment_options', payment_option);
+    const { data } = await api.post(
+      'https://www.zixdo.com/Api/subscription-place-order.php',
+      formData
+    );
+    setsubscriptionRegistration(data);
+    setLoading(false);
+  };
+
+  return {
+    subscriptionRegistration,
+    AddSubcriptionRegistration,
+    subscription_registration_loading: loading,
+  };
+};
 export {
   useFetch,
   usePost,
@@ -424,8 +499,11 @@ export {
   UseLogin,
   UseServiceType,
   usePrferredPartner,
+  UseSubscriptionPlan,
+  UseGalleryImages,
   UseSubCat,
   UseGetBrandType,
+  UseSubscriptionRegistration,
   UseGetServices,
   UseCenterFilter,
   UseHomepageOfferImage,

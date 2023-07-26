@@ -46,11 +46,11 @@ function CheckoutComponent() {
 
   return (
     <div>
-      <section className='checkout ptb-50'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-lg-12'>
-              <div className='ltn__checkout-inner'>
+      <section className="checkout ptb-50">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <div className="ltn__checkout-inner">
                 {/* <div className="ltn__checkout-single-content ltn__returning-customer-wrap">
                   <h5>
                     Returning customer?{' '}
@@ -229,73 +229,73 @@ function CheckoutComponent() {
                   {(formik) => {
                     console.log(formik);
                     return (
-                      <div className='ltn__checkout-single-content mt-50'>
-                        <h4 className='title-2'>Billing Details</h4>
-                        <div className='ltn__checkout-single-content-info'>
+                      <div className="ltn__checkout-single-content mt-50">
+                        <h4 className="title-2">Billing Details</h4>
+                        <div className="ltn__checkout-single-content-info">
                           <Form>
                             <h6>Personal Information</h6>
-                            <div className='row'>
-                              <div className='col-md-6'>
-                                <div className='form-group'>
+                            <div className="row">
+                              <div className="col-md-6">
+                                <div className="form-group">
                                   <TextInput
-                                    name='full_name'
-                                    type='text'
-                                    placeholder='Full Name'
-                                    className='form-control'
+                                    name="full_name"
+                                    type="text"
+                                    placeholder="Full Name"
+                                    className="form-control"
                                   />
                                 </div>
                               </div>
-                              <div className='col-md-6'>
-                                <div className='form-group'>
+                              <div className="col-md-6">
+                                <div className="form-group">
                                   <TextInput
-                                    name='email'
-                                    type='email'
-                                    placeholder='Enter your email'
-                                    className='form-control'
+                                    name="email"
+                                    type="email"
+                                    placeholder="Enter your email"
+                                    className="form-control"
                                   />
                                 </div>
                               </div>
-                              <div className='col-md-6'>
-                                <div className='form-group'>
+                              <div className="col-md-6">
+                                <div className="form-group">
                                   <TextInput
-                                    name='phone'
-                                    type='number'
-                                    placeholder='Phone Number'
-                                    className='form-control'
+                                    name="phone"
+                                    type="number"
+                                    placeholder="Phone Number"
+                                    className="form-control"
                                   />
                                 </div>
                               </div>
-                              <div className='col-md-6'>
-                                <div className='form-group'>
+                              <div className="col-md-6">
+                                <div className="form-group">
                                   <TextInput
-                                    name='vehicle_type'
-                                    type='text'
-                                    placeholder='Which vehicle do you have?'
-                                    className='form-control'
+                                    name="vehicle_type"
+                                    type="text"
+                                    placeholder="Which vehicle do you have?"
+                                    className="form-control"
                                   />
                                 </div>
                               </div>
-                              <div className='col-md-12'>
-                                <div className='form-group'>
+                              <div className="col-md-12">
+                                <div className="form-group">
                                   <TextInput
-                                    name='address'
-                                    type='text'
-                                    placeholder='Enter Your Complete Address'
-                                    className='form-control'
+                                    name="address"
+                                    type="text"
+                                    placeholder="Enter Your Complete Address"
+                                    className="form-control"
                                   />
                                 </div>
                               </div>
-                              <div className='col-md-12'>
-                                <div className='form-group'>
+                              <div className="col-md-12">
+                                <div className="form-group">
                                   <div
-                                    className='d-flex'
+                                    className="d-flex"
                                     style={{ gap: '20px' }}
                                   >
                                     <div>
                                       <input
-                                        type='text'
-                                        className='form-control'
-                                        placeholder='Enter Pincode'
+                                        type="text"
+                                        className="form-control"
+                                        placeholder="Enter Pincode"
                                         onChange={(e) =>
                                           setPincode(e.target.value)
                                         }
@@ -303,7 +303,7 @@ function CheckoutComponent() {
                                     </div>
                                     <div>
                                       <a
-                                        className='btn btn-primary'
+                                        className="btn btn-primary"
                                         onClick={() =>
                                           findStoreLocationHandler()
                                         }
@@ -315,14 +315,14 @@ function CheckoutComponent() {
                                   </div>
                                 </div>
                               </div>
-                              <div className='col-md-12'>
-                                <div className='row'>
+                              <div className="col-md-12">
+                                <div className="row">
                                   {centres &&
                                     centres.map((item) => {
                                       return (
-                                        <div className='col-md-6'>
+                                        <div className="col-md-6">
                                           <div
-                                            className='location-header'
+                                            className="location-header"
                                             style={{
                                               background:
                                                 store_id &&
@@ -331,24 +331,24 @@ function CheckoutComponent() {
                                                   : '#fff',
                                             }}
                                           >
-                                            <div className='location-search-flex'>
+                                            <div className="location-search-flex">
                                               <div>
                                                 <h3> {item.store_name} </h3>
                                               </div>
                                               <div></div>
                                             </div>
-                                            <div className='open-accordian'>
+                                            <div className="open-accordian">
                                               <p>
                                                 {item.store_complete_address}
                                               </p>
-                                              <div className='call-now-button'>
+                                              <div className="call-now-button">
                                                 <a
                                                   href={`tel:${item.store_contact_number}`}
                                                 >
-                                                  <div className='icon-with-button'>
+                                                  <div className="icon-with-button">
                                                     <div>
                                                       <span>
-                                                        <i className='fa fa-phone' />
+                                                        <i className="fa fa-phone" />
                                                       </span>
                                                     </div>
                                                     <div>Call Now </div>
@@ -357,10 +357,10 @@ function CheckoutComponent() {
                                                 <a
                                                   href={`https://api.whatsapp.com/send?phone=91${item.store_contact_number}&text=Hello%20I%20am%20interested%20in%20car%20wash`}
                                                 >
-                                                  <div className='icon-with-button'>
+                                                  <div className="icon-with-button">
                                                     <div>
                                                       <span>
-                                                        <i className='fa fa-whatsapp' />
+                                                        <i className="fa fa-whatsapp" />
                                                       </span>
                                                     </div>
                                                     <div>Whatsapp </div>
@@ -369,7 +369,7 @@ function CheckoutComponent() {
                                               </div>
                                               <a
                                                 onClick={() => setStoreId(item)}
-                                                className='partner'
+                                                className="partner"
                                               >
                                                 Select Store
                                               </a>
@@ -381,24 +381,24 @@ function CheckoutComponent() {
                                 </div>
                               </div>
                             </div>
-                            <div className='row'>
-                              <div className='col-md-6'>
-                                <div className='payment-sec mt-50'>
-                                  <h4 className='title-2'>Payment Method</h4>
-                                  <div className='payment-card'>
+                            <div className="row">
+                              <div className="col-md-6">
+                                <div className="payment-sec mt-50">
+                                  <h4 className="title-2">Payment Method</h4>
+                                  <div className="payment-card">
                                     <form>
-                                      <div className='form-check'>
+                                      <div className="form-check">
                                         <input
-                                          className='form-check-input'
-                                          type='radio'
-                                          name='exampleRadios'
-                                          id='exampleRadios1'
-                                          defaultValue='option1'
+                                          className="form-check-input"
+                                          type="radio"
+                                          name="exampleRadios"
+                                          id="exampleRadios1"
+                                          defaultValue="option1"
                                           defaultChecked
                                         />
                                         <label
-                                          className='form-check-label'
-                                          htmlFor='exampleRadios1'
+                                          className="form-check-label"
+                                          htmlFor="exampleRadios1"
                                         >
                                           Cash Payment
                                         </label>
@@ -423,9 +423,9 @@ function CheckoutComponent() {
                                   </div>
                                 </div>
                               </div>
-                              <div className='shoping-cart-total mt-50'>
-                                <h4 className='title-2'>Cart Totals</h4>
-                                <table className='table'>
+                              <div className="shoping-cart-total mt-50">
+                                <h4 className="title-2">Cart Totals</h4>
+                                <table className="table">
                                   <tbody>
                                     {cartItems &&
                                       cartItems.map((item) => {
@@ -449,8 +449,8 @@ function CheckoutComponent() {
                                 </table>
                               </div>
                             </div>
-                            <div className='center checkout-button w15'>
-                              <button type='submit' className='btn btn-primary'>
+                            <div className="center checkout-button w50">
+                              <button type="submit" className="btn btn-primary">
                                 Proceed
                               </button>
                             </div>

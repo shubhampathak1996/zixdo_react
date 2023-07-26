@@ -10,10 +10,10 @@ function WhyChooseUs() {
             <div className="col-md-12">
               <div className="how-we-work-section-heading">
                 <h3>Why choose us?</h3>
-                <p>
+                {/* <p>
                   Lorem ipsum dolor sit amet consectetur. Non nulla ultrices
                   rhoncus morbi elementum nisi sed.
-                </p>
+                </p> */}
               </div>
             </div>
           </div>

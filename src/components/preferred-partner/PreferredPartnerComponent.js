@@ -62,10 +62,7 @@ function PreferredPartnerComponent() {
             <div className="col-md-5">
               <div className="zixdo-partner-form">
                 <h3>Become our zixdo partner</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur. Non nulla ultrices
-                  rhoncus morbi elementum nisi sed.
-                </p>
+                <p>To be our partner, fill the given details below:</p>
                 <Formik
                   initialValues={{
                     name: '',

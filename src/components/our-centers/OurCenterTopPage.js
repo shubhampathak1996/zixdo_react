@@ -9,11 +9,7 @@ function OurCenterTopPage() {
             <div className="col-md-8 mx-auto">
               <div className="location-page-searchbar center">
                 <h2>Find Your Store</h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur. Amet quis integer
-                  libero sed phasellus. Eget diam fusce lectus suspendisse vel
-                  in. Pretium sit penatibus odio non. In tincidunt{' '}
-                </p>
+                <p>Find Car Cleaning and Shining Service at Your Location</p>
                 <div className="location-search">
                   <div className="icon-search-flex">
                     <div className>

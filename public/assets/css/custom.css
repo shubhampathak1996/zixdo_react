@@ -391,6 +391,12 @@ img {
   padding: 80px 0px;
   position: relative;
 }
+.gallery-banner {
+  background: url('../images/pages_banner/banner7.jpg');
+  background-size: cover;
+  padding: 80px 0px;
+  position: relative;
+}
 .location-page-searchbar h2,
 .location-page-searchbar p {
   color: #fff;
@@ -488,6 +494,7 @@ img {
 .icon-with-button {
   display: flex;
   align-items: center;
+  padding-right: 40px;
   max-width: 180px;
   width: 100%;
   gap: 10px;
@@ -800,17 +807,20 @@ img {
 .main-box-plan {
   flex-basis: 25%;
   flex-grow: 0;
-  background: var(--secondary-color);
+  background: #f1f1f1;
   padding: 10px 0px;
   border-radius: 5px;
 }
-.main-box-plan:hover {
+.main-box-plan .active {
   background: rgba(255, 194, 14, 0.7);
   cursor: pointer;
 }
 .main-box-plan h4 {
   font-size: 1.3rem;
   font-weight: 700;
+}
+.text-yellow {
+  color: #1e1e1e;
 }
 .main-box-plan h5 {
   font-size: 0.9rem;
@@ -824,6 +834,9 @@ img {
 }
 .procees .btn-primary {
   padding: 15px 30px;
+}
+.procees .btn-primary:hover {
+  background: #fff;
 }
 .subscription .book-service-card {
   background: #f7f7f7;
@@ -946,6 +959,7 @@ img {
 }
 .checkout-button .btn-primary {
   padding: 15px 30px;
+  width: 25%;
 }
 .shoping-cart-table .table tr {
   background-color: transparent;

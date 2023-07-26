@@ -27,6 +27,8 @@ import MyProfile from './containers/my-profile/MyProfile';
 import ContactUs from './containers/contact-us/ContactUs';
 import Refund from './containers/refund_cancellation/Refund';
 import PrivacyPolicy from './containers/privacy-policy/PrivacyPolicy';
+import Gallary from './containers/gallary/Gallary';
+import SubscriptionRegistration from './containers/subscription-registration/SubscriptionRegistration';
 
 function App() {
   useEffect(() => {
@@ -54,12 +56,22 @@ function App() {
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/checkout" component={Checkout} />
           <Route exact path="/register" component={SignUp} />
-          <Route exact path="/my-account" component={MyProfile} />
+          <Route
+            exact
+            path="/user-subscription-registration"
+            component={SubscriptionRegistration}
+          />
+          <Route
+            exact
+            path="/my-account"
+            component={SubscriptionRegistration}
+          />
 
           <Route exact path="/contactus" component={ContactUs} />
 
           <Route exact path="/refund-cancellation" component={Refund} />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
+          <Route exact path="/gallery" component={Gallary} />
           <Route component={PageNotFound} />
         </Switch>
       </Router>

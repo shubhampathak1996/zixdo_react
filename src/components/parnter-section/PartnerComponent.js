@@ -31,8 +31,7 @@ function PartnerComponent() {
               <div className="partner-section-heading">
                 <h3>Our Partners</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur. Non nulla ultrices
-                  rhoncus morbi elementum nisi sed.
+                  Opportunity to own & run car cleaning business in your city
                 </p>
               </div>
             </div>

@@ -95,7 +95,7 @@ function HowWeWorkComponent() {
                 <BookServiceCard
                   paragraph={'Get your vehicle registered with us & Pay.'}
                   heading={'Register Your Vehicle'}
-                  icon={'assets/images/shine_1.png'}
+                  icon={'assets/images/payment_1.png'}
                 />
               </div>
               <div className="col-md-4">
@@ -104,7 +104,7 @@ function HowWeWorkComponent() {
                     'Relax! Our expert will shine your vehicle as per subscription.EASY!!'
                   }
                   heading={'Visit & Shine'}
-                  icon={'assets/images/payment_1.png'}
+                  icon={'assets/images/shine_1.png'}
                 />
               </div>
             </div>

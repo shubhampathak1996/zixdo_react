@@ -10,7 +10,7 @@ function Footer() {
               <div className="col-md-3">
                 <div className="footer-content">
                   <div className="footer-logo">
-                    <img src="./assets/images/logo.png" alt />
+                    <img src="/assets/images/logo.png" alt />
                   </div>
                 </div>
                 <div className="footer-content">
@@ -70,16 +70,11 @@ function Footer() {
                   <div className="col-md-6">
                     <div className="footer-content">
                       <div className="footer-heading">
-                        <h4>Leaarn More</h4>
+                        <h4>Learn More</h4>
                       </div>
                       <div className="footer-pointers">
                         <div className="footer-bullet-points">
                           <ul>
-                            <li>
-                              <a href="#">
-                                <i className="fa fa-arrow-right" /> ABOUT US
-                              </a>
-                            </li>
                             <li>
                               <Link to="/privacy-policy">
                                 <i className="fa fa-arrow-right" /> PRIVACY
@@ -87,22 +82,20 @@ function Footer() {
                               </Link>
                             </li>
                             <li>
-                              <a href="#">
-                                <i className="fa fa-arrow-right" /> TERMS &amp;
-                                CONDITIONS
-                              </a>
+                              <Link to="/contactus">
+                                <i className="fa fa-arrow-right" /> Contact Us
+                              </Link>
                             </li>
                             <li>
-                              <a href="#">
-                                <i className="fa fa-arrow-right" /> REFUND
-                                POLICY
-                              </a>
+                              <Link to="/refund-cancellation">
+                                <i className="fa fa-arrow-right" /> Refunds and
+                                cancellations
+                              </Link>
                             </li>
                             <li>
-                              <a href="#">
-                                <i className="fa fa-arrow-right" /> WASHING
-                                CENTERS
-                              </a>
+                              <Link to="/gallery">
+                                <i className="fa fa-arrow-right" /> GALLERY
+                              </Link>
                             </li>
                           </ul>
                         </div>
@@ -115,7 +108,7 @@ function Footer() {
                 <div className="footer-content">
                   <div className="footer-location">
                     <div className="location-icon">
-                      <img src="./assets/images/Location_1.png" alt />
+                      <img src="/assets/images/Location_1.png" alt />
                     </div>
                     <div className="location-text">
                       Zixdo Technologies Private Limited, D-485 KH NO-29/8 RAM
@@ -125,7 +118,7 @@ function Footer() {
                   </div>
                   <div className="footer-phone">
                     <div className="phone-icon">
-                      <img src="./assets/images/Ringer_Volume.png" alt />
+                      <img src="/assets/images/Ringer_Volume.png" alt />
                     </div>
                     <div className="phone-text">
                       <a href="tel:8055008805">805-5 00-88 05</a>
@@ -144,17 +137,34 @@ function Footer() {
                     <div className="social-links">
                       <ul>
                         <li>
-                          <a href="#">
+                          <a
+                            href="https://www.facebook.com/thezixdo"
+                            target="_blank"
+                          >
                             <i className="fab fa-facebook-f" />
                           </a>
                         </li>
                         <li>
-                          <a href="#">
+                          <a
+                            href="https://www.instagram.com/thezixdo/"
+                            target="_blank"
+                          >
                             <i className="fab fa-instagram" />
                           </a>
                         </li>
                         <li>
-                          <a href="#">
+                          <a
+                            href="https://twitter.com/i/flow/login?redirect_after_login=%2Fthezixdo"
+                            target="_blank"
+                          >
+                            <i className="fab fa-twitter" />
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="https://youtube.com/@zixdo9211"
+                            target="_blank"
+                          >
                             <i className="fab fa-youtube" />
                           </a>
                         </li>
@@ -176,10 +186,15 @@ function Footer() {
                   </div>
                   <div className="col-md-2">
                     <div className="footer-play-img">
-                      <img
-                        src="./assets/images/zixdo-google-playstore 1.png"
-                        alt
-                      />
+                      <a
+                        href="https://play.google.com/store/apps/details?id=com.wZIXDOFranchise_14948759&hl=en-IN"
+                        target="_blank"
+                      >
+                        <img
+                          src="/assets/images/zixdo-google-playstore 1.png"
+                          alt
+                        />
+                      </a>
                     </div>
                   </div>
                 </div>
