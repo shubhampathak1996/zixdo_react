@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Slider from 'react-slick';
+import { UsePartnerImages } from '../../shared/hooks/UseFetch';
+import { UPLOAD_URI } from '../../domain/constant';
 
 function PartnerComponent() {
+  const { partnerImage, GetPartnerImage, partner_image_loading } =
+    UsePartnerImages();
+  useEffect(() => {
+    GetPartnerImage();
+  }, []);
+  console.log(partnerImage, 'partner Image');
   var partners = {
     dots: true,
     autoplay: true,
@@ -39,41 +47,16 @@ function PartnerComponent() {
 
           <div className="row ptb-20">
             <Slider {...partners}>
-              <div>
-                <div className="partners-img">
-                  <img src="assets/images/america_car.png" alt />
-                </div>
-              </div>
-
-              <div>
-                <div className="partners-img">
-                  <img src="assets/images/megu.png" alt />
-                </div>
-              </div>
-
-              <div>
-                <div className="partners-img">
-                  <img src="assets/images/car_mate.png" alt />
-                </div>
-              </div>
-
-              <div>
-                <div className="partners-img">
-                  <img src="assets/images/snap.png" alt />
-                </div>
-              </div>
-
-              <id>
-                <div className="partners-img">
-                  <img src="assets/images/zz.png" alt />
-                </div>
-              </id>
-
-              <div>
-                <div className="partners-img">
-                  <img src="assets/images/america_car.png" alt />
-                </div>
-              </div>
+              {partnerImage &&
+                partnerImage.map((data) => {
+                  return (
+                    <div>
+                      <div className="partners-img">
+                        <img src={`${UPLOAD_URI}/${data.image}`} alt />
+                      </div>
+                    </div>
+                  );
+                })}
             </Slider>
           </div>
         </div>

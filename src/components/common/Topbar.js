@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Topbar() {
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    window.localStorage.getItem('ZIXDO_TOKEN')
+      ? window.localStorage.getItem('ZIXDO_TOKEN')
+      : null
+  );
+  const handleLogout = () => {
+    window.localStorage.removeItem('ZIXDO_TOKEN');
+    window.localStorage.removeItem('ZIXDO_EMAIL');
+    setIsAuthenticated(null);
+  };
   return (
     <div>
       <section class="top-bar">
@@ -19,9 +29,25 @@ function Topbar() {
                 <Link to="/cart" className="d-w ">
                   <i class="fa fa-shopping-cart"></i>
                 </Link>
-                <Link to="/login" className="logi">
-                  Login / Signup{' '}
-                </Link>
+                {isAuthenticated ? (
+                  <>
+                    <Link to="/my-account" className="logi">
+                      My Account
+                    </Link>
+                    <a
+                      onClick={() => {
+                        handleLogout();
+                      }}
+                      className="logi"
+                    >
+                      Logout
+                    </a>
+                  </>
+                ) : (
+                  <Link to="/login" className="logi">
+                    Login / Signup
+                  </Link>
+                )}
               </div>
             </div>
           </div>

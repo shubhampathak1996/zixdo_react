@@ -10,8 +10,16 @@ import * as Yup from 'yup';
 import Header from '../../components/common/Header';
 import Footer from '../../components/common/Footer';
 import { UseSubscriptionRegistration } from '../../shared/hooks/UseFetch';
+import { UseLat } from '../../shared/hooks/UseApi';
 
 function SubscriptionRegistration() {
+  const { getCentres, centers_loading, centres } = UseLat();
+  const [pincode, setPincode] = useState(null);
+  const findStoreLocationHandler = () => {
+    if (pincode && pincode.length === 6) {
+      getCentres({ zip: pincode });
+    }
+  };
   const {
     subscriptionRegistration,
     AddSubcriptionRegistration,
@@ -103,12 +111,16 @@ function SubscriptionRegistration() {
                                 </div>
                               </div>
                               <div className="col-md-6">
-                                <div className="form-group">
+                                <div
+                                  className="form-group"
+                                  onClick={() => findStoreLocationHandler()}
+                                >
                                   <TextInput
                                     name="zip"
                                     type="text"
                                     placeholder="Enter Your Zip Code"
                                     className="form-control"
+                                    // onChange={(e) => setPincode(e.target.value)}
                                   />
                                 </div>
                               </div>
@@ -150,8 +162,12 @@ function SubscriptionRegistration() {
                                     >
                                       Select Your Nearest Store
                                     </option>
-                                    <option value={'Online'}>Online</option>
-                                    <option value={'Cash'}>Cash</option>
+                                    {centres &&
+                                      centres.map((data) => {
+                                        return (
+                                          <option>{data.store_name}</option>
+                                        );
+                                      })}
                                   </SelectBox>
                                 </div>
                               </div>

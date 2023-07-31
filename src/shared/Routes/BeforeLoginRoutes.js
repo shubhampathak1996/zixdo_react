@@ -1,28 +1,36 @@
-import React from "react";
-import { Route, Redirect } from "react-router-dom";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import Spinner from "../../components/layout/Spinner";
+import React, { useState } from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import Spinner from '../../components/layout/Spinner';
 
 const BeforeLoginRoutes = ({
   component: Component,
   redirectTo,
-  auth: { isAuthenticated, loading },
+
   ...rest
-}) => (
-  <Route
-    {...rest}
-    render={(props) =>
-      loading ? (
-        <Spinner />
-      ) : isAuthenticated ? (
-        <Redirect to={redirectTo ? redirectTo : "/my-account"} />
-      ) : (
-        <Component {...props} />
-      )
-    }
-  />
-);
+}) => {
+  const [loading, setLoading] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    window.localStorage.getItem('ZIXDO_TOKEN')
+      ? window.localStorage.getItem('ZIXDO_TOKEN')
+      : null
+  );
+  return (
+    <Route
+      {...rest}
+      render={(props) =>
+        loading ? (
+          <Spinner />
+        ) : isAuthenticated ? (
+          <Redirect to={redirectTo ? redirectTo : '/my-account'} />
+        ) : (
+          <Component {...props} />
+        )
+      }
+    />
+  );
+};
 
 BeforeLoginRoutes.propTypes = {
   auth: PropTypes.object.isRequired,

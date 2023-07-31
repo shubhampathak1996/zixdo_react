@@ -96,17 +96,32 @@ const UseAuthenticated = () => {
 const UseLogin = () => {
   const [loginData, setLoginData] = useState(null);
   const [loading, setLoading] = useState(false);
-  const loginUser = async (formData) => {
+  const loginUser = async (formData, email) => {
     setLoading(true);
     const { data } = await api.post('/login.php', formData);
     console.log('Login Data', data);
     if (data && data.seesion_key) {
       window.localStorage.setItem('ZIXDO_TOKEN', data.seesion_key);
+      window.localStorage.setItem('ZIXDO_EMAIL', email);
+      window.location.reload();
     }
+
     setLoginData(data);
     setLoading(false);
   };
   return { loginUser, login_loading: loading, loginData };
+};
+// getServiceTypeByZipCode
+const UseGetServiceTypeByZipCode = () => {
+  const [ZipServiceType, setZipServiceType] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const SearchByZipCode = async (zip_code) => {
+    setLoading(true);
+    const { data } = await api.get(`/zip-services.php?zip=zip_code`);
+    setZipServiceType(true);
+    setLoading(false);
+  };
+  return { ZipServiceType, zipservice_type_loading: loading, SearchByZipCode };
 };
 
 // ServiceType
@@ -492,6 +507,23 @@ const UseSubscriptionRegistration = () => {
     subscription_registration_loading: loading,
   };
 };
+// partners
+const UsePartnerImages = () => {
+  const [partnerImage, setpartnerImage] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const GetPartnerImage = async () => {
+    setLoading(true);
+    const { data } = await api.get('https://www.zixdo.com/Api/partners.php');
+    setpartnerImage(data);
+    setLoading(false);
+  };
+  return {
+    partnerImage,
+    GetPartnerImage,
+    partner_image_loading: loading,
+  };
+};
+
 export {
   useFetch,
   usePost,
@@ -501,12 +533,14 @@ export {
   usePrferredPartner,
   UseSubscriptionPlan,
   UseGalleryImages,
+  UseGetServiceTypeByZipCode,
   UseSubCat,
   UseGetBrandType,
   UseSubscriptionRegistration,
   UseGetServices,
   UseCenterFilter,
   UseHomepageOfferImage,
+  UsePartnerImages,
   UseServiceName,
   UseAuthenticated,
 };

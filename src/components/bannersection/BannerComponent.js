@@ -10,8 +10,11 @@ import { SubMenuComponent } from './SubMenuComponent';
 import { ModelComponent } from './ModelComponent';
 import { useHistory } from 'react-router-dom';
 import { useCategory, usePinCode } from '../../shared/hooks/UseApi';
+import { UseGetServiceTypeByZipCode } from '../../shared/hooks/UseFetch';
 
 function BannerComponent() {
+  const { ZipServiceType, SearchByZipCode, zipservice_type_loading } =
+    UseGetServiceTypeByZipCode();
   const { categories, getCategories, categories_loading } = useCategory();
   const { centres, center_loading, getCenterByPinCode } = usePinCode();
   const [pinCode, setPincode] = useState('');
@@ -75,7 +78,7 @@ function BannerComponent() {
   const pinCodeSearchHandler = async () => {
     if (pinCode && pinCode.length === 6) {
       setPinCodeError(false);
-      await getCenterByPinCode(pinCode);
+      await SearchByZipCode(pinCode);
     } else {
       setPinCodeError(true);
     }
@@ -88,52 +91,52 @@ function BannerComponent() {
 
   return (
     <>
-      <section className='hero-wrapper'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-md-6'>
-              <div className='hero-section-content'>
-                <div className='main-heading-section'>
+      <section className="hero-wrapper">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6">
+              <div className="hero-section-content">
+                <div className="main-heading-section">
                   <h1>FAST. CLEAN. SHINE!</h1>
                   <p>
                     Choose your Service Type - We provide car washing and other
                     cleaning services.
                   </p>
-                  <div className='search-bar-section'>
-                    {/* <form>
+                  <div className="search-bar-section">
+                    <form>
                       <input
-                        type='number'
-                        className='form-control'
-                        placeholder='Search Pincode'
+                        type="number"
+                        className="form-control"
+                        placeholder="Search Pincode"
                         onChange={(e) => setPincode(e.target.value)}
                         value={pinCode}
                       />
                       <div
-                        className='search-btn'
+                        className="search-btn"
                         onClick={() => {
                           // setSERVICES(!SERVICES);
                           pinCodeSearchHandler();
                         }}
                       >
-                        <a href className='btn btn-primary'>
+                        <a href className="btn btn-primary">
                           Search
                         </a>
                       </div>
-                    </form> */}
+                    </form>
                     {categories_loading ? (
                       <div>
                         <>
-                          <div className='hatch-flex'>
-                            <div className='car-box'>
+                          <div className="hatch-flex">
+                            <div className="car-box">
                               <Skeleton height={100} />
                             </div>
-                            <div className='car-box'>
+                            <div className="car-box">
                               <Skeleton height={100} />
                             </div>
-                            <div className='car-box'>
+                            <div className="car-box">
                               <Skeleton height={100} />
                             </div>
-                            <div className='car-box'>
+                            <div className="car-box">
                               <Skeleton height={100} />
                             </div>
                           </div>
@@ -142,7 +145,7 @@ function BannerComponent() {
                     ) : (
                       <div>
                         <div
-                          className='searc-box-container'
+                          className="searc-box-container"
                           style={{ display: 'block' }}
                         >
                           {categories_loading ? (
@@ -191,10 +194,10 @@ function BannerComponent() {
                             filteredBrandData={filteredBrandData}
                           />
 
-                          <div className='go-gor-it text-center'>
+                          <div className="go-gor-it text-center">
                             <a
                               onClick={() => searchBtnHandler()}
-                              className='btn btn-primary w25'
+                              className="btn btn-primary w25"
                             >
                               Go For it
                             </a>
@@ -206,9 +209,9 @@ function BannerComponent() {
                 </div>
               </div>
             </div>
-            <div className='col-md-6'>
-              <div className='hero-image'>
-                <img src='/assets/images/Wavy_Bus-38_Single-05 1.png' alt />
+            <div className="col-md-6">
+              <div className="hero-image">
+                <img src="/assets/images/Wavy_Bus-38_Single-05 1.png" alt />
               </div>
             </div>
           </div>

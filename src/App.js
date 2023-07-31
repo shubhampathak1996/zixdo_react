@@ -29,6 +29,7 @@ import Refund from './containers/refund_cancellation/Refund';
 import PrivacyPolicy from './containers/privacy-policy/PrivacyPolicy';
 import Gallary from './containers/gallary/Gallary';
 import SubscriptionRegistration from './containers/subscription-registration/SubscriptionRegistration';
+import BeforeLoginRoutes from './shared/Routes/BeforeLoginRoutes';
 
 function App() {
   useEffect(() => {
@@ -50,7 +51,7 @@ function App() {
           <Route exact path="/brand-collabs" component={BrandCollabs} />
           <Route exact path="/subscription-plan" component={SubscriptionPlan} />
           <Route exact path="/preferred-partner" component={PreferredPartner} />
-          <Route exact path="/login" component={Login} />
+          <BeforeLoginRoutes exact path="/login" component={Login} />
           <Route exact path="/forget-password" component={ForgetPassword} />
           <Route exact path="/our-services" component={OurServices} />
           <Route exact path="/cart" component={Cart} />
