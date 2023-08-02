@@ -1,4 +1,7 @@
-import React from 'react'
+import { Form, Formik } from "formik";
+import React from "react";
+import * as Yup from "yup";
+import { TextInput } from "../../components/Form/Form";
 
 const PersonalInfo = () => {
   return (
@@ -6,19 +9,63 @@ const PersonalInfo = () => {
   <div className='container'>
     <div className='row'>
         <div className='col-md-12'>
-        <table className='table'>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <td>AAfiya</td>
-        </tr>
-        <tr>
-            <th>Email</th>
-            <td>abcd@gmail.com</td>
-        </tr>
-    </thead>
-   
-  </table>
+        <Formik
+        initialValues={{
+          currentPassword: "",
+          newPassword: "",
+          confirmPassword: "",
+        }}
+        validationSchema={Yup.object({
+          currentPassword: Yup.string().required("Required"),
+          newPassword: Yup.string().required("Required"),
+          confirmPassword: Yup.string().required("Required"),
+        })}
+        onSubmit={async (values, { setSubmitting, resetForm }) => {
+          setSubmitting(true);
+
+          resetForm();
+          setSubmitting(false);
+        }}
+      >
+        {(formik) => {
+          console.log(formik);
+          return (
+            <Form>
+              <div className="row">
+                <div className="col-md-6">
+                  <TextInput
+                    placeholder="Name"
+                    name="currentPassword"
+                    type="text"
+                  />
+                </div>
+                <div className="col-md-6">
+                  <TextInput
+                    placeholder="New Password"
+                    name="newPassword"
+                    type="text"
+                  />
+                </div>
+                <div className="col-md-6">
+                  <TextInput
+                    placeholder="Confirm Password"
+                    name="confirmPassword"
+                    type="text"
+                  />
+                </div>
+                <div className="col-md-12">
+                    <div className="reset-btn">
+
+                  <button type="submit" className="btn btn-primary ">
+              Submit
+                  </button>
+                    </div>
+                </div>
+              </div>
+            </Form>
+          );
+        }}
+      </Formik>
         </div>
     </div>
   </div>

@@ -6,7 +6,7 @@ import PersonalInfo from "../../components/profile/PersonalInfo";
 import ChangePassword from "../../components/profile/ChangePassword";
 import OrderHistory from "../../components/profile/OrderHistory";
 import ProfileSidebar from "../../components/myprfile/ProfileSidebar";
-const MyProfile = () => {
+const ChangePasswordPage = () => {
   return (
     <>
       <Header />
@@ -18,7 +18,7 @@ const MyProfile = () => {
                 <h4>AS</h4>
                 <div className="profile-wallet">
                 {/* <i class="fa-solid fa-wallet"></i> */}
-                <h5>My Profile</h5>
+                <h5>Change Password</h5>
                 </div>
               </div>
               <div className="profile-content">
@@ -29,7 +29,7 @@ const MyProfile = () => {
                 <div className="profile-data">
                 {/* <PersonalInfo/> */}
                 {/* <ChangePassword/> */}
-                <OrderHistory/>
+                <ChangePassword/>
                 </div>
               </div>
               </div>
@@ -42,4 +42,4 @@ const MyProfile = () => {
   );
 };
 
-export default MyProfile;
+export default ChangePasswordPage;

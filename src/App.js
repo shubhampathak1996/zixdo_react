@@ -31,6 +31,13 @@ import Gallary from './containers/gallary/Gallary';
 import SubscriptionRegistration from './containers/subscription-registration/SubscriptionRegistration';
 import BeforeLoginRoutes from './shared/Routes/BeforeLoginRoutes';
 import PrivateRoutes from './shared/Routes/PrivateRoutes';
+import PersonalInformation from './containers/my-profile/PersonalInformation';
+
+
+import ChangePasswordPage from './containers/my-profile/ChangePasswordPage';
+import OrderHistory from './components/profile/OrderHistory';
+import OrderHistoryPage from './containers/my-profile/OrderHistoryPage';
+
 
 function App() {
   useEffect(() => {
@@ -59,6 +66,9 @@ function App() {
           <Route exact path="/checkout" component={Checkout} />
           <Route exact path="/register" component={SignUp} />
           <PrivateRoutes exact path="/my-profile" component={MyProfile} />
+          <PrivateRoutes exact path="/my-profile/personal-information" component={PersonalInformation} />
+          <PrivateRoutes exact path="/my-profile/change-password" component={ChangePasswordPage} />
+          <PrivateRoutes exact path="/my-profile/order-history" component={OrderHistoryPage} />
           <Route
             exact
             path="/user-subscription-registration"
