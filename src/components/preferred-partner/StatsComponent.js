@@ -10,7 +10,7 @@ function StatsComponent() {
               <div className="icon-box center">
                 <div className="main-icon">
                   <img src="assets/images/pages_banner/map-location.png" />
-                  <h4>12+</h4>
+                  <h4>20+</h4>
                   <h6>State</h6>
                 </div>
               </div>
@@ -19,7 +19,7 @@ function StatsComponent() {
               <div className="icon-box center">
                 <div className="main-icon">
                   <img src="assets/images/pages_banner/place.png" />
-                  <h4>30+</h4>
+                  <h4>110+</h4>
                   <h6>Locations</h6>
                 </div>
               </div>

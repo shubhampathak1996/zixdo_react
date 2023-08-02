@@ -15,17 +15,10 @@ function ReachCollab() {
               <div className="enhace-content ">
                 <h3>Reach us for collaboration</h3>
                 <p>
-                  We are excited about the potential to work together and
-                  explore mutual opportunities. Our team is passionate about
-                  innovative solutions and achieving impactful results. By
-                  combining our expertise, resources, and shared vision, we can
-                  create something truly remarkable. Whether it's a project,
-                  partnership, or any other form of collaboration, we believe
-                  that together, we can achieve greatness. Let's connect and
-                  discuss how we can leverage our strengths to make a positive
-                  difference in the world. Looking forward to exploring this
-                  journey together! Please reach out to us at your earliest
-                  convenience.
+                Getting in touch with us for collaboration is as easy as a breeze. Simply reach out to our
+partnership team through our website or contact details provided below. We eagerly await
+the opportunity to discuss potential collaborations and how we can mutually benefit each
+other&#39;s businesses.
                 </p>
                 {/* <div className="enquiry-now">
                   <a className="btn btn-primary">Enquiry Now</a>

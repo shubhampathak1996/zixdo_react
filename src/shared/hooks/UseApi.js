@@ -58,7 +58,25 @@ const useServices = () => {
     getServices,
   };
 };
+// homepageServices
 
+const useHomepageServices = () => {
+  const [HomePageservices, setHomePageServices] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const getHomePageServices = async () => {
+    setLoading(true);
+    const { data } = await api.get(
+      `https://zixdo.com/Api/luhaif/services.php?brand_id=1&service_type=0&phone_id=2`
+    );
+    setHomePageServices(data);
+    setLoading(false);
+  };
+  return {
+    HomePageservices,
+    Home_Page_services_loading: loading,
+    getHomePageServices,
+  };
+};
 // Add to Cart
 const UseAddCart = () => {
   const [cartMessage, setCartMessage] = useState(null);
@@ -210,6 +228,7 @@ export {
   UseAddCart,
   UseViewCart,
   UseRemoveCart,
+  useHomepageServices,
   UseLat,
   UseCheckout,
 };

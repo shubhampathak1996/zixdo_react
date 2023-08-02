@@ -9,6 +9,7 @@ const PrivateRoute = ({
 
   ...rest
 }) => {
+ const [loading,IsLoading] = useState(false)
   const [isAuthenticated, setIsAuthenticated] = useState(
     window.localStorage.getItem('ZIXDO_TOKEN')
       ? window.localStorage.getItem('ZIXDO_TOKEN')

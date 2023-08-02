@@ -1,6 +1,14 @@
 import React from 'react';
+import { useHomepageServices } from '../../shared/hooks/UseApi';
+import { useEffect } from 'react';
 
 function MainServiceComponent() {
+  const { HomePageservices, getHomePageServices, Home_Page_services_loading } =useHomepageServices()
+ 
+  useEffect(() => {
+    getHomePageServices();
+  }, []);
+  console.log(HomePageservices,'homepageSservice')
   return (
     <>
       <section className="service-section ptb-60 bg-grey">
@@ -24,11 +32,11 @@ function MainServiceComponent() {
                 <div className="service-content">
                   <div className="service-heading">Car Exterior Service</div>
                   <p>
-                    We, at Zixdo specialize in premium car exterior services,
-                    using cutting-edge tools and techniques. Our skilled
-                    technicians flawlessly restore your car's paintwork,
-                    bodywork, and detailing, enhancing its aesthetic appeal and
-                    ensuring a head-turning, brand-new look.
+                  At Zixdo, we are experts in delivering top-tier car exterior services, utilizing state-of-the-art
+tools and advanced techniques. Our highly skilled technicians work diligently to restore your
+car&#39;s paintwork, bodywork, and detailing to perfection, elevating its visual allure and leaving
+it with a stunning, showroom-worthy appearance. Trust us to provide your vehicle with a
+head-turning, brand-new look that will impress all who lay eyes on it.
                   </p>
                 </div>
               </div>
@@ -41,9 +49,9 @@ function MainServiceComponent() {
                 <div className="service-content">
                   <div className="service-heading">Car Interior Service</div>
                   <p>
-                    We excel in car interior services, enhancing comfort and
-                    aesthetics through luxurious transformations using
-                    high-quality materials and precise craftsmanship.
+                  At Zixdo Technologies Pvt, we are masters in the art of car interior services, elevating both
+comfort and aesthetics to new heights. Our expert team specializes in crafting luxurious
+transformations, employing only the finest materials and delivering impeccable craftsmanship.
                   </p>
                   {/* <a href className="read-mroe">
                     READ MORE
@@ -59,10 +67,9 @@ function MainServiceComponent() {
                 <div className="service-content">
                   <div className="service-heading">Home/AC service</div>
                   <p>
-                    Zixdo is committed to delivering outstanding home/AC
-                    services with skilled technicians for efficient
-                    installation, maintenance, and repair, ensuring comfort and
-                    satisfaction.
+                  At Zixdo, our unwavering dedication is to provide exceptional home/AC services through a
+team of highly skilled technicians. We specialize in efficient installation, maintenance, and
+repair, guaranteeing utmost comfort and complete satisfaction for our valued customers.
                   </p>
                 </div>
               </div>
@@ -75,9 +82,8 @@ function MainServiceComponent() {
                 <div className="service-content">
                   <div className="service-heading">2 Wheelers</div>
                   <p>
-                    We deliver exceptional two-wheeler services, ensuring your
-                    motorcycle or scooter remains in optimal condition for a
-                    seamless and enjoyable ride.
+                  Experience the pinnacle of two-wheeler services, where we ensure your motorcycle or
+scooter stays in prime condition for a smooth and delightful ride.
                   </p>
                 </div>
               </div>
@@ -90,8 +96,8 @@ function MainServiceComponent() {
                 <div className="service-content">
                   <div className="service-heading">Commercial Vehicle</div>
                   <p>
-                    We offer comprehensive services for commercial vehicles,
-                    ensuring performance and longevity.
+                  We provide a wide range of all-inclusive services specifically designed for commercial vehicles,
+guaranteeing optimal performance and prolonged lifespan.
                   </p>
                 </div>
               </div>
@@ -103,11 +109,11 @@ function MainServiceComponent() {
                 </div>
                 <div className="service-content">
                   <div className="service-heading">
-                    Service for all types of vehicles
+                  Service for all types of vehicles
                   </div>
                   <p>
-                    We take pride to provide services for all types of your
-                    vehicles-including ACs that too at your place!
+                  &quot;We take immense pride in offering a comprehensive range of services for all your vehicles,
+including ACs, right at your doorstep!&quot;
                   </p>
                 </div>
               </div>

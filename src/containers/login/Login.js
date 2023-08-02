@@ -84,6 +84,7 @@ function Login() {
                               </span>
                             )}
                           </div>
+                        <div className='text-end'>  <a href='/forget-password'><span>Forget Password ?</span></a></div>
                         </div>
                         {!login_loading && loginData && (
                           <p

@@ -16,7 +16,7 @@ const MyProfile = () => {
               <div className="profile  ">
                 <h4>AS</h4>
                 <div className="profile-wallet">
-                <i class="fa-solid fa-wallet"></i>
+                {/* <i class="fa-solid fa-wallet"></i> */}
                 <h5>Your Wallet Balance :<span>0.00</span></h5>
                 </div>
               </div>

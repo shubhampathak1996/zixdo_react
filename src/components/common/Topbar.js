@@ -13,7 +13,7 @@ function Topbar() {
     setIsAuthenticated(null);
   };
   return (
-    <div>
+    <>
       <section class="top-bar">
         <div class="container">
           <div class="header-top">
@@ -31,7 +31,7 @@ function Topbar() {
                 </Link>
                 {isAuthenticated ? (
                   <>
-                    <Link to="/my-account" className="logi">
+                    <Link to="/my-profile" className="logi">
                       My Account
                     </Link>
                     <a
@@ -53,7 +53,7 @@ function Topbar() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }
 

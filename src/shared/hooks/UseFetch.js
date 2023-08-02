@@ -91,7 +91,37 @@ const UseAuthenticated = () => {
     auth_loading: loadingAuthenticated,
   };
 };
+// forget password
+const UseForgetPassword = ()=>{
+  const [forgetPassword, setforgetPassword] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const GetforgetPassword = async (formData, email)=>{
+    setLoading(true);
+    const {data} = await api.post("/forgot-password.php",formData)
+    console.log(data,'data')
+    
+    setforgetPassword(data);
+    setLoading(false);
+  }
+  return { forgetPassword, forget_loading: loading, GetforgetPassword };
+}
 
+
+// all center 
+const UseAllCenters = ()=>{
+  const [allCenter, setallCenter] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const GetAllCenter = async ()=>{
+    setLoading(true)
+    const {data} = await api.post("/all-center.php")
+    console.log(data)
+    setLoading(false)
+    setallCenter(data)
+  }
+  return{allCenter,GetAllCenter,Get_AllCenter_Loading:loading
+
+  }
+}
 // Login
 const UseLogin = () => {
   const [loginData, setLoginData] = useState(null);
@@ -538,6 +568,7 @@ export {
   UseGetBrandType,
   UseSubscriptionRegistration,
   UseGetServices,
+  UseForgetPassword,
   UseCenterFilter,
   UseHomepageOfferImage,
   UsePartnerImages,
