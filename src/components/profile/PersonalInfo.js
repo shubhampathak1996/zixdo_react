@@ -10,62 +10,103 @@ const PersonalInfo = () => {
     <div className='row'>
         <div className='col-md-12'>
         <Formik
-        initialValues={{
-          currentPassword: "",
-          newPassword: "",
-          confirmPassword: "",
-        }}
-        validationSchema={Yup.object({
-          currentPassword: Yup.string().required("Required"),
-          newPassword: Yup.string().required("Required"),
-          confirmPassword: Yup.string().required("Required"),
-        })}
-        onSubmit={async (values, { setSubmitting, resetForm }) => {
-          setSubmitting(true);
-
-          resetForm();
-          setSubmitting(false);
-        }}
-      >
-        {(formik) => {
-          console.log(formik);
-          return (
-            <Form>
-              <div className="row">
-                <div className="col-md-6">
-                  <TextInput
-                    placeholder="Name"
-                    name="currentPassword"
-                    type="text"
-                  />
-                </div>
-                <div className="col-md-6">
-                  <TextInput
-                    placeholder="New Password"
-                    name="newPassword"
-                    type="text"
-                  />
-                </div>
-                <div className="col-md-6">
-                  <TextInput
-                    placeholder="Confirm Password"
-                    name="confirmPassword"
-                    type="text"
-                  />
-                </div>
-                <div className="col-md-12">
-                    <div className="reset-btn">
-
-                  <button type="submit" className="btn btn-primary ">
-              Submit
-                  </button>
-                    </div>
-                </div>
-              </div>
-            </Form>
-          );
-        }}
-      </Formik>
+                  initialValues={{
+                    full_name: '',
+                    email: '',
+                    phone: '',
+                    vehicle_type: '',
+                    Address: '',
+                    nearest_store: '',
+                  }}
+                  validationSchema={Yup.object({
+                    full_name: Yup.string().required('Required'),
+                    email: Yup.string().required('Required'),
+                    phone: Yup.string().required('Required'),
+                    vehicle_type: Yup.string().required('Required'),
+                    address: Yup.string().required('Required'),
+                    // nearest_store: Yup.string().required('Required'),
+                  })}
+                  onSubmit={async (values, { setSubmitting, resetForm }) => {
+                    setSubmitting(true);
+                    // proceedCheckoutHandler(values);
+                    resetForm();
+                    setSubmitting(false);
+                  }}
+                >
+                  {(formik) => {
+                    console.log(formik);
+                    return (
+                      <div className="ltn__checkout-single-content mt-50">
+                     
+                        <div className="ltn__checkout-single-content-info">
+                          <Form>
+                          
+                            <div className="row">
+                              <div className="col-md-6">
+                                <div className="form-group">
+                                  <TextInput
+                                    name="full_name"
+                                    type="text"
+                                    placeholder="Full Name"
+                                    className="form-control"
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-md-6">
+                                <div className="form-group">
+                                  <TextInput
+                                    name="email"
+                                    type="email"
+                                    placeholder="Enter your email"
+                                    className="form-control"
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-md-6">
+                                <div className="form-group">
+                                  <TextInput
+                                    name="phone"
+                                    type="number"
+                                    placeholder="Phone Number"
+                                    className="form-control"
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-md-6">
+                                <div className="form-group">
+                                  <TextInput
+                                    name="vehicle_type"
+                                    type="text"
+                                    placeholder="Which vehicle do you have?"
+                                    className="form-control"
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-md-12">
+                                <div className="form-group">
+                                  <TextInput
+                                    name="address"
+                                    type="text"
+                                    placeholder="Enter Your Complete Address"
+                                    className="form-control"
+                                  />
+                                </div>
+                              </div>
+                            
+                            
+                            </div>
+                         
+                            <div className="center checkout-button w50">
+                              <button type="submit" className="btn btn-primary">
+                                Proceed
+                              </button>
+                            </div>
+                          </Form>
+                        </div>
+                      </div>
+                    );
+                  }}
+                </Formik>
         </div>
     </div>
   </div>
