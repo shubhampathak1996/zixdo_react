@@ -7,6 +7,7 @@ import MainServiceComponent from '../components/main-service/MainServiceComponen
 import WhyChooseUs from '../components/brandcollabs/WhyChooseUs';
 import TestimonialSectionComponent from '../components/testimonial-box/TestimonialSectionComponent';
 import ReachCollab from '../components/brandcollabs/ReachCollab';
+import HowWeWorkComponent from '../components/how-we-work/HowWeWorkComponent';
 
 function BrandCollabs() {
   return (
@@ -15,7 +16,7 @@ function BrandCollabs() {
       <BrandCollabsComponent />
       <PartnerComponent />
       <MainServiceComponent />
-      <WhyChooseUs />
+      <HowWeWorkComponent/>
       <ReachCollab />
       <TestimonialSectionComponent />
       <Footer />
