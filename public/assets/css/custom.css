@@ -843,13 +843,16 @@ img {
   border-radius: 8px;
   padding: 35px 35px;
 }
+button{
+  background: none;
+}
 .contact-form-brand {
   position: sticky;
   top: 20px;
   width: 100%;
 }
 .collobration .enhace-content {
-  padding-top: 0px;
+  padding-top: 45px;
 }
 /* checkout */
 .ltn__checkout-single-content {

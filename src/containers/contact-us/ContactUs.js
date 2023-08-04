@@ -1,4 +1,7 @@
-import React from 'react';
+import { Form, Formik } from "formik";
+import React from "react";
+import * as Yup from "yup";
+import { TextArea, TextInput } from "../../components/Form/Form";
 import Header from '../../components/common/Header';
 import Footer from '../../components/common/Footer';
 
@@ -23,27 +26,56 @@ const ContactUs = () => {
                   Lorem ipsum dolor sit amet consectetur. Non nulla ultrices
                   rhoncus morbi elementum nisi sed.
                 </p> */}
-                <form action>
-                  <div className="contact-form-group">
-                    <div className="contact-form-input">
-                      <input type="text" placeholder="Name" />
-                    </div>
-                    <div className="contact-form-input">
-                      <input type="text" placeholder="Email" />
-                    </div>
-                    <div className="contact-form-input">
-                      <input type="text" placeholder="Phone" />
-                    </div>
-                    <div className="contact-form-input-message">
-                      <input type="text" placeholder="Message" />
-                    </div>
-                  </div>
-                  <div className="contact-form-btn">
+                 <Formik
+                                      initialValues={{
+                                        name: "",
+                                        email: "",
+                                        phone: "",
+                                        message: "",
+                                      }}
+                                      validationSchema={Yup.object({
+                                        name: Yup.string().required("Required"),
+                                        email: Yup.string().required("Required"),
+                                        phone: Yup.string().required("Required"),
+                                     
+                                      })}
+                                      onSubmit={async (
+                                        values,
+                                        { setSubmitting, resetForm }
+                                      ) => {
+                                        setSubmitting(true);
+                
+                                        resetForm();
+                                        setSubmitting(false);
+                                      }}
+                                    >
+                                      {(formik) => {
+                                        console.log(formik);
+                                        return (
+                                          <Form>
+                                            <div className="contact-form-group">
+                                            <div className="contact-form-input">
+                               <TextInput name="name" placeholder="Enter Your Name"/>
+                               </div>
+                               <div className="contact-form-input">
+                               <TextInput name="email" placeholder="Enter Your Email"/>
+                               </div>
+                               <div className="contact-form-input">
+                               <TextInput name="phone" placeholder="Enter Your Phone"/>
+                               </div>
+                               <TextArea placeholder = "Enter Your Message Here..." name="message"/>
+
+                               <div className="contact-form-btn">
                     <div className="form-submit-btn">
-                      <a href>Submit</a>
+                      <button type="submit" >Submit</button>
                     </div>
                   </div>
-                </form>
+                                            </div>
+                                          </Form>
+                                        );
+                                      }}
+                                    </Formik>
+             
               </div>
             </div>
             <div className="col-md-6">

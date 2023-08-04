@@ -27,7 +27,7 @@ function MainServiceComponent() {
             <div className="col-md-4">
               <div className="service-card">
                 <div className="service-image">
-                  <img src="assets/images/service1 1.png" alt />
+                  <img src="assets/images/services/1.png" alt />
                 </div>
                 <div className="service-content">
                   <div className="service-heading">Car Exterior Service</div>
@@ -44,7 +44,7 @@ head-turning, brand-new look that will impress all who lay eyes on it.
             <div className="col-md-4">
               <div className="service-card">
                 <div className="service-image">
-                  <img src="assets/images/service1 1.png" alt />
+                  <img src="assets/images/services/2.png" alt />
                 </div>
                 <div className="service-content">
                   <div className="service-heading">Car Interior Service</div>
@@ -62,7 +62,7 @@ transformations, employing only the finest materials and delivering impeccable c
             <div className="col-md-4">
               <div className="service-card">
                 <div className="service-image">
-                  <img src="assets/images/service1 1.png" alt />
+                  <img src="assets/images/services/3.png" alt />
                 </div>
                 <div className="service-content">
                   <div className="service-heading">Home/AC service</div>
@@ -77,7 +77,7 @@ repair, guaranteeing utmost comfort and complete satisfaction for our valued cus
             <div className="col-md-4">
               <div className="service-card">
                 <div className="service-image">
-                  <img src="assets/images/service1 1.png" alt />
+                  <img src="assets/images/services/5.png" alt />
                 </div>
                 <div className="service-content">
                   <div className="service-heading">2 Wheelers</div>
@@ -91,7 +91,7 @@ scooter stays in prime condition for a smooth and delightful ride.
             <div className="col-md-4">
               <div className="service-card">
                 <div className="service-image">
-                  <img src="assets/images/service1 1.png" alt />
+                  <img src="assets/images/services/6.png" alt />
                 </div>
                 <div className="service-content">
                   <div className="service-heading">Commercial Vehicle</div>
@@ -105,7 +105,7 @@ guaranteeing optimal performance and prolonged lifespan.
             <div className="col-md-4">
               <div className="service-card">
                 <div className="service-image">
-                  <img src="assets/images/service1 1.png" alt />
+                  <img src="assets/images/services/7.png" alt />
                 </div>
                 <div className="service-content">
                   <div className="service-heading">

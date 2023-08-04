@@ -8,7 +8,7 @@ function Collobration() {
           <div className="row ">
             <div className="col-md-6">
               <div className="enhace-content-image">
-                <img src="assets/images/pages_banner/authori_loca.png" />
+                <img src="assets/images/services/8.png" />
               </div>
             </div>
             <div className="col-md-6">

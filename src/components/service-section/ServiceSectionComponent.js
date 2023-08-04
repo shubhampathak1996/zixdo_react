@@ -8,12 +8,7 @@ function ServiceSectionComponent() {
           <div className="row">
             <div className="col-md-5">
               <div className="service-image">
-                <img src="assets/images/about-2 1 (3).png" alt />
-                <img
-                  src="assets/images/about-us_sec.png"
-                  className="ab-ab"
-                  alt
-                />
+               <img src='assets/images/about_us.png'/>
               </div>
             </div>
             <div className="col-md-7">
