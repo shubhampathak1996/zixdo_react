@@ -2,7 +2,7 @@ import React from 'react';
 
 function ServiceSectionComponent() {
   return (
-    <div>
+    <>
       <section className="service-section ptb-60">
         <div className="container">
           <div className="row">
