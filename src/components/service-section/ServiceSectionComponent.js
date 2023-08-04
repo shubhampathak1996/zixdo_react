@@ -11,7 +11,7 @@ function ServiceSectionComponent() {
                <img src='assets/images/about_us.png'/>
               </div>
             </div>
-            <div className="col-md-7">
+            <div className="col-md-">
               <div className="service-content-section">
                 <h3>WELCOME TO ZIXDO.COM</h3>
                 <p>
@@ -75,7 +75,7 @@ function ServiceSectionComponent() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }
 
