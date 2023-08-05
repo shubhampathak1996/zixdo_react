@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-const OrderHistory = () => {
+const OrderHistory = ({ orderData, order_loading }) => {
   return (
     <>
       <div className="container">
@@ -49,70 +49,16 @@ const OrderHistory = () => {
                         </tr>
                       </tbody>
                     </table>
-                    
                   </div>
-                 <div className="order-total ">
-                    Total Amount:<strong>$ 25438</strong><br/>
-                 </div>
-                <div className="order-status">
-                    <h6>Order :<strong style={{color:"#0a9f0b"}} >Completed </strong></h6>
-                </div>
-                </div> */}
-                <div className="col-md-12">
-                  <div className="order-details  d-flex mb-3">
-                    <div className="col-md-4">
-                      <h6>
-                        Order Id: <span>1234567</span>
-                      </h6>
-                    </div>
-                    <div className="col-md-4">
-                      <h6>
-                        Invoice Id: <span>1234567</span>
-                      </h6>
-                    </div>
-                    <div className="col-md-4">
-                      <h6>
-                        Store Id: <span>1234567</span>
-                      </h6>
-                    </div>
+                  <div className="order-total ">
+                    Total Amount:<strong>$ 25438</strong>
+                    <br />
                   </div>
-                </div>
-                <div className="col-md-12">
-                  <div className="order-details  d-flex mb-3">
-                    <div className="col-md-4">
-                      <h6>
-                        Address: <span>1234567</span>
-                      </h6>
-                    </div>
-                    <div className="col-md-4">
-                      <h6>
-                        Zip Code: <span>1234567</span>
-                      </h6>
-                    </div>
-                    <div className="col-md-4">
-                      <h6>
-                        Order Status: <span>1234567</span>
-                      </h6>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-12">
-                  <div className="order-details  d-flex mb-3">
-                    <div className="col-md-4">
-                      <h6>
-                        Name: <span>1234567</span>
-                      </h6>
-                    </div>
-                    <div className="col-md-4">
-                      <h6>
-                        Email: <span>1234567</span>
-                      </h6>
-                    </div>
-                    <div className="col-md-4">
-                      <h6>
-                        ContactNo.: <span>1234567</span>
-                      </h6>
-                    </div>
+                  <div className="order-status">
+                    <h6>
+                      Order :
+                      <strong style={{ color: '#0a9f0b' }}>Completed </strong>
+                    </h6>
                   </div>
                 </div>
               </div>

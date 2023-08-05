@@ -35,8 +35,7 @@ function MainServiceComponent() {
                   At Zixdo, we are experts in delivering top-tier car exterior services, utilizing state-of-the-art
 tools and advanced techniques. Our highly skilled technicians work diligently to restore your
 car&#39;s paintwork, bodywork, and detailing to perfection, elevating its visual allure and leaving
-it with a stunning, showroom-worthy appearance. Trust us to provide your vehicle with a
-head-turning, brand-new look that will impress all who lay eyes on it.
+it with a stunning, showroom-worthy appearance. 
                   </p>
                 </div>
               </div>

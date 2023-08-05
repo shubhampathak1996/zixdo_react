@@ -6,7 +6,7 @@ import { UseCenterFilter } from '../../shared/hooks/UseFetch';
 
 function OurCenter() {
   const { centers, getCenters, centers_loading } = UseCenterFilter();
-  const [text, setText] = useState(null);
+  const [text, setText] = useState("A");
   useEffect(() => {
     if (text) {
       getCenters({ text });

@@ -91,37 +91,108 @@ const UseAuthenticated = () => {
     auth_loading: loadingAuthenticated,
   };
 };
+
+const UseGetCurrentUserInformation = () => {
+  const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    getUserInforation();
+  }, []);
+  const getUserInforation = async () => {
+    const email = localStorage.getItem('ZIXDO_EMAIL');
+
+    setLoading(true);
+    const formData = new FormData();
+    formData.append('email', email);
+    const { data } = await api.post('/user-profile.php', formData);
+    console.log('Data', data);
+
+    setUserData(data);
+    setLoading(false);
+  };
+
+  return {
+    userData,
+    user_loading: loading,
+  };
+};
+
+const UseResetUserPassword = () => {
+  const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const resetUserPassword = async (password) => {
+    const email = localStorage.getItem('ZIXDO_EMAIL');
+
+    setLoading(true);
+    const formData = new FormData();
+    formData.append('email', email);
+    formData.append('password', password);
+    const { data } = await api.post('/reset-password.php', formData);
+    console.log('Data', data);
+    setUserData(data);
+    setLoading(false);
+  };
+
+  return {
+    userData,
+    userDataMessage: userData,
+    user_loading: loading,
+    resetUserPassword,
+  };
+};
+
+// Order Information
+const UseUserOrders = () => {
+  const [loading, setLoading] = useState(false);
+  const [orderData, setOrderData] = useState(null);
+  useEffect(() => {
+    getUserOrderData();
+  }, []);
+
+  const getUserOrderData = async () => {
+    setLoading(true);
+    const email = localStorage.getItem('ZIXDO_EMAIL');
+    const formData = new FormData();
+    formData.append('email', email);
+    const { data } = await api.post('/my-orders.php', formData);
+    setOrderData(data);
+    setLoading(false);
+  };
+  return {
+    order_loading: loading,
+    orderData,
+  };
+};
+
 // forget password
-const UseForgetPassword = ()=>{
+const UseForgetPassword = () => {
   const [forgetPassword, setforgetPassword] = useState(null);
   const [loading, setLoading] = useState(false);
-  const GetforgetPassword = async (formData, email)=>{
+  const GetforgetPassword = async (formData, email) => {
     setLoading(true);
-    const {data} = await api.post("/forgot-password.php",formData)
-    console.log(data,'data')
-    
+    const { data } = await api.post('/forgot-password.php', formData);
+    console.log(data, 'data');
+
     setforgetPassword(data);
     setLoading(false);
-  }
+  };
   return { forgetPassword, forget_loading: loading, GetforgetPassword };
-}
+};
 
-
-// all center 
-const UseAllCenters = ()=>{
+// all center
+const UseAllCenters = () => {
   const [allCenter, setallCenter] = useState(null);
   const [loading, setLoading] = useState(false);
-  const GetAllCenter = async ()=>{
-    setLoading(true)
-    const {data} = await api.post("/all-center.php")
-    console.log(data)
-    setLoading(false)
-    setallCenter(data)
-  }
-  return{allCenter,GetAllCenter,Get_AllCenter_Loading:loading
-
-  }
-}
+  const GetAllCenter = async () => {
+    setLoading(true);
+    const { data } = await api.post('/all-center.php');
+    console.log(data);
+    setLoading(false);
+    setallCenter(data);
+  };
+  return { allCenter, GetAllCenter, Get_AllCenter_Loading: loading };
+};
 // Login
 const UseLogin = () => {
   const [loginData, setLoginData] = useState(null);
@@ -147,8 +218,8 @@ const UseGetServiceTypeByZipCode = () => {
   const [loading, setLoading] = useState(false);
   const SearchByZipCode = async (zip_code) => {
     setLoading(true);
-    const { data } = await api.get(`/zip-services.php?zip=zip_code`);
-    setZipServiceType(true);
+    const { data } = await api.get(`/zip-services.php?zip=${zip_code}`);
+    setZipServiceType(data);
     setLoading(false);
   };
   return { ZipServiceType, zipservice_type_loading: loading, SearchByZipCode };
@@ -574,4 +645,7 @@ export {
   UsePartnerImages,
   UseServiceName,
   UseAuthenticated,
+  UseGetCurrentUserInformation,
+  UseResetUserPassword,
+  UseUserOrders,
 };

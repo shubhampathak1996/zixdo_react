@@ -1,12 +1,14 @@
 import React from 'react';
 
 export const SubMenuComponent = ({
+  ZipServiceType,
   sub_cat_loading,
   subCatData,
   setWashType,
   washType,
   vehicleType,
 }) => {
+  console.log("ZipServiceType",ZipServiceType);
   return (
     <div className='car-option car-option-flex'>
       {sub_cat_loading ? (
@@ -30,7 +32,7 @@ export const SubMenuComponent = ({
         <>
           {subCatData &&
             subCatData.map((item) => {
-              if (item.service_type === 'Wet Wash') {
+              if (item.service_type === 'Wet Wash' && ZipServiceType && ZipServiceType.type && ZipServiceType.type.includes("Pressure Wash")) {
                 return (
                   <div
                     className={
@@ -53,7 +55,7 @@ export const SubMenuComponent = ({
                   </div>
                 );
               }
-              if (item.service_type === 'Dry Wash') {
+              if (item.service_type === 'Dry Wash' && ZipServiceType && ZipServiceType.type && ZipServiceType.type.includes("Eco Wash")) {
                 return (
                   <div
                     className={

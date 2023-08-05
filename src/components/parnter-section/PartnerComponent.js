@@ -6,9 +6,9 @@ import { UPLOAD_URI } from '../../domain/constant';
 function PartnerComponent() {
   const { partnerImage, GetPartnerImage, partner_image_loading } =
     UsePartnerImages();
-  useEffect(() => {
+ useEffect(() => {
     GetPartnerImage();
-  }, []);
+  }, []); 
   console.log(partnerImage, 'partner Image');
   var partners = {
     dots: true,

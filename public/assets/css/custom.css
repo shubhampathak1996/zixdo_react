@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
-@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
-@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-@import url("./style.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('./style.css');
 
 :root {
   --white-color: #fff;
@@ -27,7 +27,7 @@ strong {
   font-weight: 700;
 }
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 14px;
   color: #888;
   line-height: 1.7em;
@@ -67,7 +67,7 @@ h6 {
   background: none;
   line-height: 1.6em;
   color: #1e1e1e;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 h1,
 h2,
@@ -386,13 +386,13 @@ img {
   text-align: center;
 }
 .location-page-banner {
-  background: url("../images/pages_banner/location_page.png");
+  background: url('../images/pages_banner/location_page.png');
   background-size: cover;
   padding: 80px 0px;
   position: relative;
 }
 .gallery-banner {
-  background: url("../images/pages_banner/banner7.jpg");
+  background: url('../images/pages_banner/banner7.jpg');
   background-size: cover;
   padding: 80px 0px;
   position: relative;
@@ -414,7 +414,7 @@ img {
   background: rgba(255, 194, 14, 0.1);
   height: 100%;
   width: 100%;
-  content: "";
+  content: '';
 }
 .location-search input {
   border: 1px solid #f1f1f1;
@@ -495,7 +495,7 @@ img {
   display: flex;
   align-items: center;
   padding-right: 40px;
-  max-width: 180px;
+  max-width: 220px;
   width: 100%;
   gap: 10px;
 }
@@ -628,7 +628,7 @@ img {
   color: white;
 }
 .about-banner {
-  background: url("../images/pages_banner/location_page.png");
+  background: url('../images/pages_banner/location_page.png');
   background-size: cover;
   padding: 80px 0px;
   position: relative;
@@ -640,7 +640,7 @@ img {
   background: rgba(255, 255, 255, 0.3);
   height: 100%;
   width: 100%;
-  content: "";
+  content: '';
 }
 .about-banner .location-page-searchbar h2 {
   color: var(--heading-color);
@@ -676,7 +676,7 @@ img {
   padding: 15px 30px;
 }
 .our-team {
-  background: url("../images/pages_banner/about-second.png");
+  background: url('../images/pages_banner/about-second.png');
   background-size: cover;
   padding: 80px 0px;
   background-position: center center;
@@ -843,6 +843,12 @@ img {
   border-radius: 8px;
   padding: 35px 35px;
 }
+.card-v {
+  background: #007cc0;
+  padding: 2px 5px;
+  border-radius: 2px;
+  color: #fff;
+}
 button {
   background: none;
 }
@@ -884,7 +890,7 @@ button {
 .input-item::after {
   display: block;
   clear: both;
-  content: "";
+  content: '';
 }
 .checkout .form-control {
   padding: 12px 20px;
@@ -962,7 +968,7 @@ button {
 }
 .checkout-button .btn-primary {
   padding: 15px 30px;
-  width: 25%;
+  width: 100%;
 }
 .shoping-cart-table .table tr {
   background-color: transparent;
@@ -1087,7 +1093,7 @@ input.cart-plus-minus-box {
   background: rgba(255, 255, 255, 0.5);
   height: 100%;
   width: 100%;
-  content: "";
+  content: '';
 }
 .authorized-partner-content {
   position: relative;

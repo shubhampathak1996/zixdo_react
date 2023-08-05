@@ -78,7 +78,9 @@ const useHomepageServices = () => {
   };
 };
 // Add to Cart
+// Add to Cart
 const UseAddCart = () => {
+  const { viewCart, cartItems } = UseViewCart();
   const [cartMessage, setCartMessage] = useState(null);
   const [loading, setLoading] = useState(false);
   const addToCart = async ({ session_id, service_id }) => {
@@ -91,6 +93,8 @@ const UseAddCart = () => {
       formData
     );
     setCartMessage(data);
+    viewCart({});
+    window.location.reload();
     setLoading(false);
   };
 
@@ -98,6 +102,7 @@ const UseAddCart = () => {
     addToCart,
     add_to_cart_loading: loading,
     cartMessage,
+    newCartItems: cartItems,
   };
 };
 // View Cart
@@ -127,12 +132,28 @@ const UseViewCart = () => {
     viewCart({});
   }, []);
 
+  const checkInCart = (service_id) => {
+    if (cartItems) {
+      const filterData = cartItems.filter(
+        (item) => item.service_id === service_id
+      );
+      if (filterData && filterData.length > 0) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    return false;
+  };
+
   return {
     viewCart,
     view_cart_loading: loading,
     cartItems,
+    checkInCart,
   };
 };
+
 // Remove Cart
 const UseRemoveCart = () => {
   const [cartMessage, setCartMessage] = useState(null);
@@ -220,7 +241,26 @@ const UseCheckout = () => {
     placeOrderMessage,
   };
 };
-
+const UseOrderInfo = () => {
+  const [orderInfo, setOrderInfo] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const getOrderDetails = async (order_id) => {
+    setLoading(true);
+    const formData = new FormData();
+    formData.append('order_id', order_id);
+    const { data } = await api.post(
+      'https://zixdo.com/Api/order-info.php',
+      formData
+    );
+    setOrderInfo(data);
+    setLoading(false);
+  };
+  return {
+    orderInfo,
+    order_loading: loading,
+    getOrderDetails,
+  };
+};
 export {
   useCategory,
   usePinCode,
@@ -231,4 +271,5 @@ export {
   useHomepageServices,
   UseLat,
   UseCheckout,
+  UseOrderInfo,
 };
