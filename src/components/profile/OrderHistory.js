@@ -8,7 +8,7 @@ const OrderHistory = () => {
           <div className="col-md-12">
             <div className="order-history ">
               <div className="row">
-                <div className="col-md-5">
+                {/* <div className="col-md-5">
                   <div className="order-details">
                     <h6>
                       Order Id: <span>1234567</span>
@@ -57,6 +57,63 @@ const OrderHistory = () => {
                 <div className="order-status">
                     <h6>Order :<strong style={{color:"#0a9f0b"}} >Completed </strong></h6>
                 </div>
+                </div> */}
+                <div className="col-md-12">
+                  <div className="order-details  d-flex mb-3">
+                    <div className="col-md-4">
+                      <h6>
+                        Order Id: <span>1234567</span>
+                      </h6>
+                    </div>
+                    <div className="col-md-4">
+                      <h6>
+                        Invoice Id: <span>1234567</span>
+                      </h6>
+                    </div>
+                    <div className="col-md-4">
+                      <h6>
+                        Store Id: <span>1234567</span>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-12">
+                  <div className="order-details  d-flex mb-3">
+                    <div className="col-md-4">
+                      <h6>
+                        Address: <span>1234567</span>
+                      </h6>
+                    </div>
+                    <div className="col-md-4">
+                      <h6>
+                        Zip Code: <span>1234567</span>
+                      </h6>
+                    </div>
+                    <div className="col-md-4">
+                      <h6>
+                        Order Status: <span>1234567</span>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-md-12">
+                  <div className="order-details  d-flex mb-3">
+                    <div className="col-md-4">
+                      <h6>
+                        Name: <span>1234567</span>
+                      </h6>
+                    </div>
+                    <div className="col-md-4">
+                      <h6>
+                        Email: <span>1234567</span>
+                      </h6>
+                    </div>
+                    <div className="col-md-4">
+                      <h6>
+                        ContactNo.: <span>1234567</span>
+                      </h6>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
