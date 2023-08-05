@@ -1,7 +1,10 @@
 import React from 'react';
-import { UseAddCart } from '../../shared/hooks/UseApi';
+import { useEffect, useState } from 'react';
+import { UseAddCart, UseViewCart } from '../../shared/hooks/UseApi';
 function AddServicesComponent({ service }) {
-  const { addToCart } = UseAddCart();
+  const { viewCart, view_cart_loading, cartItems, checkInCart } = UseViewCart();
+  const { addToCart, cartMessage, newCartItems } = UseAddCart();
+  const [inCart, setInCart] = useState(false);
   const addToCartHandler = () => {
     const session_id = localStorage.getItem('ZIXDO_CART');
     if (session_id) {
@@ -18,8 +21,8 @@ function AddServicesComponent({ service }) {
     }
   };
   return (
-    <div className='service-card'>
-      <div className='service-image'>
+    <div className="service-card">
+      <div className="service-image">
         <img
           src={
             service.image
@@ -29,31 +32,40 @@ function AddServicesComponent({ service }) {
           alt
         />
       </div>
-      <div className='service-content'>
-        <div className='service-heading'>{service.service_name}</div>
+      <div className="service-content">
+        <div className="service-heading">{service.service_name}</div>
         <ul>
           {service.contents &&
             service.contents.map((item) => {
               return (
                 <li>
-                  <i className='fa fa-check'></i> {item.content}
+                  <i className="fa fa-check"></i> {item.content}
                 </li>
               );
             })}
         </ul>
         <hr></hr>
 
-        <div className='booking-amount-flex'>
-          <div className='booking-content'>
+        <div className="booking-amount-flex">
+          <div className="booking-content">
             <h2>₹{service.price}</h2>
           </div>
-          <div className='add-button'>
-            <button
-              onClick={() => addToCartHandler()}
-              className='btn btn-primary'
-            >
-              Add To Cart
-            </button>
+          <div className="add-button">
+            {checkInCart(service.service_id) ? (
+              <button
+                onClick={() => addToCartHandler()}
+                className="btn btn-primary"
+              >
+                Added To Cart
+              </button>
+            ) : (
+              <button
+                onClick={() => addToCartHandler()}
+                className="btn btn-primary"
+              >
+                Add To Cart
+              </button>
+            )}
           </div>
         </div>
       </div>

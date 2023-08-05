@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-const OrderHistory = () => {
+const OrderHistory = ({ orderData, order_loading }) => {
   return (
     <>
       <div className="container">
@@ -49,14 +49,17 @@ const OrderHistory = () => {
                         </tr>
                       </tbody>
                     </table>
-                    
                   </div>
-                 <div className="order-total ">
-                    Total Amount:<strong>$ 25438</strong><br/>
-                 </div>
-                <div className="order-status">
-                    <h6>Order :<strong style={{color:"#0a9f0b"}} >Completed </strong></h6>
-                </div>
+                  <div className="order-total ">
+                    Total Amount:<strong>$ 25438</strong>
+                    <br />
+                  </div>
+                  <div className="order-status">
+                    <h6>
+                      Order :
+                      <strong style={{ color: '#0a9f0b' }}>Completed </strong>
+                    </h6>
+                  </div>
                 </div>
               </div>
             </div>

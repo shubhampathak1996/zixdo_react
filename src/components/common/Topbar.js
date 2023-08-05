@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { UseViewCart } from '../../shared/hooks/UseApi';
 
 function Topbar() {
+  const { viewCart, view_cart_loading, cartItems } = UseViewCart();
   const [isAuthenticated, setIsAuthenticated] = useState(
     window.localStorage.getItem('ZIXDO_TOKEN')
       ? window.localStorage.getItem('ZIXDO_TOKEN')
@@ -26,8 +28,11 @@ function Topbar() {
               </div>
 
               <div>
-                <Link to="/cart" className="d-w ">
-                  <i class="fa fa-shopping-cart"></i>
+                <Link to="/cart" className="d-w  ">
+                  <i class="fa fa-shopping-cart"></i>{' '}
+                  <span className="card-v">
+                    {cartItems && cartItems.length ? cartItems.length : ''}
+                  </span>
                 </Link>
                 {isAuthenticated ? (
                   <>

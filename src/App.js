@@ -33,14 +33,13 @@ import BeforeLoginRoutes from './shared/Routes/BeforeLoginRoutes';
 import PrivateRoutes from './shared/Routes/PrivateRoutes';
 import PersonalInformation from './containers/my-profile/PersonalInformation';
 
-
 import ChangePasswordPage from './containers/my-profile/ChangePasswordPage';
 import OrderHistory from './components/profile/OrderHistory';
 import OrderHistoryPage from './containers/my-profile/OrderHistoryPage';
-
+import ThankYou from './containers/thankyou/ThankYou';
+import SingleStore from './containers/singlestore/SingleStore';
 
 function App() {
-  
   useEffect(() => {
     const body = document.querySelector('#root');
 
@@ -67,21 +66,34 @@ function App() {
           <Route exact path="/checkout" component={Checkout} />
           <Route exact path="/register" component={SignUp} />
           <PrivateRoutes exact path="/my-profile" component={MyProfile} />
-          <PrivateRoutes exact path="/my-profile/personal-information" component={PersonalInformation} />
-          <PrivateRoutes exact path="/my-profile/change-password" component={ChangePasswordPage} />
-          <PrivateRoutes exact path="/my-profile/order-history" component={OrderHistoryPage} />
+          <PrivateRoutes
+            exact
+            path="/my-profile/personal-information"
+            component={PersonalInformation}
+          />
+          <PrivateRoutes
+            exact
+            path="/my-profile/change-password"
+            component={ChangePasswordPage}
+          />
+          <PrivateRoutes
+            exact
+            path="/my-profile/order-history"
+            component={OrderHistoryPage}
+          />
           <Route
             exact
             path="/user-subscription-registration"
             component={SubscriptionRegistration}
           />
-       
 
           <Route exact path="/contactus" component={ContactUs} />
 
           <Route exact path="/refund-cancellation" component={Refund} />
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
           <Route exact path="/gallery" component={Gallary} />
+          <Route exact path="/thank-you/:order_id" component={ThankYou} />
+          <Route exact path="/store/:order_id" component={SingleStore} />
           <Route component={PageNotFound} />
         </Switch>
       </Router>

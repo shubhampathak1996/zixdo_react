@@ -14,7 +14,6 @@ function VideoSectionComponent() {
                 <div className="play-button">
                   <a
                     className="play-btn"
-                    target="_blank"
                     href="https://zixdo.com/video/zixdo-car-wash-video-latest.mp4"
                   >
                     <i className="fa fa-play" />
