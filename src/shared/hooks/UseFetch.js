@@ -624,7 +624,24 @@ const UsePartnerImages = () => {
     partner_image_loading: loading,
   };
 };
-
+// single_partner
+const UseSingleLocation = () => {
+  const [SingleLocation, setSingleLocation] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const GetSingleFranchise = async (center_id) => {
+    setLoading(true);
+    const { data } = await api.get(
+      'https://zixdo.com/Api/franchise-details.php'
+    );
+    setSingleLocation(data);
+    setLoading(false);
+  };
+  return {
+    SingleLocation,
+    GetSingleFranchise,
+    Single_location_loading: loading,
+  };
+};
 export {
   useFetch,
   usePost,
@@ -645,6 +662,7 @@ export {
   UsePartnerImages,
   UseServiceName,
   UseAuthenticated,
+  UseSingleLocation,
   UseGetCurrentUserInformation,
   UseResetUserPassword,
   UseUserOrders,
