@@ -25,14 +25,17 @@ const OrderHistoryPage = () => {
                 </div>
               </div>
               <div className='profile-content'>
-                <div className='col-md-3'>
-                  <ProfileSidebar />
-                </div>
-                <div className='col-md-9'>
-                  <div className='profile-data'>
-                    {/* <PersonalInfo/> */}
-                    {/* <ChangePassword/> */}
-                    <OrderHistory />
+                <div className='row'>
+                  <div className='col-md-2'>
+                    <ProfileSidebar />
+                  </div>
+                  <div className='col-md-10'>
+                    <div className='profile-data'>
+                      {/* <PersonalInfo/> */}
+                      {/* <ChangePassword/> */}
+                      <OrderHistory />
+                      {/* <OrderHistoryCard /> */}
+                    </div>
                   </div>
                 </div>
               </div>

@@ -1206,9 +1206,11 @@ input.cart-plus-minus-box {
 .order-history {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   padding: 30px;
+  margin-bottom: 50px;
 }
 .order-details {
   border-bottom: 1px solid #f1f1f1;
+  margin-top: 10px;
 }
 .order-details h6 {
   font-weight: 600;
@@ -1226,9 +1228,13 @@ input.cart-plus-minus-box {
   margin-bottom: 7px;
   color: #007cc0;
 }
+.order-content span {
+  color: #1e1e1e;
+  font-weight: 500;
+}
 .order-status {
   text-align: end;
-  margin-top: 100px;
+  margin-top: 20px;
 }
 .order-total {
   float: right;
@@ -1236,13 +1242,34 @@ input.cart-plus-minus-box {
 .order-status h6 {
   font-weight: 600;
 }
-.order-card {
+/* .order-card {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border: none;
   border-radius: 0;
-  margin-top: 20px;
 
   padding: 10px 20px;
+}
+.order-card img {
+  height: 150px;
+}
+.order-history-btn .btn-primary {
+  padding: 10px 30px;
+} */
+
+.order-card {
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
+  padding: 10px;
+  border-radius: 0;
+}
+.order-card-details h6 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.order-card-details span {
+  font-weight: 400;
+  font-size: 12px;
 }
 
 /* aafiya css end */
