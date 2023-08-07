@@ -3,13 +3,13 @@ import React from 'react';
 const OrderHistory = ({ orderData, order_loading }) => {
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12">
-            <div className="order-history ">
-              <div className="row">
-                {/* <div className="col-md-5">
-                  <div className="order-details">
+      <div className='container'>
+        <div className='row'>
+          <div className='col-md-12'>
+            <div className='order-history '>
+              <div className='row'>
+                <div className='col-md-5'>
+                  <div className='order-details'>
                     <h6>
                       Order Id: <span>1234567</span>
                     </h6>
@@ -28,10 +28,10 @@ const OrderHistory = ({ orderData, order_loading }) => {
                     </h6>
                   </div>
                 </div>
-                <div className="col-md-7">
-                  <div className="order-content">
+                <div className='col-md-7'>
+                  <div className='order-content'>
                     <h6>Order Information</h6>
-                    <table className="table border">
+                    <table className='table border'>
                       <thead>
                         <tr>
                           <th>S.No.</th>
@@ -50,11 +50,11 @@ const OrderHistory = ({ orderData, order_loading }) => {
                       </tbody>
                     </table>
                   </div>
-                  <div className="order-total ">
+                  <div className='order-total '>
                     Total Amount:<strong>$ 25438</strong>
                     <br />
                   </div>
-                  <div className="order-status">
+                  <div className='order-status'>
                     <h6>
                       Order :
                       <strong style={{ color: '#0a9f0b' }}>Completed </strong>

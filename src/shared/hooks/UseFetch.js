@@ -155,7 +155,7 @@ const UseUserOrders = () => {
     const email = localStorage.getItem('ZIXDO_EMAIL');
     const formData = new FormData();
     formData.append('email', email);
-    const { data } = await api.post('/my-orders.php', formData);
+    const { data } = await api.post('/luhaif/my-orders.php', formData);
     setOrderData(data);
     setLoading(false);
   };

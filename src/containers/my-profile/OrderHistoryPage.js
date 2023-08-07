@@ -6,6 +6,8 @@ import PersonalInfo from '../../components/profile/PersonalInfo';
 import ChangePassword from '../../components/profile/ChangePassword';
 import OrderHistory from '../../components/profile/OrderHistory';
 import ProfileSidebar from '../../components/myprfile/ProfileSidebar';
+import { UseUserOrders } from '../../shared/hooks/UseFetch';
+
 const OrderHistoryPage = () => {
   const { order_loading, orderData } = UseUserOrders();
   return (
