@@ -1207,8 +1207,12 @@ input.cart-plus-minus-box {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   padding: 30px;
 }
+.order-details {
+  border-bottom: 1px solid #f1f1f1;
+}
 .order-details h6 {
   font-weight: 600;
+  margin-bottom: 10px;
 }
 .order-details span {
   font-weight: 400;
@@ -1232,6 +1236,15 @@ input.cart-plus-minus-box {
 .order-status h6 {
   font-weight: 600;
 }
+.order-card {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border: none;
+  border-radius: 0;
+  margin-top: 20px;
+
+  padding: 10px 20px;
+}
+
 /* aafiya css end */
 
 /* end che */
