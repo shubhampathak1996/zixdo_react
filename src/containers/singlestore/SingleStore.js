@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../../components/common/Header';
 import Footer from '../../components/common/Footer';
+import { UseSingleLocation } from '../../shared/hooks/UseFetch';
 
 import {
   UseServiceType,
@@ -18,6 +19,9 @@ import TestimonialSectionComponent from '../../components/testimonial-box/Testim
 import { ModelComponent } from '../../components/bannersection/ModelComponent';
 
 function SingleStore() {
+  const { SingleLocation, GetSingleFranchise, Single_location_loading } =
+    UseSingleLocation();
+
   const { ZipServiceType, SearchByZipCode, zipservice_type_loading } =
     UseGetServiceTypeByZipCode();
   const { categories, getCategories, categories_loading } = useCategory();
@@ -41,6 +45,7 @@ function SingleStore() {
   useEffect(() => {
     getServiceTypes();
   }, []);
+
   useEffect(() => {
     if (vehicleType) {
       getSubCats(vehicleType);
@@ -96,6 +101,11 @@ function SingleStore() {
   useEffect(() => {
     getCategories();
   }, []);
+
+  useEffect(() => {
+    GetSingleFranchise();
+  }, []);
+  console.log(SingleLocation, 'singlelocation');
   return (
     <>
       <Header />

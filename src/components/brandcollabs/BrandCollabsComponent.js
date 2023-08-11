@@ -9,64 +9,8 @@ function BrandCollabsComponent() {
         <div className="container">
           <div className="row">
             <div className="col-md-7">
-              <div className="car-wash-pointers">
-                <h3>Car subscription vs buying</h3>
-                <div className="row">
-                  <div className="col-md-6">
-                    <div className="plan-ul">
-                      <ul>
-                        <li>Zero down payment &amp; road tax</li>
-                        <li>No long term commitment</li>
-                        <li>No loan process, no cibil check</li>
-                        <li>
-                          Doorstep pick &amp; drop for maintenance &amp; service
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="subscribe-box">
-                      <div className="subcribe-box-m right">
-                        <h5>Subscribe</h5>
-                        <ul>
-                          <li>
-                            <i className="fa fa-check" />
-                          </li>
-                          <li>
-                            <i className="fa fa-check" />
-                          </li>
-                          <li>
-                            <i className="fa fa-check" />
-                          </li>
-                          <li>
-                            <i className="fa fa-check" />
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-md-3">
-                    <div className="subscribe-box">
-                      <div className="subcribe-box-m clsoe">
-                        <h5>Buy</h5>
-                        <ul>
-                          <li>
-                            <i className="fa fa-close" />
-                          </li>
-                          <li>
-                            <i className="fa fa-close" />
-                          </li>
-                          <li>
-                            <i className="fa fa-close" />
-                          </li>
-                          <li>
-                            <i className="fa fa-close" />
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="">
+                <img src="assets/images/services/brand_collab.jpg" />
               </div>
             </div>
             <div className="col-md-5">

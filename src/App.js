@@ -38,6 +38,7 @@ import OrderHistory from './components/profile/OrderHistory';
 import OrderHistoryPage from './containers/my-profile/OrderHistoryPage';
 import ThankYou from './containers/thankyou/ThankYou';
 import SingleStore from './containers/singlestore/SingleStore';
+import Test from './containers/test/Test';
 
 function App() {
   useEffect(() => {
@@ -94,6 +95,7 @@ function App() {
           <Route exact path="/gallery" component={Gallary} />
           <Route exact path="/thank-you/:order_id" component={ThankYou} />
           <Route exact path="/store/:order_id" component={SingleStore} />
+          <Route exact path="/test" component={Test} />
           <Route component={PageNotFound} />
         </Switch>
       </Router>
