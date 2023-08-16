@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { UseSingleLocation } from '../../shared/hooks/UseFetch';
 
-function AlphabeticalSearch({ setText, text, centers }) {
+function AlphabeticalSearch({ setText, text, centers, center_id }) {
   console.log('centers', centers);
   return (
     <>
@@ -94,7 +95,7 @@ function AlphabeticalSearch({ setText, text, centers }) {
                               </div>
                             </a>
                           </div>
-                          <Link to="/store/:order_id" className="partner">
+                          <Link to={`/store/${item.id}`} className="partner">
                             Partner Details
                           </Link>
                         </div>

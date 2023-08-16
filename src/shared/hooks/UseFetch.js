@@ -631,7 +631,7 @@ const UseSingleLocation = () => {
   const GetSingleFranchise = async (center_id) => {
     setLoading(true);
     const { data } = await api.get(
-      'https://zixdo.com/Api/franchise-details.php'
+      `https://zixdo.com/Api/franchise-details.php?center_id=${center_id}`
     );
     setSingleLocation(data);
     setLoading(false);

@@ -3,10 +3,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { CheckBox, TextInput } from '../../components/Form/Form';
 import { Link } from 'react-router-dom';
-import {
-  UsePrferredPartner,
-  usePrferredPartner,
-} from '../../shared/hooks/UseFetch';
+import { usePrferredPartner } from '../../shared/hooks/UseFetch';
 
 function PreferredPartnerComponent() {
   const {
@@ -69,6 +66,7 @@ function PreferredPartnerComponent() {
                     email: '',
                     mobile_number: '',
                     city: '',
+                    invest_type: '',
                   }}
                   validationSchema={Yup.object({
                     name: Yup.string().required('Required'),
@@ -106,7 +104,7 @@ function PreferredPartnerComponent() {
                           </div>
 
                           <div className="invest-label">
-                            <label>Do you have 3-5 lacs to invest</label>
+                            <label>Do you have 3-5 Lacs to invest</label>
                             <div className="row">
                               <div className="col-md-12">
                                 <div className="form-check">

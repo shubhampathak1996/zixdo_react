@@ -1,5 +1,38 @@
+@media only screen and (max-width: 400px) {
+  .call-button {
+    font-size: 0.8rem;
+  }
+  .top-bar {
+    background-color: var(--grey-color);
+    width: 100%;
+    padding: 5px 0px;
+  }
+  .call-now-button {
+    display: flex;
+    flex-direction: column;
+  }
+  .logi {
+    font-size: 0.8rem;
+  }
+  .call-button a {
+    font-size: 0.8rem;
+  }
+}
 @media only screen and (max-width: 600px) {
   .only-desktop {
+    display: none;
+  }
+  .icon-with-button {
+    margin-bottom: 20px;
+  }
+  .single-sto-flex {
+    flex-direction: column;
+  }
+  .single-sto-flex span {
+    margin-bottom: 20px;
+    display: block;
+  }
+  .slick-slider .slick-prev .slick-next {
     display: none;
   }
   .only-mobile {

@@ -276,6 +276,7 @@ header {
   background: #007cc0;
   color: #fff;
   padding: 20px 15px;
+  height: 115px;
   text-align: center;
   border: 1px solid #007cc0;
   border-radius: 4px;
@@ -408,6 +409,7 @@ header {
 .book-service-card {
   background: rgba(255, 194, 14, 0.1);
   border-radius: 8px;
+  height: 300px;
   padding: 35px 35px;
 }
 .book-service-card img {
@@ -469,6 +471,12 @@ header {
 .ptb-20 {
   padding: 20px 0px;
 }
+.marg {
+  margin: 0 10px;
+}
+.slick-next {
+  right: -25px !important;
+}
 .service-card {
   padding: 27px 27px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -476,6 +484,14 @@ header {
   margin-top: 20px;
   background: #fff;
   height: 600px;
+}
+.single-sto-flex {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.single-sto-flex div {
+  flex: 1;
 }
 .service-image img {
   border-radius: 16px;

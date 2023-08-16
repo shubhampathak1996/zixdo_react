@@ -17,8 +17,11 @@ import { useCategory, usePinCode } from '../../shared/hooks/UseApi';
 import { UseGetServiceTypeByZipCode } from '../../shared/hooks/UseFetch';
 import TestimonialSectionComponent from '../../components/testimonial-box/TestimonialSectionComponent';
 import { ModelComponent } from '../../components/bannersection/ModelComponent';
+import { useParams } from 'react-router-dom/cjs/react-router-dom';
+import { UPLOAD_URI } from '../../domain/constant';
 
 function SingleStore() {
+  const params = useParams();
   const { SingleLocation, GetSingleFranchise, Single_location_loading } =
     UseSingleLocation();
 
@@ -103,44 +106,190 @@ function SingleStore() {
   }, []);
 
   useEffect(() => {
-    GetSingleFranchise();
-  }, []);
+    GetSingleFranchise(params.store_id);
+  }, [params.store_id]);
   console.log(SingleLocation, 'singlelocation');
+
   return (
     <>
       <Header />
       <div>
-        <section className="single-location sec-50">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-6">
-                <div className="single-location-content">
-                  <h3>
-                    Andhra Pradesh - Jangareddigudem - Near Triveni College
-                  </h3>
-                  <p>
-                    Zixdo.Com, Near Triveni College, Jangareddigudem, Andhra
-                    Pradesh - 534447
-                  </p>
-                  <div className="icon-with-button">
-                    <div>
-                      <span>
-                        <i className="fa fa-phone" />
-                      </span>
+        {SingleLocation && (
+          <section className="single-location sec-50">
+            <div className="container">
+              <div className="row">
+                <div className="col-md-6">
+                  <div className="single-location-content">
+                    <h3>{SingleLocation.store_name}</h3>
+                    <p>{SingleLocation.store_complete_address}</p>
+                    <a href={`tel:${SingleLocation.store_contact_number}`}>
+                      <div className="icon-with-button">
+                        <div>
+                          <span>
+                            <i className="fa fa-phone" />
+                          </span>
+                        </div>
+                        <div>Call Now Button</div>
+                      </div>
+                    </a>
+
+                    {/* <div className="review-system">
+                      <h3>4.6</h3>
+                      <i className="fa fa-star" />
+                      <i className="fa fa-star" />
+                      <i className="fa fa-star" />
+                      <i className="fa fa-star" />
+                      <i className="fa fa-star-o" />
+                    </div> */}
+                  </div>
+                </div>
+                <div className="col-md-6">
+                  <div className="location-again-select ptb-50 p-3">
+                    <h4 className="mb-2">Search By Pincode</h4>
+                    <div className="search-bar-section">
+                      <input
+                        type="number"
+                        className="form-control"
+                        placeholder="Search Pincode"
+                        onChange={(e) => setPincode(e.target.value)}
+                        value={pinCode}
+                        style={{ background: '#fff' }}
+                      />
+                      <div
+                        className="search-btn"
+                        onClick={() => {
+                          // setSERVICES(!SERVICES);
+                          pinCodeSearchHandler();
+                        }}
+                      >
+                        <a href className="btn btn-primary">
+                          Search
+                        </a>
+                      </div>
+                      {pinCodeChanged && (
+                        <div>
+                          {categories_loading || !ZipServiceType ? (
+                            <div>
+                              <>
+                                <div className="hatch-flex">
+                                  <div className="car-box">
+                                    <Skeleton height={100} />
+                                  </div>
+                                  <div className="car-box">
+                                    <Skeleton height={100} />
+                                  </div>
+                                  <div className="car-box">
+                                    <Skeleton height={100} />
+                                  </div>
+                                  <div className="car-box">
+                                    <Skeleton height={100} />
+                                  </div>
+                                </div>
+                              </>
+                            </div>
+                          ) : (
+                            <div>
+                              <div
+                                className="searc-box-container"
+                                style={{ display: 'block' }}
+                              >
+                                {categories_loading ? (
+                                  <>
+                                    {/* <div className='hatch-flex'>
+                           <div className='car-box'>
+                             <Skeleton height={100} />
+                           </div>
+                           <div className='car-box'>
+                             <Skeleton height={100} />
+                           </div>
+                           <div className='car-box'>
+                             <Skeleton height={100} />
+                           </div>
+                           <div className='car-box'>
+                             <Skeleton height={100} />
+                           </div>
+                         </div> */}
+                                  </>
+                                ) : (
+                                  <>
+                                    <ServiceType
+                                      vehicleType={vehicleType}
+                                      serviceTypeData={
+                                        categories && categories.vehicleType
+                                      }
+                                      handleServiceTypeChange={
+                                        handleServiceTypeChange
+                                      }
+                                    />
+                                  </>
+                                )}
+
+                                {vehicleType && (
+                                  <SubMenuComponent
+                                    ZipServiceType={ZipServiceType}
+                                    washType={washType}
+                                    vehicleType={vehicleType}
+                                    sub_cat_loading={categories_loading}
+                                    subCatData={subCatData}
+                                    setWashType={setWashType}
+                                  />
+                                )}
+                                <ModelComponent
+                                  setModelType={setModelType}
+                                  modelType={modelType}
+                                  filteredBrandData={filteredBrandData}
+                                />
+
+                                <div className="go-gor-it text-center">
+                                  <a
+                                    onClick={() => searchBtnHandler()}
+                                    className="btn btn-primary w25"
+                                  >
+                                    Go For it
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      )}
                     </div>
-                    <div>Call Now Button</div>
                   </div>
-                  <div className="review-system">
-                    <h3>4.6</h3>
-                    <i className="fa fa-star" />
-                    <i className="fa fa-star" />
-                    <i className="fa fa-star" />
-                    <i className="fa fa-star" />
-                    <i className="fa fa-star-o" />
+                </div>
+              </div>
+              <div className="row mt-3">
+                <div className="col-md-6">
+                  <h5 className="mb-2">Store Information</h5>
+                  <div class="card order-card">
+                    <div class="order-card-details single-sto-flex">
+                      <div>
+                        <h6>Store GST Number</h6>
+                        <span>{SingleLocation.gst_number}</span>
+                      </div>
+                      <div>
+                        <h6>Store Owner Name</h6>
+                        <span>{SingleLocation.name}</span>
+                      </div>
+                      <div>
+                        <h6>Store Email Id</h6>
+                        <span>{SingleLocation.email_id}</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="map">
+                </div>
+                <div className="col-md-6">
+                  <div className="store-image">
+                    <img src={`${UPLOAD_URI}${SingleLocation.store_image}`} />
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-12">
+                  <div className="map mt-5">
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.422611694297!2d77.2229761747413!3d28.617093475673165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2ce08640973%3A0x5b85ddaba64ca75c!2sAndhra%20Pradesh%20Bhavan!5e0!3m2!1sen!2sin!4v1686225700041!5m2!1sen!2sin"
+                      src={
+                        'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.422611694297!2d77.2229761747413!3d28.617093475673165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2ce08640973%3A0x5b85ddaba64ca75c!2sAndhra%20Pradesh%20Bhavan!5e0!3m2!1sen!2sin!4v1686225700041!5m2!1sen!2sin'
+                      }
                       width="100%"
                       height={350}
                       style={{ border: 0 }}
@@ -151,122 +300,9 @@ function SingleStore() {
                   </div>
                 </div>
               </div>
-              <div className="col-md-6">
-                <div className="location-again-select ptb-50 p-3">
-                  <h4 className="mb-2">Search By Pincode</h4>
-                  <div className="search-bar-section">
-                    <input
-                      type="number"
-                      className="form-control"
-                      placeholder="Search Pincode"
-                      onChange={(e) => setPincode(e.target.value)}
-                      value={pinCode}
-                      style={{ background: '#fff' }}
-                    />
-                    <div
-                      className="search-btn"
-                      onClick={() => {
-                        // setSERVICES(!SERVICES);
-                        pinCodeSearchHandler();
-                      }}
-                    >
-                      <a href className="btn btn-primary">
-                        Search
-                      </a>
-                    </div>
-                    {pinCodeChanged && (
-                      <div>
-                        {categories_loading || !ZipServiceType ? (
-                          <div>
-                            <>
-                              <div className="hatch-flex">
-                                <div className="car-box">
-                                  <Skeleton height={100} />
-                                </div>
-                                <div className="car-box">
-                                  <Skeleton height={100} />
-                                </div>
-                                <div className="car-box">
-                                  <Skeleton height={100} />
-                                </div>
-                                <div className="car-box">
-                                  <Skeleton height={100} />
-                                </div>
-                              </div>
-                            </>
-                          </div>
-                        ) : (
-                          <div>
-                            <div
-                              className="searc-box-container"
-                              style={{ display: 'block' }}
-                            >
-                              {categories_loading ? (
-                                <>
-                                  {/* <div className='hatch-flex'>
-                          <div className='car-box'>
-                            <Skeleton height={100} />
-                          </div>
-                          <div className='car-box'>
-                            <Skeleton height={100} />
-                          </div>
-                          <div className='car-box'>
-                            <Skeleton height={100} />
-                          </div>
-                          <div className='car-box'>
-                            <Skeleton height={100} />
-                          </div>
-                        </div> */}
-                                </>
-                              ) : (
-                                <>
-                                  <ServiceType
-                                    vehicleType={vehicleType}
-                                    serviceTypeData={
-                                      categories && categories.vehicleType
-                                    }
-                                    handleServiceTypeChange={
-                                      handleServiceTypeChange
-                                    }
-                                  />
-                                </>
-                              )}
-
-                              {vehicleType && (
-                                <SubMenuComponent
-                                  ZipServiceType={ZipServiceType}
-                                  washType={washType}
-                                  vehicleType={vehicleType}
-                                  sub_cat_loading={categories_loading}
-                                  subCatData={subCatData}
-                                  setWashType={setWashType}
-                                />
-                              )}
-                              <ModelComponent
-                                setModelType={setModelType}
-                                modelType={modelType}
-                                filteredBrandData={filteredBrandData}
-                              />
-
-                              <div className="go-gor-it text-center">
-                                <a
-                                  onClick={() => searchBtnHandler()}
-                                  className="btn btn-primary w25"
-                                >
-                                  Go For it
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* <section className="review-system sec-50">
           <div className="container">
