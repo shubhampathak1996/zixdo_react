@@ -18,7 +18,7 @@ function WhySectionWhite() {
           </div>
           <div className="row ptb-30">
             <div className="col-md-4">
-              <div className="book-service-card">
+              <div className="book-service-card" style={{ height: 360 }}>
                 <div className="service-icon">
                   <img src="/assets/images/calendar_1.png" alt />
                 </div>
@@ -31,7 +31,7 @@ function WhySectionWhite() {
               </div>
             </div>
             <div className="col-md-4">
-              <div className="book-service-card">
+              <div className="book-service-card" style={{ height: 360 }}>
                 <div className="service-icon">
                   <img src="/assets/images/shine_1.png" alt />
                 </div>
@@ -44,7 +44,7 @@ function WhySectionWhite() {
               </div>
             </div>
             <div className="col-md-4">
-              <div className="book-service-card">
+              <div className="book-service-card" style={{ height: 360 }}>
                 <div className="service-icon">
                   <img src="/assets/images/payment_1.png" alt />
                 </div>

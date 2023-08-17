@@ -3,7 +3,7 @@ import React from 'react';
 function BookServiceCard({ icon, heading, paragraph }) {
   return (
     <>
-      <div className="book-service-card">
+      <div className="book-service-card" style={{ height: 355 }}>
         <div className="service-icon">
           <img src={icon} alt />
           {/* <img src="assets/images/calendar_1.png" alt /> */}
