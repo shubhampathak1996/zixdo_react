@@ -499,6 +499,9 @@ img {
   width: 100%;
   gap: 10px;
 }
+.cart-product-remove {
+  cursor: pointer;
+}
 .icon-with-button span {
   width: 40px;
   height: 40px;

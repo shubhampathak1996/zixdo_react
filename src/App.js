@@ -59,7 +59,11 @@ function App() {
           <Route exact path="/our-centers" component={OurCenter} />
           <Route exact path="/brand-collabs" component={BrandCollabs} />
           <Route exact path="/subscription-plan" component={SubscriptionPlan} />
-          <Route exact path="/preferred-partner" component={PreferredPartner} />
+          <Route
+            exact
+            path="/authorized-partner"
+            component={PreferredPartner}
+          />
           <BeforeLoginRoutes exact path="/login" component={Login} />
           <Route exact path="/forget-password" component={ForgetPassword} />
           <Route exact path="/our-services" component={OurServices} />

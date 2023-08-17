@@ -66,7 +66,6 @@ function PreferredPartnerComponent() {
                     email: '',
                     mobile_number: '',
                     city: '',
-                    invest_type: '',
                   }}
                   validationSchema={Yup.object({
                     name: Yup.string().required('Required'),
@@ -104,18 +103,24 @@ function PreferredPartnerComponent() {
                           </div>
 
                           <div className="invest-label">
-                            <label>Do you have 3-5 Lacs to invest</label>
+                            <label>Do you have 3-5 lacs to invest</label>
                             <div className="row">
                               <div className="col-md-12">
                                 <div className="form-check">
                                   <CheckBox
                                     className="form-check-input"
-                                    name="invest_type"
-                                    value="Yes"
+                                    name="invest_type_yes"
+                                    checked={formik.values.invest_type}
+                                    onChange={(e) => {
+                                      if (e.target.checked) {
+                                        formik.setFieldValue(
+                                          'invest_type',
+                                          true
+                                        );
+                                      }
+                                    }}
                                   >
-                                    <label className="form-check-label">
-                                      YES
-                                    </label>
+                                    YES
                                   </CheckBox>
                                 </div>
                               </div>
@@ -123,12 +128,18 @@ function PreferredPartnerComponent() {
                                 <div className="form-check">
                                   <CheckBox
                                     className="form-check-input"
-                                    name="invest_type"
-                                    value="No"
+                                    name="invest_type_no"
+                                    checked={!formik.values.invest_type}
+                                    onChange={(e) => {
+                                      if (e.target.checked) {
+                                        formik.setFieldValue(
+                                          'invest_type',
+                                          false
+                                        );
+                                      }
+                                    }}
                                   >
-                                    <label className="form-check-label">
-                                      NO
-                                    </label>
+                                    NO
                                   </CheckBox>
                                 </div>
                               </div>
