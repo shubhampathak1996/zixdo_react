@@ -193,7 +193,7 @@ const UseLat = () => {
 
   return {
     getCentres,
-    centers_loading: loading,
+    centres_loading: loading,
     centres,
   };
 };

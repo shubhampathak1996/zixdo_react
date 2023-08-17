@@ -16,11 +16,11 @@ function BecomeServicePartnerComponent() {
   console.log(preferredParnterMessage, 'preferred partner');
   return (
     <div>
-      <section className="become-partner-section ptb-50 bg-grey">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-5">
-              <div className="partner-form">
+      <section className='become-partner-section ptb-50 bg-grey'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-md-5'>
+              <div className='partner-form'>
                 <h3>Become our service partner</h3>
                 <p>
                   Best Franchise Business in Car Cleaning & Disinfectant
@@ -50,50 +50,62 @@ function BecomeServicePartnerComponent() {
                     console.log(formik);
                     return (
                       <Form>
-                        <div className="main-zixdo-form">
-                          <div className="form-group">
-                            <TextInput name="name" placeholder="Name" />
+                        <div className='main-zixdo-form'>
+                          <div className='form-group'>
+                            <TextInput name='name' placeholder='Name' />
                           </div>
 
-                          <div className="form-group">
-                            <TextInput name="email" placeholder="Email" />
+                          <div className='form-group'>
+                            <TextInput name='email' placeholder='Email' />
                           </div>
-                          <div className="form-group">
+                          <div className='form-group'>
                             <TextInput
-                              name="mobile_number"
-                              placeholder="Mobile Number"
+                              name='mobile_number'
+                              placeholder='Mobile Number'
                             />
                           </div>
-                          <div className="form-group">
-                            <TextInput name="city" placeholder="City" />
+                          <div className='form-group'>
+                            <TextInput name='city' placeholder='City' />
                           </div>
 
-                          <div className="invest-label">
+                          <div className='invest-label'>
                             <label>Do you have 3-5 lacs to invest</label>
-                            <div className="row">
-                              <div className="col-md-12">
-                                <div className="form-check">
+                            <div className='row'>
+                              <div className='col-md-12'>
+                                <div className='form-check'>
                                   <CheckBox
-                                    className="form-check-input"
-                                    name="invest_type"
-                                    value="Yes"
+                                    className='form-check-input'
+                                    name='invest_type_yes'
+                                    checked={formik.values.invest_type}
+                                    onChange={(e) => {
+                                      if (e.target.checked) {
+                                        formik.setFieldValue(
+                                          'invest_type',
+                                          true
+                                        );
+                                      }
+                                    }}
                                   >
-                                    <label className="form-check-label">
-                                      YES
-                                    </label>
+                                    YES
                                   </CheckBox>
                                 </div>
                               </div>
-                              <div className="col-md-12">
-                                <div className="form-check">
+                              <div className='col-md-12'>
+                                <div className='form-check'>
                                   <CheckBox
-                                    className="form-check-input"
-                                    name="invest_type"
-                                    value="No"
+                                    className='form-check-input'
+                                    name='invest_type_no'
+                                    checked={!formik.values.invest_type}
+                                    onChange={(e) => {
+                                      if (e.target.checked) {
+                                        formik.setFieldValue(
+                                          'invest_type',
+                                          false
+                                        );
+                                      }
+                                    }}
                                   >
-                                    <label className="form-check-label">
-                                      NO
-                                    </label>
+                                    NO
                                   </CheckBox>
                                 </div>
                               </div>
@@ -101,12 +113,12 @@ function BecomeServicePartnerComponent() {
                           </div>
                           {preferredParnterMessage &&
                             preferredParnterMessage.msg && (
-                              <p className="text-success">
+                              <p className='text-success'>
                                 {preferredParnterMessage.msg}
                               </p>
                             )}
-                          <div className="submit-button center">
-                            <button href="#" className="btn btn-primary w50">
+                          <div className='submit-button center'>
+                            <button href='#' className='btn btn-primary w50'>
                               SUBMIT
                             </button>
                           </div>
@@ -117,9 +129,9 @@ function BecomeServicePartnerComponent() {
                 </Formik>
               </div>
             </div>
-            <div className="col-md-7">
-              <div className="become-part">
-                <img src="assets/images/about_img.png" alt />
+            <div className='col-md-7'>
+              <div className='become-part'>
+                <img src='assets/images/about_img.png' alt />
               </div>
             </div>
           </div>

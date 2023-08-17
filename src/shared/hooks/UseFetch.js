@@ -666,4 +666,5 @@ export {
   UseGetCurrentUserInformation,
   UseResetUserPassword,
   UseUserOrders,
+  UseAllCenters,
 };
