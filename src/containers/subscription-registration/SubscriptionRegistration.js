@@ -3,13 +3,26 @@ import { Formik, Form, Field } from 'formik';
 import { TextInput, SelectBox, CheckBox } from '../../components/Form/Form';
 import * as Yup from 'yup';
 import { UseLat, UseViewCart, UseCheckout } from '../../shared/hooks/UseApi';
+import { useParams } from 'react-router-dom';
+import {
+  UseSubscriptionRegistration,
+  useFetch,
+} from '../../shared/hooks/UseFetch';
+
 import { useHistory } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import Header from '../../components/common/Header';
 import Footer from '../../components/common/Footer';
 function SubscriptionRegistration() {
   const history = useHistory();
+  const params = useParams();
+  console.log(params, 'params');
   const { getCentres, centers_loading, centres } = UseLat();
+  const {
+    AddSubcriptionRegistration,
+    subscription_registration_loading,
+    subscriptionRegistration,
+  } = UseSubscriptionRegistration();
   const [customer, setCustomer] = useState(false);
   const [coupan, setCoupan] = useState(false);
   const [pincode, setPincode] = useState(null);
@@ -36,30 +49,49 @@ function SubscriptionRegistration() {
   }, [cartItems]);
   const proceedCheckoutHandler = (values) => {
     const session_id = localStorage.getItem('ZIXDO_CART');
-    placeOrder({
-      session_id: session_id,
-      company_type: store_id.company_type,
-      contact_number: values.phone,
-      water: store_id.water,
-      vehicle_type: values.vehicle_type,
-      store_id: store_id.id,
+    // paln_id:1
+    // full_name:Ravindra Yadav
+    // email:ravindrayadavrpsit170@gmail.com
+    // contact_number:6299812434
+    // store_id:2
+    // zip:110034
+    // vehicle_type:Hero
+    // complete_address:Lajpat Nagar
+    // payment_options:1
+    AddSubcriptionRegistration({
       full_name: values.full_name,
+      plan_id: params.id,
       email: values.email,
-      complete_address: values.address,
+      phone: values.phone,
+      nearest_store: store_id.id,
+      zip: pincode,
+      vehicle_type: values.vehicle_type,
+      address: values.address,
+      payment_option: 1,
+
+      // session_id: session_id,
+      // company_type: store_id.company_type,
+      // contact_number: values.phone,
+      // water: store_id.water,
+      // vehicle_type: values.vehicle_type,
+      // store_id: store_id.id,
+      // full_name: values.full_name,
+      // email: values.email,
+      // complete_address: values.address,
     });
   };
 
   useEffect(() => {
-    if (placeOrderMessage && placeOrderMessage.order_id) {
-      history.push(`/thank-you/${placeOrderMessage.order_id}`);
+    if (subscriptionRegistration && subscriptionRegistration.order_id) {
+      history.push(`/thank-you/${subscriptionRegistration.order_id}`);
     }
-  }, [placeOrderMessage]);
+  }, [subscriptionRegistration]);
 
   return (
     <div>
       <Header />
       <section className="checkout ptb-50">
-        {place_order_loading ? (
+        {subscription_registration_loading ? (
           <>
             <div className="container">
               <div className="row">

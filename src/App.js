@@ -88,7 +88,7 @@ function App() {
           />
           <Route
             exact
-            path="/user-subscription-registration"
+            path="/user-subscription-registration/:id"
             component={SubscriptionRegistration}
           />
 

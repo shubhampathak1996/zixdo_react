@@ -11,7 +11,9 @@ function ThankYou() {
   useEffect(() => {
     if (params.order_id) {
       console.log('params.order_id', params.order_id);
+
       getOrderDetails(params.order_id);
+      localStorage.removeItem('ZIXDO_CART');
     }
   }, [params.order_id]);
   return (

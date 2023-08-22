@@ -509,6 +509,22 @@ img {
   border-radius: 50%;
   display: inline-block;
 }
+.cart-component {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  background: rgb(255, 194, 14, 0.2);
+  padding: 10px 20px;
+}
+.btn-proceed {
+  background: #007cc0;
+  color: #fff;
+}
+.btn-proceed:hover {
+  background: #0e9ae5;
+  color: #fff;
+}
 .open-accordian h4 {
   font-size: 1.2rem;
   margin-bottom: 5px;

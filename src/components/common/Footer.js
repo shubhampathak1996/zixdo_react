@@ -57,8 +57,8 @@ function Footer() {
                               </Link>
                             </li>
                             <li>
-                              <Link to="/preferred-partner">
-                                <i className="fa fa-arrow-right" /> Preferred
+                              <Link to="/authorized-partner">
+                                <i className="fa fa-arrow-right" /> Authorized
                                 PARTNER
                               </Link>
                             </li>
@@ -121,7 +121,7 @@ function Footer() {
                       <img src="/assets/images/Ringer_Volume.png" alt />
                     </div>
                     <div className="phone-text">
-                      <a href="tel:8055008805">805-5 00-88 05</a>
+                      <a href="tel:8055008805">8055008805</a>
                     </div>
                   </div>
                   <div className="search-bar-section ptb-20">

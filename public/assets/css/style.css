@@ -276,7 +276,7 @@ header {
   background: #007cc0;
   color: #fff;
   padding: 20px 15px;
-  height: 115px;
+  height: 100%;
   text-align: center;
   border: 1px solid #007cc0;
   border-radius: 4px;
@@ -483,7 +483,7 @@ header {
   border-radius: 4px;
   margin-top: 20px;
   background: #fff;
-  height: 600px;
+  height: 100%;
 }
 .single-sto-flex {
   display: flex;
@@ -774,6 +774,7 @@ header {
   text-decoration: none;
   text-transform: capitalize;
 }
+
 .thankyou-form-top-content h3 {
   font-size: 2rem;
   font-weight: 700;
@@ -797,4 +798,11 @@ header {
 }
 .only-mobile {
   display: none;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+  .booking-amount-flex {
+    flex-direction: column !important;
+    margin-bottom: 20px;
+  }
 }

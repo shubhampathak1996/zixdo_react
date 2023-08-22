@@ -575,7 +575,7 @@ const UseSubscriptionRegistration = () => {
   const [loading, setLoading] = useState(false);
   const AddSubcriptionRegistration = async ({
     full_name,
-
+    plan_id,
     email,
     phone,
     nearest_store,
@@ -587,6 +587,7 @@ const UseSubscriptionRegistration = () => {
     setLoading(true);
     const formData = new FormData();
     formData.append('full_name', full_name);
+    formData.append('paln_id', plan_id);
     formData.append('email', email);
     formData.append('contact_number', phone);
     formData.append('store_id', nearest_store);

@@ -30,9 +30,11 @@ function Topbar() {
               <div>
                 <Link to="/cart" className="d-w  ">
                   <i class="fa fa-shopping-cart"></i>{' '}
-                  <span className="card-v">
-                    {cartItems && cartItems.length ? cartItems.length : ''}
-                  </span>
+                  {cartItems && cartItems.length > 0 && (
+                    <span className="card-v">
+                      {cartItems && cartItems.length ? cartItems.length : ''}
+                    </span>
+                  )}
                 </Link>
                 {isAuthenticated ? (
                   <>

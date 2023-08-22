@@ -17,65 +17,6 @@ function SubscriptionPlanComponent() {
       <section class="ptb-60 subscription-plan">
         <div class="container">
           <div class="row">
-            {/* <div class="col-md-7">
-              <div class="car-wash-pointers">
-                <h3>Car subscription vs buying</h3>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="plan-ul">
-                      <ul>
-                        <li>Zero down payment & road tax</li>
-                        <li>No long term commitment</li>
-                        <li>No loan process, no cibil check</li>
-                        <li>Doorstep pick & drop for maintenance & service</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="subscribe-box">
-                      <div class="subcribe-box-m right">
-                        <h5>Subscribe</h5>
-                        <ul>
-                          <li>
-                            <i class="fa fa-check"></i>
-                          </li>
-                          <li>
-                            <i class="fa fa-check"></i>
-                          </li>
-                          <li>
-                            <i class="fa fa-check"></i>
-                          </li>
-                          <li>
-                            <i class="fa fa-check"></i>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="subscribe-box">
-                      <div class="subcribe-box-m clsoe">
-                        <h5>Buy</h5>
-                        <ul>
-                          <li>
-                            <i class="fa fa-close"></i>
-                          </li>
-                          <li>
-                            <i class="fa fa-close"></i>
-                          </li>
-                          <li>
-                            <i class="fa fa-close"></i>
-                          </li>
-                          <li>
-                            <i class="fa fa-close"></i>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> */}
             <div class="col-md-10 mx-auto">
               <div class="car-wash-maainnn">
                 <div class="car-w">
@@ -124,7 +65,7 @@ function SubscriptionPlanComponent() {
                               </div>
                               <div class="procees center ">
                                 <Link
-                                  to={`/user-subscription-registration/`}
+                                  to={`/user-subscription-registration/${data.id}`}
                                   class="btn btn-primary w-50"
                                 >
                                   Rs.{data.price}
