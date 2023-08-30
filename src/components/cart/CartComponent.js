@@ -13,10 +13,11 @@ function CartComponent({
   removeFromCart,
 }) {
   const { CouponCode, GetCouponCode, coupon_code_loading } = UseCouponCode();
+  const [discount, setDiscount] = useState(null);
 
   console.log(CouponCode, 'coupon_code');
   console.log('Cart Items', cartItems);
-  const [totalCartAmount, setTotalCartAmount] = useState(null);
+  const [totalCartAmount, setTotalCartAmount] = useState(0);
   useEffect(() => {
     if (cartItems && cartItems.length > 0) {
       let totalAmount = 0;
@@ -29,6 +30,18 @@ function CartComponent({
       setTotalCartAmount(totalAmount);
     }
   }, [cartItems]);
+
+  useEffect(() => {
+    if (CouponCode && CouponCode.discount_percent) {
+      setDiscount(
+        parseFloat(
+          (Number(totalCartAmount) * Number(CouponCode.discount_percent)) / 100
+        ).toFixed(2)
+      );
+    } else {
+      setDiscount(0);
+    }
+  }, [CouponCode]);
   const proceedCheckout = () => {};
 
   return (
@@ -36,6 +49,13 @@ function CartComponent({
       <section className="cart ptb-50">
         <div className="container">
           <div className="row">
+            <div className="col-md-12">
+              {coupon_code_loading && (
+                <div className="loader-loading">
+                  <img src="/loading.gif" alt="" />
+                </div>
+              )}
+            </div>
             <div className="col-md-12">
               <h3> Your Cart ({cartItems.length}) </h3>
               <div className="shoping-cart-table table-responsive">
@@ -157,6 +177,13 @@ function CartComponent({
                       <td>Cart Subtotal</td>
                       <td>₹{totalCartAmount}</td>
                     </tr>
+                    {CouponCode && CouponCode.discount_percent && (
+                      <tr>
+                        <td>Discount</td>
+                        <td>₹{discount}</td>
+                      </tr>
+                    )}
+
                     {/* <tr>
                       <td>Shipping and Handing</td>
                       <td>₹15.00</td>
@@ -170,7 +197,7 @@ function CartComponent({
                         <strong>Order Total</strong>
                       </td>
                       <td>
-                        <strong>₹{totalCartAmount}</strong>
+                        <strong>₹{totalCartAmount - discount}</strong>
                       </td>
                     </tr>
                   </tbody>

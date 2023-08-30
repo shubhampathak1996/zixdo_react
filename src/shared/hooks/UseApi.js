@@ -182,10 +182,11 @@ const UseRemoveCart = () => {
 const UseLat = () => {
   const [centres, setCentres] = useState(null);
   const [loading, setLoading] = useState(false);
-  const getCentres = async ({ zip }) => {
+  const getCentres = async ({ zip, activeServiceType }) => {
     setLoading(true);
     const formData = new FormData();
     formData.append('zip', zip);
+    formData.append('type', activeServiceType);
     const { data } = await api.post('https://zixdo.com/Api/lat.php', formData);
     setCentres(data);
     setLoading(false);
@@ -200,6 +201,7 @@ const UseLat = () => {
 
 // Checkout
 const UseCheckout = () => {
+  const [payment_options, setPayment_options] = useState(null);
   const [placeOrderMessage, setPlaceOrderMessage] = useState(null);
   const [loading, setLoading] = useState(false);
   const placeOrder = async ({
@@ -214,6 +216,7 @@ const UseCheckout = () => {
     complete_address,
     payment_options,
   }) => {
+    setPayment_options(payment_options);
     setLoading(true);
     var formdata = new FormData();
     formdata.append('session_id', session_id);
@@ -225,18 +228,27 @@ const UseCheckout = () => {
     formdata.append('full_name', full_name);
     formdata.append('email', email);
     formdata.append('complete_address', complete_address);
-    formdata.append('payment_options', '1');
-
-    const { data } = await api.post(
-      'https://zixdo.com/Api/checkout.php',
-      formdata
-    );
-    setPlaceOrderMessage(data);
-    setLoading(false);
+    formdata.append('payment_options', payment_options);
+    if (payment_options == '2') {
+      const { data } = await api.post(
+        'https://zixdo.com/Api/pay-online.php',
+        formdata
+      );
+      setPlaceOrderMessage(data);
+      setLoading(false);
+    } else {
+      const { data } = await api.post(
+        'https://zixdo.com/Api/checkout.php',
+        formdata
+      );
+      setPlaceOrderMessage(data);
+      setLoading(false);
+    }
   };
 
   return {
     placeOrder,
+    payment_options,
     place_order_loading: loading,
     placeOrderMessage,
   };

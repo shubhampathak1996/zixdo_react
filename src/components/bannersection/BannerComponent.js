@@ -197,15 +197,16 @@ function BannerComponent() {
                                 modelType={modelType}
                                 filteredBrandData={filteredBrandData}
                               />
-
-                              <div className="go-gor-it text-center">
-                                <a
-                                  onClick={() => searchBtnHandler()}
-                                  className="btn btn-primary w25"
-                                >
-                                  Go For it
-                                </a>
-                              </div>
+                              {modelType && vehicleType && (
+                                <div className="go-gor-it text-center">
+                                  <a
+                                    onClick={() => searchBtnHandler()}
+                                    className="btn btn-primary w25"
+                                  >
+                                    Go For it
+                                  </a>
+                                </div>
+                              )}
                             </div>
                           </div>
                         )}

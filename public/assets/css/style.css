@@ -20,6 +20,22 @@ img {
   margin-left: 10px;
   display: inline-block;
 }
+.loader-loading {
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.loader-loading img {
+  width: 100px;
+  height: auto;
+}
 .d-w {
   margin-right: 20px;
   color: #131313;

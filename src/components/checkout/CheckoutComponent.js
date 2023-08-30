@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Formik, Form, Field } from 'formik';
-import { TextInput, SelectBox, CheckBox } from '../../components/Form/Form';
+import {
+  TextInput,
+  SelectBox,
+  CheckBox,
+  RadioButton,
+} from '../../components/Form/Form';
 import * as Yup from 'yup';
 import { UseLat, UseViewCart, UseCheckout } from '../../shared/hooks/UseApi';
 import { useHistory } from 'react-router-dom';
@@ -13,10 +18,16 @@ function CheckoutComponent() {
   const [pincode, setPincode] = useState(null);
   const [store_id, setStoreId] = useState(null);
   const { viewCart, view_cart_loading, cartItems } = UseViewCart();
-  const { placeOrder, place_order_loading, placeOrderMessage } = UseCheckout();
+  const {
+    placeOrder,
+    place_order_loading,
+    placeOrderMessage,
+    payment_options,
+  } = UseCheckout();
+  const [activeServiceType, setActiveServiceType] = useState(null);
   const findStoreLocationHandler = () => {
     if (pincode && pincode.length === 6) {
-      getCentres({ zip: pincode });
+      getCentres({ zip: pincode, activeServiceType });
     }
   };
   const [totalCartAmount, setTotalCartAmount] = useState(null);
@@ -44,14 +55,24 @@ function CheckoutComponent() {
       full_name: values.full_name,
       email: values.email,
       complete_address: values.address,
+      payment_options: values.payment_options,
     });
   };
 
   useEffect(() => {
     if (placeOrderMessage && placeOrderMessage.order_id) {
-      history.push(`/thank-you/${placeOrderMessage.order_id}`);
+      if (payment_options == '2') {
+        window.location.href = `https://zixdo.com/payment-online.php?orderid=${placeOrderMessage.order_id}`;
+      } else {
+        history.push(`/thank-you/${placeOrderMessage.order_id}`);
+      }
     }
   }, [placeOrderMessage]);
+  useEffect(() => {
+    if (cartItems && cartItems.length > 0) {
+      setActiveServiceType(cartItems[0].service_type);
+    }
+  }, [cartItems]);
 
   return (
     <div>
@@ -259,14 +280,11 @@ function CheckoutComponent() {
                                     <div className="payment-card">
                                       <form>
                                         <div className="form-check">
-                                          <input
-                                            className="form-check-input"
-                                            type="radio"
-                                            name="exampleRadios"
-                                            id="exampleRadios1"
-                                            defaultValue="option1"
-                                            defaultChecked
-                                          />
+                                          <RadioButton
+                                            name="payment_options"
+                                            value="1"
+                                          ></RadioButton>
+
                                           <label
                                             className="form-check-label"
                                             htmlFor="exampleRadios1"
@@ -274,22 +292,18 @@ function CheckoutComponent() {
                                             Cash Payment
                                           </label>
                                         </div>
-                                        {/* <div className='form-check'>
-                      <input
-                        className='form-check-input'
-                        type='radio'
-                        name='exampleRadios'
-                        id='exampleRadios1'
-                        defaultValue='option1'
-                        defaultChecked
-                      />
-                      <label
-                        className='form-check-label'
-                        htmlFor='exampleRadios1'
-                      >
-                        Online
-                      </label>
-                    </div> */}
+                                        <div className="form-check">
+                                          <RadioButton
+                                            name="payment_options"
+                                            value="2"
+                                          ></RadioButton>
+                                          <label
+                                            className="form-check-label"
+                                            htmlFor="exampleRadios1"
+                                          >
+                                            Online
+                                          </label>
+                                        </div>
                                       </form>
                                     </div>
                                   </div>
