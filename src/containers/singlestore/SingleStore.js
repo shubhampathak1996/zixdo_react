@@ -108,8 +108,8 @@ function SingleStore() {
   }, []);
 
   useEffect(() => {
-    GetSingleFranchise(params.store_id);
-  }, [params.store_id]);
+    GetSingleFranchise(params.custom_url);
+  }, [params.custom_url]);
   console.log(SingleLocation, 'singlelocation');
 
   return (
@@ -117,18 +117,18 @@ function SingleStore() {
       <Header />
       <div>
         {SingleLocation && (
-          <section className='single-location sec-50'>
-            <div className='container'>
-              <div className='row'>
-                <div className='col-md-6'>
-                  <div className='single-location-content'>
+          <section className="single-location sec-50">
+            <div className="container">
+              <div className="row">
+                <div className="col-md-6">
+                  <div className="single-location-content">
                     <h3>{SingleLocation.store_name}</h3>
                     <p>{SingleLocation.store_complete_address}</p>
                     <a href={`tel:${SingleLocation.store_contact_number}`}>
-                      <div className='icon-with-button'>
+                      <div className="icon-with-button">
                         <div>
                           <span>
-                            <i className='fa fa-phone' />
+                            <i className="fa fa-phone" />
                           </span>
                         </div>
                         <div>Call Now Button</div>
@@ -145,26 +145,26 @@ function SingleStore() {
                     </div> */}
                   </div>
                 </div>
-                <div className='col-md-6'>
-                  <div className='location-again-select ptb-50 p-3'>
-                    <h4 className='mb-2'>Search By Pincode</h4>
-                    <div className='search-bar-section'>
+                <div className="col-md-6">
+                  <div className="location-again-select ptb-50 p-3">
+                    <h4 className="mb-2">Search By Pincode</h4>
+                    <div className="search-bar-section">
                       <input
-                        type='number'
-                        className='form-control'
-                        placeholder='Search Pincode'
+                        type="number"
+                        className="form-control"
+                        placeholder="Search Pincode"
                         onChange={(e) => setPincode(e.target.value)}
                         value={pinCode}
                         style={{ background: '#fff' }}
                       />
                       <div
-                        className='search-btn'
+                        className="search-btn"
                         onClick={() => {
                           // setSERVICES(!SERVICES);
                           pinCodeSearchHandler();
                         }}
                       >
-                        <a href className='btn btn-primary'>
+                        <a href className="btn btn-primary">
                           Search
                         </a>
                       </div>
@@ -173,17 +173,17 @@ function SingleStore() {
                           {categories_loading || !ZipServiceType ? (
                             <div>
                               <>
-                                <div className='hatch-flex'>
-                                  <div className='car-box'>
+                                <div className="hatch-flex">
+                                  <div className="car-box">
                                     <Skeleton height={100} />
                                   </div>
-                                  <div className='car-box'>
+                                  <div className="car-box">
                                     <Skeleton height={100} />
                                   </div>
-                                  <div className='car-box'>
+                                  <div className="car-box">
                                     <Skeleton height={100} />
                                   </div>
-                                  <div className='car-box'>
+                                  <div className="car-box">
                                     <Skeleton height={100} />
                                   </div>
                                 </div>
@@ -192,7 +192,7 @@ function SingleStore() {
                           ) : (
                             <div>
                               <div
-                                className='searc-box-container'
+                                className="searc-box-container"
                                 style={{ display: 'block' }}
                               >
                                 {categories_loading ? (
@@ -242,10 +242,10 @@ function SingleStore() {
                                   filteredBrandData={filteredBrandData}
                                 />
 
-                                <div className='go-gor-it text-center'>
+                                <div className="go-gor-it text-center">
                                   <a
                                     onClick={() => searchBtnHandler()}
-                                    className='btn btn-primary w25'
+                                    className="btn btn-primary w25"
                                   >
                                     Go For it
                                   </a>
@@ -259,11 +259,11 @@ function SingleStore() {
                   </div>
                 </div>
               </div>
-              <div className='row mt-3'>
-                <div className='col-md-6'>
-                  <h5 className='mb-2'>Store Information</h5>
-                  <div class='card order-card'>
-                    <div class='order-card-details single-sto-flex'>
+              <div className="row mt-3">
+                <div className="col-md-6">
+                  <h5 className="mb-2">Store Information</h5>
+                  <div class="card order-card">
+                    <div class="order-card-details single-sto-flex">
                       <div>
                         <h6>Store GST Number</h6>
                         <span>{SingleLocation.gst_number}</span>
@@ -279,14 +279,14 @@ function SingleStore() {
                     </div>
                   </div>
                 </div>
-                <div className='col-md-6'>
-                  <div className='store-image'>
+                <div className="col-md-6">
+                  <div className="store-image">
                     <img src={`${UPLOAD_URI}${SingleLocation.store_image}`} />
                   </div>
                 </div>
               </div>
-              <div className='row'>
-                <div className='col-md-12'>
+              <div className="row">
+                <div className="col-md-12">
                   <LocationMap
                     latitude={Number(SingleLocation.latitude)}
                     longitude={Number(SingleLocation.longitude)}
@@ -431,11 +431,11 @@ function SingleStore() {
           </div>
         </section> */}
         <TestimonialSectionComponent />
-        <section className='review-system sec-50'>
-          <div className='container'>
-            <div className='row'>
-              <div className='col-md-8 mx-auto'>
-                <div className='sec-heading center'>
+        <section className="review-system sec-50">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-8 mx-auto">
+                <div className="sec-heading center">
                   <h3>Others Location Near You</h3>
                   <p>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit.{' '}
@@ -443,12 +443,12 @@ function SingleStore() {
                 </div>
               </div>
             </div>
-            <div className='row'>
+            <div className="row">
               {/* <SingleStoreNearby pincode={SingleLocation.} /> */}
 
-              <div className='col-md-6'>
-                <div className='single-location-slide'>
-                  <div className='open-accordian'>
+              <div className="col-md-6">
+                <div className="single-location-slide">
+                  <div className="open-accordian">
                     <h4>
                       Andhra Pradesh - Jangareddigudem - Near Triveni College
                     </h4>
@@ -456,33 +456,33 @@ function SingleStore() {
                       Zixdo.Com, Near Triveni College, Jangareddigudem, Andhra
                       Pradesh - 534447
                     </p>
-                    <div className='call-now-button'>
-                      <div className='icon-with-button'>
+                    <div className="call-now-button">
+                      <div className="icon-with-button">
                         <div>
                           <span>
-                            <i className='fa fa-phone' />
+                            <i className="fa fa-phone" />
                           </span>
                         </div>
                         <div>Call Now Button</div>
                       </div>
-                      <div className='icon-with-button'>
+                      <div className="icon-with-button">
                         <div>
                           <span>
-                            <i className='fa fa-whatsapp' />
+                            <i className="fa fa-whatsapp" />
                           </span>
                         </div>
                         <div>Whatsapp US</div>
                       </div>
                     </div>
-                    <a href='#' className='partner'>
+                    <a href="#" className="partner">
                       Partner Details
                     </a>
                   </div>
                 </div>
               </div>
-              <div className='col-md-6'>
-                <div className='single-location-slide'>
-                  <div className='open-accordian'>
+              <div className="col-md-6">
+                <div className="single-location-slide">
+                  <div className="open-accordian">
                     <h4>
                       Andhra Pradesh - Jangareddigudem - Near Triveni College
                     </h4>
@@ -490,25 +490,25 @@ function SingleStore() {
                       Zixdo.Com, Near Triveni College, Jangareddigudem, Andhra
                       Pradesh - 534447
                     </p>
-                    <div className='call-now-button'>
-                      <div className='icon-with-button'>
+                    <div className="call-now-button">
+                      <div className="icon-with-button">
                         <div>
                           <span>
-                            <i className='fa fa-phone' />
+                            <i className="fa fa-phone" />
                           </span>
                         </div>
                         <div>Call Now Button</div>
                       </div>
-                      <div className='icon-with-button'>
+                      <div className="icon-with-button">
                         <div>
                           <span>
-                            <i className='fa fa-whatsapp' />
+                            <i className="fa fa-whatsapp" />
                           </span>
                         </div>
                         <div>Whatsapp US</div>
                       </div>
                     </div>
-                    <a href='#' className='partner'>
+                    <a href="#" className="partner">
                       Partner Details
                     </a>
                   </div>

@@ -609,6 +609,28 @@ const UseSubscriptionRegistration = () => {
     subscription_registration_loading: loading,
   };
 };
+// coupon code
+const UseCouponCode = () => {
+  const [CouponCode, setCouponCode] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const GetCouponCode = async ({ coupon_code }) => {
+    setLoading(true);
+    const formData = new FormData();
+    formData.append('coupon_code', coupon_code);
+    console.log(coupon_code, 'coupon-code');
+    const { data } = await api.post(
+      'https://zixdo.com/Api/coupon-code.php',
+      formData
+    );
+    setCouponCode(data);
+    setLoading(false);
+  };
+  return {
+    CouponCode,
+    GetCouponCode,
+    coupon_code_loading: loading,
+  };
+};
 // partners
 const UsePartnerImages = () => {
   const [partnerImage, setpartnerImage] = useState(null);
@@ -629,10 +651,10 @@ const UsePartnerImages = () => {
 const UseSingleLocation = () => {
   const [SingleLocation, setSingleLocation] = useState(null);
   const [loading, setLoading] = useState(false);
-  const GetSingleFranchise = async (center_id) => {
+  const GetSingleFranchise = async (custom_url) => {
     setLoading(true);
     const { data } = await api.get(
-      `https://zixdo.com/Api/franchise-details.php?center_id=${center_id}`
+      `https://zixdo.com/Api/franchise-details.php?custom_url=${custom_url}`
     );
     setSingleLocation(data);
     setLoading(false);
@@ -643,6 +665,26 @@ const UseSingleLocation = () => {
     Single_location_loading: loading,
   };
 };
+// testimonial
+const UseTestimonial = () => {
+  const [testimonial, setTestimonial] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const GetTestimonial = async () => {
+    setLoading(true);
+    const { data } = await api.get(
+      'https://www.zixdo.com/Api/client-feedback.php'
+    );
+    // console.log(data, 'datasssss');
+    setTestimonial(data);
+    setLoading(false);
+  };
+  return {
+    testimonial,
+    GetTestimonial,
+    testimonial_loading: loading,
+  };
+};
+
 export {
   useFetch,
   usePost,
@@ -667,5 +709,7 @@ export {
   UseGetCurrentUserInformation,
   UseResetUserPassword,
   UseUserOrders,
+  UseCouponCode,
+  UseTestimonial,
   UseAllCenters,
 };

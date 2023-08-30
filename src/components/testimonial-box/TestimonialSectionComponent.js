@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Slider from 'react-slick/lib/slider';
+import { UseTestimonial } from '../../shared/hooks/UseFetch';
 
 function TestimonialSectionComponent() {
+  const { testimonial, GetTestimonial, testimonial_loading } = UseTestimonial();
+  console.log(testimonial, 'testimonial');
+  useEffect(() => {
+    GetTestimonial(testimonial);
+  }, []);
   var testimonials = {
     dots: true,
     infinite: true,
@@ -49,58 +55,24 @@ function TestimonialSectionComponent() {
           <div className="row ptb-30">
             <div className="col-md-12">
               <Slider {...testimonials}>
-                <div>
-                  <div className="testimonial-card marg">
-                    <div className="testimonial-content">
-                      <div className="testimonial-para">
-                        <p>
-                          No 1 car washing franchise brand in Delhi maine apni
-                          Honda civic wash krayi thi zixdo se and ye log awesome
-                          service dete h
-                        </p>
+                {testimonial &&
+                  testimonial.map((item) => {
+                    return (
+                      <div>
+                        <div className="testimonial-card marg">
+                          <div className="testimonial-content">
+                            <div className="testimonial-para">
+                              <p>{item.feedback}</p>
+                            </div>
+                            <div className="testimonial-title">
+                              <h3>{item.client_name}</h3>
+                            </div>
+                            {/* <div className="testmonial-des">Website Developer</div> */}
+                          </div>
+                        </div>
                       </div>
-                      <div className="testimonial-title">
-                        <h3>Ritika Arora</h3>
-                      </div>
-                      {/* <div className="testmonial-des">Website Developer</div> */}
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div className="testimonial-card marg">
-                    <div className="testimonial-content">
-                      <div className="testimonial-para">
-                        <p>
-                          No 1 car washing franchise brand in Delhi maine apni
-                          Honda civic wash krayi thi zixdo se and ye log awesome
-                          service dete h
-                        </p>
-                      </div>
-                      <div className="testimonial-title">
-                        <h3>Ritika Arora</h3>
-                      </div>
-                      {/* <div className="testmonial-des">Website Developer</div> */}
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <div className="testimonial-card marg">
-                    <div className="testimonial-content">
-                      <div className="testimonial-para">
-                        <p>
-                          No 1 car washing franchise brand in Delhi maine apni
-                          Honda civic wash krayi thi zixdo se and ye log awesome
-                          service dete h
-                        </p>
-                      </div>
-                      <div className="testimonial-title">
-                        <h3>Ritika Arora</h3>
-                      </div>
-                      {/* <div className="testmonial-des">Website Developer</div> */}
-                    </div>
-                  </div>
-                </div>
+                    );
+                  })}
               </Slider>
             </div>
           </div>

@@ -18,7 +18,7 @@ function BannerComponent() {
   const { categories, getCategories, categories_loading } = useCategory();
   const { centres, center_loading, getCenterByPinCode } = usePinCode();
   const [pinCode, setPincode] = useState('');
-  const [pinCodeChanged,setPinCodeChanged ] = useState(false)
+  const [pinCodeChanged, setPinCodeChanged] = useState(false);
   const [pinCodeError, setPinCodeError] = useState(false);
 
   const { getServiceTypes, service_type_loading, serviceTypeData } =
@@ -79,7 +79,7 @@ function BannerComponent() {
 
   const pinCodeSearchHandler = async () => {
     if (pinCode && pinCode.length === 6) {
-      setPinCodeChanged(true)
+      setPinCodeChanged(true);
       setPinCodeError(false);
       await SearchByZipCode(pinCode);
     } else {
@@ -106,58 +106,54 @@ function BannerComponent() {
                     cleaning services.
                   </p>
                   <div className="search-bar-section">
-                 
-                      <input
-                        type="number"
-                        className="form-control"
-                        placeholder="Search Pincode"
-                        onChange={(e) => setPincode(e.target.value)}
-                        value={pinCode}
-                      />
-                      <div
-                        className="search-btn"
-                        onClick={() => {
-                          // setSERVICES(!SERVICES);
-                          pinCodeSearchHandler();
-                        }}
-                      >
-                        <a href className="btn btn-primary">
-                          Search
-                        </a>
-                      </div>
-                     {pinCodeChanged && (
-                       <div>
-
-                     
-                    
-                       {categories_loading || !ZipServiceType? (
-                         <div>
-                           <>
-                             <div className="hatch-flex">
-                               <div className="car-box">
-                                 <Skeleton height={100} />
-                               </div>
-                               <div className="car-box">
-                                 <Skeleton height={100} />
-                               </div>
-                               <div className="car-box">
-                                 <Skeleton height={100} />
-                               </div>
-                               <div className="car-box">
-                                 <Skeleton height={100} />
-                               </div>
-                             </div>
-                           </>
-                         </div>
-                       ) : (
-                         <div>
-                           <div
-                             className="searc-box-container"
-                             style={{ display: 'block' }}
-                           >
-                             {categories_loading ? (
-                               <>
-                                 {/* <div className='hatch-flex'>
+                    <input
+                      type="number"
+                      className="form-control"
+                      placeholder="Search Pincode"
+                      onChange={(e) => setPincode(e.target.value)}
+                      value={pinCode}
+                    />
+                    <div
+                      className="search-btn"
+                      onClick={() => {
+                        // setSERVICES(!SERVICES);
+                        pinCodeSearchHandler();
+                      }}
+                    >
+                      <a href className="btn btn-primary">
+                        Search
+                      </a>
+                    </div>
+                    {pinCodeChanged && (
+                      <div>
+                        {categories_loading || !ZipServiceType ? (
+                          <div>
+                            <>
+                              <div className="hatch-flex">
+                                <div className="car-box">
+                                  <Skeleton height={100} />
+                                </div>
+                                <div className="car-box">
+                                  <Skeleton height={100} />
+                                </div>
+                                <div className="car-box">
+                                  <Skeleton height={100} />
+                                </div>
+                                <div className="car-box">
+                                  <Skeleton height={100} />
+                                </div>
+                              </div>
+                            </>
+                          </div>
+                        ) : (
+                          <div>
+                            <div
+                              className="searc-box-container"
+                              style={{ display: 'block' }}
+                            >
+                              {categories_loading ? (
+                                <>
+                                  {/* <div className='hatch-flex'>
                                <div className='car-box'>
                                  <Skeleton height={100} />
                                </div>
@@ -171,51 +167,50 @@ function BannerComponent() {
                                  <Skeleton height={100} />
                                </div>
                              </div> */}
-                               </>
-                             ) : (
-                               <>
-                                 <ServiceType
-                                   vehicleType={vehicleType}
-                                   serviceTypeData={
-                                     categories && categories.vehicleType
-                                   }
-                                   handleServiceTypeChange={
-                                     handleServiceTypeChange
-                                   }
-                                 />
-                               </>
-                             )}
-   
-                             {vehicleType && (
-                               <SubMenuComponent
-                               ZipServiceType={ZipServiceType}
-                                 washType={washType}
-                                 vehicleType={vehicleType}
-                                 sub_cat_loading={categories_loading}
-                                 subCatData={subCatData}
-                                 setWashType={setWashType}
-                               />
-                             )}
-                             <ModelComponent
-                               setModelType={setModelType}
-                               modelType={modelType}
-                               filteredBrandData={filteredBrandData}
-                             />
-   
-                             <div className="go-gor-it text-center">
-                               <a
-                                 onClick={() => searchBtnHandler()}
-                                 className="btn btn-primary w25"
-                               >
-                                 Go For it
-                               </a>
-                             </div>
-                           </div>
-                         </div>
-                       )}
-                     </div>
-                     )}   
-                     
+                                </>
+                              ) : (
+                                <>
+                                  <ServiceType
+                                    vehicleType={vehicleType}
+                                    serviceTypeData={
+                                      categories && categories.vehicleType
+                                    }
+                                    handleServiceTypeChange={
+                                      handleServiceTypeChange
+                                    }
+                                  />
+                                </>
+                              )}
+
+                              {vehicleType && (
+                                <SubMenuComponent
+                                  ZipServiceType={ZipServiceType}
+                                  washType={washType}
+                                  vehicleType={vehicleType}
+                                  sub_cat_loading={categories_loading}
+                                  subCatData={subCatData}
+                                  setWashType={setWashType}
+                                />
+                              )}
+                              <ModelComponent
+                                setModelType={setModelType}
+                                modelType={modelType}
+                                filteredBrandData={filteredBrandData}
+                              />
+
+                              <div className="go-gor-it text-center">
+                                <a
+                                  onClick={() => searchBtnHandler()}
+                                  className="btn btn-primary w25"
+                                >
+                                  Go For it
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

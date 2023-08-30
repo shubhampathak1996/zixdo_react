@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Formik, Form, Field } from 'formik';
 import { TextInput, SelectBox, CheckBox } from '../../components/Form/Form';
+import { UseCouponCode } from '../../shared/hooks/UseFetch';
 import * as Yup from 'yup';
 function CartComponent({
   cartItems,
@@ -11,6 +12,9 @@ function CartComponent({
   removeCartMessage,
   removeFromCart,
 }) {
+  const { CouponCode, GetCouponCode, coupon_code_loading } = UseCouponCode();
+
+  console.log(CouponCode, 'coupon_code');
   console.log('Cart Items', cartItems);
   const [totalCartAmount, setTotalCartAmount] = useState(null);
   useEffect(() => {
@@ -33,7 +37,7 @@ function CartComponent({
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h3> Your Cart (1) </h3>
+              <h3> Your Cart ({cartItems.length}) </h3>
               <div className="shoping-cart-table table-responsive">
                 <table className="table">
                   {/* <thead>
@@ -91,21 +95,21 @@ function CartComponent({
                       <div> Loading .... </div>
                     )}
 
-                    {/* <tr className='cart-coupon-row appply'>
+                    <tr className="cart-coupon-row appply">
                       <td colSpan={6}>
                         <Formik
                           initialValues={{
-                            coupan_code: '',
+                            coupon_code: '',
                           }}
                           validationSchema={Yup.object({
-                            coupan_code: Yup.string().required('Required'),
+                            // coupon_code: Yup.string().required('Required'),
                           })}
                           onSubmit={async (
                             values,
                             { setSubmitting, resetForm }
                           ) => {
                             setSubmitting(true);
-
+                            GetCouponCode({ coupon_code: values.coupon_code });
                             resetForm();
                             setSubmitting(false);
                           }}
@@ -114,17 +118,18 @@ function CartComponent({
                             console.log(formik);
                             return (
                               <Form>
-                                <div className='form-group'>
+                                <div className="form-group">
                                   <TextInput
-                                    name='coupan_code'
-                                    type='text'
-                                    placeholder='Enter your Coupon Code'
-                                    className='form-control'
+                                    name="coupon_code"
+                                    type="text"
+                                    placeholder="Enter your Coupon Code"
+                                    className="form-control"
                                   />
                                 </div>
+
                                 <button
-                                  type='submit'
-                                  className='btn btn-primary mt-4'
+                                  type="submit"
+                                  className="btn btn-primary mt-4"
                                 >
                                   Apply Coupon
                                 </button>
@@ -134,11 +139,11 @@ function CartComponent({
                         </Formik>
                       </td>
                       <td>
-                        <button type='submit' className='btn btn-primary end '>
+                        <button type="submit" className="btn btn-primary end ">
                           Update Cart
                         </button>
                       </td>
-                    </tr> */}
+                    </tr>
                   </tbody>
                 </table>
               </div>

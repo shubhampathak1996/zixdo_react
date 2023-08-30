@@ -98,7 +98,7 @@ function App() {
           <Route exact path="/privacy-policy" component={PrivacyPolicy} />
           <Route exact path="/gallery" component={Gallary} />
           <Route exact path="/thank-you/:order_id" component={ThankYou} />
-          <Route exact path="/store/:store_id" component={SingleStore} />
+          <Route exact path="/:custom_url" component={SingleStore} />
           <Route exact path="/test" component={Test} />
           <Route component={PageNotFound} />
         </Switch>
